@@ -16,7 +16,7 @@ html{
 body{
    font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
-    background-color: #fff;
+    background-color: #f7f7f7;
 }
 
 // Navbar
@@ -97,13 +97,17 @@ div.container{
         grid-template-columns: 1fr;        
         margin-left: 100px;
         margin-top: 50px;
+        background-color: rgba(255,255,255,.5);
+        padding: 1em;
+        box-sizing: border-box;        
         div.article{        
             margin-bottom: 50px;            
             padding: 1em;           
-            background-color: rgba(0,0,0,.009);
-            transition: 200ms ease-in-out;
-            box-shadow: 0px 0px 20px rgba(0,0,0,.1);            
+            background-color: #fff;
+            transition: 200ms ease-in-out;        
             box-sizing: border-box;
+            border-radius: 5px;
+            border: 1px solid rgba(0,0,0,.1);
             div.title{
                 h2{
                     color: rgba(0,0,0,.7);
@@ -121,10 +125,7 @@ div.container{
                     }
                }
             }
-        }
-        div.article:hover{
-            box-shadow: 0px 0px 20px rgba(0,0,0,.1);            
-        }
+        }        
     }
    
     div.social-profiles{
@@ -132,7 +133,7 @@ div.container{
         top: 50%;
         padding: 1em;        
         transform: translateY(-50%);
-        background-color:#f7f7f7;
+        background-color:#fff;
         left: 0;
         box-sizing: border-box; 
         box-shadow: 0px 0px 5px rgba(0,0,0,.2);       
