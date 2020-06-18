@@ -35,6 +35,7 @@ nav#navbar a.brand-logo {
   display: -ms-flexbox;
   display: flex;
   padding: 0 10px;
+  margin-left: 20px;
   color: #fff;
 }
 
@@ -46,10 +47,36 @@ nav#navbar a.brand-logo span.w {
   margin-left: 5px;
 }
 
+nav#navbar span.hamburger-icon {
+  float: right;
+  cursor: pointer;
+  display: none;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  margin-right: 40px;
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 40px;
+  height: 40px;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.8);
+  -webkit-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.4);
+          box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.4);
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+}
+
+nav#navbar span.hamburger-icon:hover {
+  background-color: #f7f7f721;
+}
+
 nav#navbar ul {
   list-style: none;
   float: right;
   margin-right: 20px;
+  display: block;
 }
 
 nav#navbar ul li {
@@ -63,8 +90,6 @@ nav#navbar ul li a {
   color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
   padding: 1em;
-  -webkit-box-decoration-break: 3px;
-          box-decoration-break: 3px;
   -webkit-transition: 200ms ease-in-out;
   transition: 200ms ease-in-out;
   font-weight: bold;
@@ -80,7 +105,7 @@ nav#navbar ul li a:hover {
 
 nav#navbar ul::after {
   content: "";
-  display: block;
+  display: none;
   width: 0;
   height: 0;
   position: relative;
@@ -98,9 +123,12 @@ div.container {
   clear: both;
   width: 100%;
   margin: auto;
-  padding: 1em;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+div.container ul.mobile-menus {
+  display: none;
 }
 
 div.container div.articles {
@@ -113,7 +141,7 @@ div.container div.articles {
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
   margin-left: 100px;
-  margin-top: 50px;
+  margin-top: 20px;
   background-color: rgba(255, 255, 255, 0.5);
   padding: 1em;
   box-sizing: border-box;
@@ -122,13 +150,11 @@ div.container div.articles {
 div.container div.articles div.article {
   margin-bottom: 50px;
   padding: 1em;
-  background-color: #fff;
   -webkit-transition: 200ms ease-in-out;
   transition: 200ms ease-in-out;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border-radius: 5px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 div.container div.articles div.article div.title h2 {
@@ -207,11 +233,15 @@ div.container div.post-article-section {
           box-sizing: border-box;
   margin-left: 100px;
   margin-top: 100px;
+  padding: 2em;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
 }
 
 div.container div.post-article-section h2 {
   margin-bottom: 20px;
   color: #00acee;
+  font-size: 2rem;
 }
 
 div.container div.post-article-section div.post-article:after {
@@ -233,8 +263,6 @@ div.container div.post-article-section div.article-form div.form {
   margin-top: 20px;
   padding: 0;
   margin: 0;
-  -webkit-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5);
-          box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5);
 }
 
 div.container div.post-article-section div.article-form div.form form div.name-title {
@@ -243,39 +271,45 @@ div.container div.post-article-section div.article-form div.form form div.name-t
   background-color: #eee;
 }
 
-div.container div.post-article-section div.article-form div.form form div.name-title input {
-  display: block;
-  width: 100%;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  outline: none;
-  padding: .5em;
-  font-size: 16px;
-  font-weight: 500;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  background-color: rgba(255, 255, 255, 0.8);
-  -webkit-transition: 200ms ease-out;
-  transition: 200ms ease-out;
-  color: rgba(0, 0, 0, 0.7);
-  border-radius: 4px;
+div.container div.post-article-section div.article-form div.form form div.name-title div {
   border: none;
 }
 
-div.container div.post-article-section div.article-form div.form form div.name-title input:first-child {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+div.container div.post-article-section div.article-form div.form form div.name-title div input {
+  display: block;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5);
+  outline: none;
+  padding: .5em;
+  font-size: 18px;
+  font-weight: 500;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: white;
+  -webkit-transition: 200ms ease-out;
+  transition: 200ms ease-out;
+  color: rgba(0, 0, 0, 0.7);
+  font-family: sans-serif;
+  margin-bottom: 5px;
+  border-radius: 5px;
 }
 
-div.container div.post-article-section div.article-form div.form form div.name-title input:focus {
+div.container div.post-article-section div.article-form div.form form div.name-title div input:focus {
   background-color: #fff;
+  -webkit-box-shadow: 0px 0px 2px #00acee;
+          box-shadow: 0px 0px 2px #00acee;
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 div.container div.post-article-section div.article-form div.form form div.btn {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  background-color: rgba(0, 0, 0, 0.05);
   width: 100%;
-  padding: .5em;
-  border: 1px solid rgba(0, 0, 0, 0.1);
   border-top: none;
 }
 
@@ -287,12 +321,13 @@ div.container div.post-article-section div.article-form div.form form button.sub
   cursor: pointer;
   border: none;
   color: white;
-  background-color: #0853dd;
+  background-color: #3b5998;
   outline: none;
   border-radius: 4px;
   -webkit-transition: 200ms ease-in-out;
   transition: 200ms ease-in-out;
   width: 100px;
+  margin-top: 20px;
 }
 
 div.container div.post-article-section div.article-form div.form form textarea {
@@ -306,5 +341,198 @@ div.container div.post-article-section div.article-form div.form form div.btn::a
   visibility: none;
   width: 0;
   height: 0;
+}
+
+@media (max-width: 620px) {
+  nav#navbar ul {
+    display: none;
+  }
+  nav#navbar a.brand-logo {
+    margin-left: 5px;
+    font-size: 170%;
+  }
+  nav#navbar span.hamburger-icon {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-right: 20px;
+  }
+  @-webkit-keyframes show {
+    0% {
+      height: 0;
+    }
+    100% {
+      height: 171px;
+    }
+  }
+  @keyframes show {
+    0% {
+      height: 0;
+    }
+    100% {
+      height: 171px;
+    }
+  }
+  @-webkit-keyframes hide {
+    0% {
+      height: 171px;
+      overflow: auto;
+    }
+    100% {
+      height: 0px;
+      overflow: hidden;
+    }
+  }
+  @keyframes hide {
+    0% {
+      height: 171px;
+      overflow: auto;
+    }
+    100% {
+      height: 0px;
+      overflow: hidden;
+    }
+  }
+  div.container ul.mobile-menus {
+    display: block;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    background-color: #00acee;
+    height: 0;
+    overflow: hidden;
+    width: 100%;
+    -webkit-animation-name: hide;
+            animation-name: hide;
+    -webkit-animation-duration: 200ms;
+            animation-duration: 200ms;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+  }
+  div.container ul.mobile-menus li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  div.container ul.mobile-menus li a {
+    display: block;
+    padding: 1em;
+    overflow: hidden;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(0, 0, 0, 0.05);
+    -webkit-transition: 200ms ease-in-out;
+    transition: 200ms ease-in-out;
+    font-size: 16px;
+  }
+  div.container ul.mobile-menus li a:hover {
+    background-color: rgba(0, 0, 0, 0.15);
+  }
+  div.container ul.mobile-menus.toggle-ul {
+    height: auto;
+    overflow: auto;
+    -webkit-animation-name: show;
+            animation-name: show;
+    -webkit-animation-duration: 200ms;
+            animation-duration: 200ms;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+  }
+  div.container div.articles {
+    position: relative;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 100%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    margin-left: 0px;
+    margin-top: 0px;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: .5em;
+    box-sizing: border-box;
+  }
+  div.container div.post-article-section {
+    width: 100%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    margin-left: 0px;
+    margin-top: 100px;
+    padding: .5em;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+  }
+  div.container div.social-profiles {
+    display: none;
+  }
+}
+
+div.footer {
+  padding: 2em;
+  background-color: #e9e6e6;
+  margin-top: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  position: relative;
+  padding-bottom: .5em;
+}
+
+div.footer div.footer-contents {
+  text-align: center;
+}
+
+div.footer div.footer-contents ul {
+  list-style: none;
+}
+
+div.footer div.footer-contents ul li {
+  display: inline;
+}
+
+div.footer div.footer-contents ul li a {
+  margin-right: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+div.footer div.footer-contents div.social-profiles {
+  margin-bottom: 20px;
+}
+
+div.footer div.footer-contents div.social-profiles span {
+  margin: 0px 10px;
+}
+
+div.footer div.footer-contents div.social-profiles span a {
+  font-size: 20px;
+  border-radius: 50%;
+}
+
+div.footer div.footer-contents div.social-profiles span a:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+div.footer div.footer-contents div.social-profiles .facebook a {
+  color: #3b5998;
+}
+
+div.footer div.footer-contents div.social-profiles .youtube a {
+  color: #c4302b;
+}
+
+div.footer div.footer-contents div.social-profiles .instagram a {
+  color: #8a3ab9;
+}
+
+div.footer div.footer-contents div.social-profiles .twitter a {
+  color: #00acee;
 }
 /*# sourceMappingURL=main.css.map */
