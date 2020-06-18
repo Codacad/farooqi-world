@@ -148,6 +148,7 @@ div.container div.articles div.article {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border-radius: 5px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 div.container div.articles div.article div.title h2 {
@@ -156,7 +157,7 @@ div.container div.articles div.article div.title h2 {
 }
 
 div.container div.articles div.article div.body div.text-content p {
-  height: 350px;
+  height: 355px;
   overflow: hidden;
 }
 
