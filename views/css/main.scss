@@ -54,13 +54,9 @@ nav#navbar{
         position: relative;
         top: 50%;
         transform: translateY(-50%);        
-        color: rgba(255,255,255,.8);
-        box-shadow: 0px 0px 2px rgba(0,0,0,.4);
+        color: rgba(255,255,255,.8);        
         transition: 200ms ease-in-out;
-    }
-    span.hamburger-icon:hover{
-        background-color: #f7f7f721;
-    }
+    }    
     ul{
         list-style: none;
         float: right;  
@@ -287,14 +283,14 @@ div.container{
             display: none;                               
         }        
         a.brand-logo{
-            margin-left: 5px;
+            margin-left: 0px;
             font-size: 170%;
         }
         span.hamburger-icon{
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-right: 20px;
+            margin-right: 10px;
         }
     }
     div.container{
