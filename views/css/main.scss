@@ -118,14 +118,12 @@ div.container{
         padding: 1em;
         box-sizing: border-box;        
         div.article{        
-            margin-bottom: 50px;            
+            margin-bottom: 0px;            
             padding: 1em;           
-            // background-color: #fff;
             transition: 200ms ease-in-out;        
             box-sizing: border-box;
             border-radius: 5px;
-            border-bottom:1px solid rgba(0,0,0,.1);
-            // border: 1px solid rgba(0,0,0,.1);
+            border-bottom:1px solid rgba(0,0,0,.1);            
             div.title{
                 h2{
                     color: rgba(0,0,0,.7);
@@ -139,7 +137,15 @@ div.container{
                         overflow: hidden;                        
                     }
                     a.read-more{
-                        display: inline;
+                        display: block;
+                        width:100px;
+                        text-align:center;  
+                        color:#fff;
+                        padding:.5em 1em;
+                        text-decoration: none;
+                        margin-top: 10px;
+                        background-color: royalblue;
+                        border-radius: 5px;
                     }
                }
             }
