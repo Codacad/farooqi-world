@@ -199,7 +199,7 @@ div.container{
         border-radius: 5px;
         h2{
             margin-bottom: 20px;
-            color: #00acee;
+            color: rgba(0,0,0,.8);
             font-size: 2rem;
         }
         div.post-article:after{
@@ -261,9 +261,9 @@ div.container{
                     cursor: pointer;
                     border: none;
                     color: rgba(255,255,255,1);                
-                    background-color: #3b5998;
+                    background-color: royalblue;
                     outline: none;
-                    border-radius: 4px;
+                    border-radius: 2px;
                     transition: 200ms ease-in-out;                
                     width: 100px;
                     margin-top: 20px;
@@ -367,6 +367,14 @@ div.container{
             background-color: rgba(255,255,255,.5);
             padding: .5em;
             box-sizing: border-box;        
+            div.article{
+                div.body{
+                    a.read-more{     
+                        display: block;                                        
+                        margin: 50px auto 0px auto;                        
+                    }
+                }
+            }            
         }
         div.post-article-section{
             width: 100%;
