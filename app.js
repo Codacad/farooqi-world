@@ -13,7 +13,7 @@ app.use(expressLayout);
 app.use(express.static('views'));
 
 // DB Connection
-require('./config/database')
+require('./config/database').db
 app.use('/', routes);
 
 const PORT = process.env.PORT || 5000;
