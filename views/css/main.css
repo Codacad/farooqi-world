@@ -552,6 +552,9 @@ div.container div.create-article-section div.article-form div.form form div.btn:
     padding: .5em;
     box-sizing: border-box;
   }
+  div.container div.articles div.article div.title h2 {
+    font-size: 1.5rem;
+  }
   div.container div.articles div.article div.body a.read-more {
     margin: 20px auto 5px auto;
   }

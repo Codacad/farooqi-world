@@ -427,6 +427,11 @@ div.container{
             padding: .5em;
             box-sizing: border-box;        
             div.article{
+                div.title{                
+                    h2{                        
+                        font-size: 1.5rem;             
+                    }
+                }  
                 div.body{
                     a.read-more{                                                                 
                         margin: 20px auto 5px auto;
