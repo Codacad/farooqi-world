@@ -16,6 +16,7 @@ Router.get('/about',(req, res) => {
 Router.get('/create-new-article', (req, res) => {
     res.render('create-article', {title:"Create Article"})    
 })
+
 Router.get('/article', (req, res) => {
     res.render('article', {title:"Article"});
 })
