@@ -41,7 +41,7 @@ nav#navbar a.create-new-article {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   float: right;
-  margin-right: 10px;
+  margin-right: 20px;
   text-decoration: none;
   background-color: #f7f7f7;
   height: 20px;
@@ -58,6 +58,10 @@ nav#navbar a.create-new-article {
   border-radius: 2px;
   -webkit-transition: 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   transition: 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+nav#navbar a.create-new-article span.article-icon {
+  margin-right: 5px;
 }
 
 nav#navbar a#hide-btn {
@@ -227,7 +231,11 @@ div.container div.articles div.article div.body div.text-content {
   font-size: 1em;
 }
 
-div.container div.articles div.article div.body div.text-content p {
+div.container div.articles div.article div.body div.text-content div p:first-child {
+  display: none;
+}
+
+div.container div.articles div.article div.body div.text-content div p {
   height: 350px;
   overflow: hidden;
   -webkit-box-sizing: border-box;
@@ -237,7 +245,7 @@ div.container div.articles div.article div.body div.text-content p {
   text-align: right;
 }
 
-div.container div.articles div.article div.body div.text-content p span.quran-ayat {
+div.container div.articles div.article div.body div.text-content div p span.quran-ayat {
   color: orange;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -245,7 +253,7 @@ div.container div.articles div.article div.body div.text-content p span.quran-ay
   font-weight: bold;
 }
 
-div.container div.articles div.article div.body div.text-content p span.translation {
+div.container div.articles div.article div.body div.text-content div p span.translation {
   color: rgba(0, 0, 0, 0.6);
   text-decoration: underline;
   font-weight: bold;
@@ -295,6 +303,8 @@ div.container div.social-profiles span {
 }
 
 div.container div.social-profiles span a {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   font-size: 30px;
   color: #0852db;
   display: -webkit-box;
@@ -309,6 +319,26 @@ div.container div.social-profiles span a {
   position: relative;
   -webkit-transition: 200ms ease-in-out;
   transition: 200ms ease-in-out;
+}
+
+div.container div.social-profiles span span.tooltip {
+  position: absolute;
+  display: block;
+  background-color: #333;
+  color: #fff;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: .2em .5em;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+  margin-top: -40px;
+  margin-left: 60px;
+}
+
+div.container div.social-profiles span a:hover span.tooltip {
+  visibility: visible;
+  opacity: 1;
 }
 
 div.container div.social-profiles span a:hover {

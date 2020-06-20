@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../fontawesome-free-5.13.0-web/css/all.css"> 
     <title>Article</title>
 </head>
 <body>
@@ -14,7 +16,7 @@
         </ul>                    
         <div class="full-article">
             <div class="contents">
-                <div class="title">
+                <!-- <div class="title">
                     <h2>نوجوان قو مِ مسلم کےامین</h2>
                 </div>
                 <div class="body">
@@ -37,7 +39,19 @@
                             باری تعالیٰ سے دعا ہے کہ ہمیں اور ہمارے نو جوانوں کو اپنی ذمہ داری سمجھنے ، قرآن و حدیث کے فرامین کے مطابق زندگی گزارنے  اور بزرگان دین کے رستے پہ چلنے کی توفیق عطا فرمائے ۔۔۔  آمین ۔۔۔
                         </p>                        
                     </div>
+                </div> -->
+            <% if (typeof article != "undefined") { %>                            
+                <div class="title">                    
+                    <h2><%=article.title%></h2>
                 </div>
+                <div class="body">
+                    <div class="text-content">
+                        <p>
+                            <%-article.body%>
+                        </p>                        
+                    </div>
+                </div> 
+                <% } %>                
             </div>    
         </div>        
         <div class="social-profiles">
