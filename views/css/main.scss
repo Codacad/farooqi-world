@@ -154,8 +154,9 @@ div.container{
             border-bottom:1px solid rgba(0,0,0,.1);                        
             width: 100%;
             div.title{
-                display: flex;
+                display: flex;                
                 justify-content: flex-end;
+                text-align: right;
                 h2{
                     color: rgba(0,0,0,.7);
                     margin: 10px 0px;
