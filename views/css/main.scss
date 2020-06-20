@@ -2,6 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mirza:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital@1&family=Cairo:wght@300&display=swap');
 // font-family: 'Pangolin', cursive;
 // font-family: 'Montserrat', sans-serif;
 // font-family: 'Poppins', sans-serif;
@@ -134,37 +136,57 @@ div.container{
         display: none;
     }
     div.articles{
+        box-sizing: border-box;        
         position: relative;
-        box-sizing: border-box;
         width: 60%;
         display: grid;
         grid-template-columns: 1fr;        
         margin-left: 100px;
         margin-top: 20px;
         background-color: rgba(255,255,255,.5);
-        padding: 1em;
-        box-sizing: border-box;        
+        padding: 1em;        
         div.article{        
             margin-bottom: 0px;            
             padding: 1em;           
             transition: 200ms ease-in-out;        
             box-sizing: border-box;
             border-radius: 5px;
-            border-bottom:1px solid rgba(0,0,0,.1);            
+            border-bottom:1px solid rgba(0,0,0,.1);                        
+            width: 100%;
             div.title{
+                display: flex;
+                justify-content: flex-end;
                 h2{
                     color: rgba(0,0,0,.7);
                     margin: 10px 0px;
+                    word-spacing: 2px;
+                    font-size: 2rem;             
                 }
-            }
+            }            
             div.body{
-               div.text-content{                   
-                    p{
-                        height: 355px;
-                        overflow: hidden;                        
+                box-sizing: border-box;
+                display: flex;                
+                font-family: "Urdu Nastaliq Unicode";
+               div.text-content{                                      
+                    box-sizing: border-box;
+                    display: block;
+                    font-size: 1em;
+                    p{                        
+                        height: 350px;
+                        overflow: hidden; 
+                        box-sizing: border-box;
+                        line-height:1.7em;                               
+                        font-size: 120%;                                          
+                        text-align: right;
+                        span.quran-ayat{
+                            background-color: yellow;
+                            color: #333;
+                            box-sizing: border-box;
+                        }
                     }
                     a.read-more{
                         display: block;
+                        float: right;
                         width:100px;
                         text-align:center;  
                         color:#fff;
@@ -175,7 +197,7 @@ div.container{
                         border-radius: 5px;     
                         box-shadow: 0px 0px 2px rgba(0,0,0,.5);                   
                     }
-               }
+               }               
             }
         } 
         div.article:last-child{
@@ -318,6 +340,9 @@ div.container{
 }
 @media (max-width:620px){
     nav#navbar{
+        a.create-new-article{
+            display: none;
+        }
         ul{
             display: none;                               
         }        
