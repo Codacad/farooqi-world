@@ -16,6 +16,7 @@ app.use(express.static('views'));
 
 // DB Connection
 require('./config/database')
+app.use('/', routes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
