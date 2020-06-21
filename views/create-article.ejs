@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+</head>
+<body>
+   <div class="container">
+        <ul class="mobile-menus">
+            <li><a href="/">Home</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>          
+        <div class="create-article-section">            
+            <h2>Create an Article</h2>
+            <div class="article-form">
+               <div class="form">
+                    <form action="/create-new-article" method="POST">
+                        <div class="form-group name-title">                        
+                            <div><input type="text" name="author" id="fullname" class="form-control" placeholder="Name"></div>
+                            <div><input type="text" name="title" id="title" class="form-control" placeholder="Title"></div>
+                        </div>                   
+                        <div class="form-group text-area">                        
+                            <textarea id="editor" name="body" placeholder="Start writing here..." class="form-control"></textarea>
+                        </div>
+                        <div class="btn">
+                            <button type="submit" class="submit-article">Post</button>
+                        </div>
+                    </form>
+               </div>
+            </div>
+        </div>      
+   </div>
+    <script src="./ckeditor/ckeditor.js"></script>  
+    <script src="./js/ckeditor.js"></script>
+</body>
+</html>
