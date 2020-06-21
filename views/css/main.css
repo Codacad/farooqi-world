@@ -231,12 +231,12 @@ div.container div.articles div.article div.body div.text-content {
   font-size: 1em;
 }
 
-div.container div.articles div.article div.body div.text-content div p:first-child {
-  display: none;
+div.container div.articles div.article div.body div.text-content div {
+  height: 350px;
+  overflow: hidden;
 }
 
 div.container div.articles div.article div.body div.text-content div p {
-  height: 350px;
   overflow: hidden;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -482,6 +482,7 @@ div.container div.create-article-section div.article-form div.form form div.btn:
 
 div.container div.full-article {
   margin-bottom: 0px;
+  margin-top: 20px;
   padding: 1em;
   -webkit-transition: 200ms ease-in-out;
   transition: 200ms ease-in-out;
@@ -494,6 +495,7 @@ div.container div.full-article {
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
   margin-left: 100px;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 div.container div.full-article div.title {

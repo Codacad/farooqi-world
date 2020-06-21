@@ -7,7 +7,6 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/farooqi-world',
 });
 
 const db = mongoose.connection;
-
 db.on('connected', () => {
     console.log(`Connection is established at ${db.host}:${db.port}`)
 })

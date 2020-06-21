@@ -177,11 +177,12 @@ div.container{
                     display: block;
                     font-size: 1em;
                     div{
-                        p:first-child{
-                            display: none;
-                        }
-                        p{                        
-                            height: 350px;
+                        height: 350px;
+                        overflow: hidden; 
+                        // p:first-child{
+                        //     display: none;
+                        // }
+                        p{                                                    
                             overflow: hidden; 
                             box-sizing: border-box;
                             line-height:1.7em;                               
@@ -378,7 +379,8 @@ div.container{
         }
     } 
     div.full-article{        
-        margin-bottom: 0px;            
+        margin-bottom: 0px;    
+        margin-top:20px;        
         padding: 1em;           
         transition: 200ms ease-in-out;        
         box-sizing: border-box;
@@ -387,6 +389,7 @@ div.container{
         display: grid;
         grid-template-columns: 1fr;
         margin-left:100px;
+        background-color: rgba(255,255,255,.5);
         div.title{
             display: flex;                
             justify-content: flex-end;
