@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
-
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/farooqi-world', {
     useNewUrlParser:true,
     useUnifiedTopology:true,
