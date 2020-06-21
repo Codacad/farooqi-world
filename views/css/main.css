@@ -649,6 +649,40 @@ div.container div.full-article div.body div.text-content a.read-more:hover {
             animation-duration: 200ms;
     -webkit-animation-timing-function: ease-in-out;
             animation-timing-function: ease-in-out;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  div.container ul.mobile-menus a.create-new-article {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 200px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    text-decoration: none;
+    background-color: #f7f7f7;
+    height: 20px;
+    line-height: 30px;
+    color: #333;
+    text-align: center;
+    padding: 1em .5em;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    -webkit-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+            box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+    border-radius: 2px;
+    margin: 30px auto 0px auto;
+    -webkit-transition: 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border-top: 1px;
+  }
+  div.container ul.mobile-menus a.create-new-article span.article-icon {
+    margin-right: 5px;
   }
   div.container ul.mobile-menus li {
     list-style: none;
@@ -661,13 +695,12 @@ div.container div.full-article div.body div.text-content a.read-more:hover {
     overflow: hidden;
     text-decoration: none;
     color: rgba(255, 255, 255, 0.8);
-    background-color: rgba(0, 0, 0, 0.05);
     -webkit-transition: 200ms ease-in-out;
     transition: 200ms ease-in-out;
     font-size: 16px;
   }
   div.container ul.mobile-menus li a:hover {
-    background-color: rgba(0, 0, 0, 0.15);
+    background-color: rgba(0, 0, 0, 0.02);
   }
   div.container ul.mobile-menus.toggle-ul {
     height: auto;
