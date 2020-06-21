@@ -209,7 +209,7 @@ div.container div.articles div.article div.title {
 }
 
 div.container div.articles div.article div.title h2 {
-  color: rgba(0, 0, 0, 0.5);
+  color: teal;
   font-weight: 700;
   margin: 10px 0px;
   word-spacing: 2px;
@@ -511,7 +511,7 @@ div.container div.full-article div.title {
 }
 
 div.container div.full-article div.title h2 {
-  color: rgba(0, 0, 0, 0.5);
+  color: teal;
   font-weight: 700;
   margin: 10px 0px;
   word-spacing: 2px;
@@ -719,6 +719,7 @@ div.container div.full-article div.body div.text-content a.read-more:hover {
   }
   div.container div.full-article div.title h2 {
     font-size: 1.5rem;
+    color: teal;
   }
   div.container div.full-article div.body a.read-more {
     margin: 20px auto 5px auto;
