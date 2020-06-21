@@ -171,6 +171,7 @@ div.container ul.mobile-menus {
 }
 
 div.container div.articles {
+  margin: 20px 0px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   position: relative;
@@ -481,9 +482,9 @@ div.container div.create-article-section div.article-form div.form form div.btn:
 }
 
 div.container div.full-article {
-  margin-bottom: 0px;
-  margin-top: 20px;
   padding: 1em;
+  margin-top: 20px;
+  margin-bottom: 20px;
   -webkit-transition: 200ms ease-in-out;
   transition: 200ms ease-in-out;
   -webkit-box-sizing: border-box;
@@ -677,6 +678,7 @@ div.container div.full-article div.body div.text-content a.read-more:hover {
             animation-timing-function: ease-in-out;
   }
   div.container div.articles {
+    margin: 0px 0px;
     position: relative;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
@@ -711,6 +713,8 @@ div.container div.full-article div.body div.text-content a.read-more:hover {
   div.container div.full-article {
     width: 100%;
     margin-left: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
   }
   div.container div.full-article div.title h2 {
     font-size: 1.5rem;
@@ -723,7 +727,6 @@ div.container div.full-article div.body div.text-content a.read-more:hover {
 div.footer {
   padding: 2em;
   background-color: #e9e6e6;
-  margin-top: 20px;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   position: relative;
   padding-bottom: .5em;

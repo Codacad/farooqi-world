@@ -139,6 +139,7 @@ div.container{
         display: none;
     }
     div.articles{
+        margin: 20px 0px;
         box-sizing: border-box;        
         position: relative;
         width: 60%;
@@ -378,10 +379,10 @@ div.container{
             }
         }
     } 
-    div.full-article{        
-        margin-bottom: 0px;    
-        margin-top:20px;        
-        padding: 1em;           
+    div.full-article{               
+        padding: 1em; 
+        margin-top: 20px;          
+        margin-bottom: 20px;
         transition: 200ms ease-in-out;        
         box-sizing: border-box;
         border-radius: 5px;                              
@@ -526,6 +527,7 @@ div.container{
             animation-timing-function:ease-in-out; 
         }
         div.articles{
+            margin: 0px 0px;
             position: relative;
             box-sizing: border-box;
             width: 100%;
@@ -562,6 +564,8 @@ div.container{
         div.full-article{
             width: 100%;
             margin-left: 0px;
+            margin-top: 0px;          
+            margin-bottom: 0px;
             div.title{                
                 h2{                        
                     font-size: 1.5rem;             
@@ -577,8 +581,7 @@ div.container{
 }
 div.footer{
     padding: 2em;
-    background-color: rgb(233, 230, 230);  
-    margin-top: 20px;      
+    background-color: rgb(233, 230, 230);      
     border-top: 1px solid rgba(0,0,0,.1);
     position: relative;
     padding-bottom: .5em;
