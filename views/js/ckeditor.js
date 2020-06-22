@@ -1,3 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-    CKEDITOR.replace('editor');
+    ClassicEditor
+        .create( document.querySelector( '#editor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
 })
