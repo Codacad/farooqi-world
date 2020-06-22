@@ -5,6 +5,7 @@ const Schema = mongoose.Schema;
 const articleSchema = new Schema({
     author:{type:String},
     title:{type:String, required:true},
+    category:{type:String},
     body:{type:String, required:true}
 }, {timestamps:true})
 
