@@ -17,5 +17,9 @@
     "express-ejs-layouts": "^2.5.0",
     "mongoose": "^5.9.10",
     "nodemon": "^2.0.3"
+  },
+  "devDependencies": {
+    "connect-mongo": "^3.2.0",
+    "express-session": "^1.17.1"
   }
 }
