@@ -5,7 +5,7 @@ const connectMongo = require('connect-mongo')(session);
 const expressLayout = require('express-ejs-layouts');
 const cors = require('cors');
 const routes = require('./routes/index');
-const config = require('dotenv').config()
+require('dotenv').config()
 const app = express()
 app.use(cors());
 app.use(express.json())
