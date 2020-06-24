@@ -51,6 +51,16 @@ Router.post('/create-new-article', (req, res) => {
         res.redirect('/')
     })        
 })
+Router.get('/login', (req, res) => {
+    res.render('login', {
+        title:"Login"
+    })
+})
+Router.get('/register', (req, res) => {
+    res.render('register', {
+        title:"Register"
+    })
+})
 Router.get('/api/article', (req, res) => {
     Article.find({}, (err, article) => {
         if(err){

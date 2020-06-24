@@ -1,6 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
-    document.querySelector('span.hamburger-icon').addEventListener('click', function(e){
+    const hamburgerIcon = document.querySelector('span.hamburger-icon');
+    
+    hamburgerIcon.addEventListener('click', function(e){
         e.preventDefault()
-        document.querySelector('ul.mobile-menus').classList.toggle('toggle-ul')
+        document.querySelector('nav#sidenav').classList.add('sidenav-toggle');
+    })
+
+    document.querySelector('nav#sidenav a#close').addEventListener('click', (e) => {
+        e.preventDefault();
+        document.querySelector('nav#sidenav').classList.remove('sidenav-toggle');
     })
 })

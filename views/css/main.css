@@ -4,6 +4,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Sriracha&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Mirza:wght@400;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Amiri:ital@1&family=Cairo:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@500&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -43,10 +44,10 @@ nav#navbar a.create-new-article {
   float: right;
   margin-right: 20px;
   text-decoration: none;
-  background-color: #f7f7f7;
-  height: 20px;
+  background-color: royalblue;
+  height: 40px;
   line-height: 30px;
-  color: #333;
+  color: #fff;
   text-align: center;
   padding: 1em;
   position: relative;
@@ -64,12 +65,67 @@ nav#navbar a.create-new-article span.article-icon {
   margin-right: 5px;
 }
 
+nav#navbar div.login-register {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  float: right;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 300px;
+  height: 40px;
+}
+
+nav#navbar div.login-register a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 50%;
+  height: 100%;
+  line-height: 40px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0px 10px;
+  background: linear-gradient(45deg, white, rgba(255, 255, 255, 0.2));
+  text-align: center;
+  padding: .5em;
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 0.8);
+  text-decoration: none;
+  -webkit-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+}
+
+nav#navbar div.login-register a span {
+  margin-right: 5px;
+}
+
+nav#navbar div.login-register a:hover {
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+  background: linear-gradient(-45deg, white, rgba(255, 255, 255, 0.2));
+  color: rgba(0, 0, 0, 0.7);
+}
+
 nav#navbar a#hide-btn {
   display: none;
 }
 
 nav#navbar a.create-new-article:hover {
-  background-color: #f7f7f7f1;
+  background-color: rgba(65, 105, 225, 0.877);
 }
 
 nav#navbar a.brand-logo {
@@ -81,7 +137,7 @@ nav#navbar a.brand-logo {
   display: -ms-flexbox;
   display: flex;
   padding: 0 10px;
-  margin-left: 20px;
+  margin-left: 10px;
   color: #fff;
 }
 
@@ -113,13 +169,15 @@ nav#navbar span.hamburger-icon {
 
 nav#navbar ul {
   list-style: none;
-  float: right;
+  float: left;
   margin-right: 20px;
   display: block;
 }
 
 nav#navbar ul li {
   float: left;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 nav#navbar ul li a {
@@ -132,14 +190,11 @@ nav#navbar ul li a {
   -webkit-transition: 200ms ease-in-out;
   transition: 200ms ease-in-out;
   font-weight: bold;
+  border-radius: 20px;
 }
 
 nav#navbar ul li a:hover {
-  color: rgba(255, 255, 255, 0.8);
-  font-weight: bold;
-  -webkit-transition: 200ms ease-in-out;
-  transition: 200ms ease-in-out;
-  text-decoration: underline;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 nav#navbar ul::after {
@@ -158,16 +213,185 @@ nav#navbar::after {
   position: relative;
 }
 
+nav#sidenav {
+  position: fixed;
+  right: -310px;
+  top: 0;
+  width: 300px;
+  height: 100%;
+  background-color: #00acee;
+  z-index: 20;
+  -webkit-transition: 500ms cubic-bezier(0.68, 0, 0.265, 0.1);
+  transition: 500ms cubic-bezier(0.68, 0, 0.265, 0.1);
+  -webkit-box-shadow: -5px 75px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: -5px 75px 10px rgba(0, 0, 0, 0.2);
+  display: none;
+}
+
+nav#sidenav a#close {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: .5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  right: 20px;
+  top: 15px;
+  border-radius: 50%;
+  -webkit-transition: 300ms ease-in-out;
+  transition: 300ms ease-in-out;
+  border: 1px solid #fff;
+}
+
+nav#sidenav a#close span span {
+  display: block;
+  width: 30px;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.7);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 0.2);
+          box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 0.2);
+}
+
+nav#sidenav a#close span span:first-child {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  position: relative;
+  top: 2px;
+}
+
+nav#sidenav a#close span span:last-child {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  position: relative;
+}
+
+nav#sidenav a#close:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+nav#sidenav div.sidenav-contents {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-top: 70px;
+  position: relative;
+  background-color: #f7f7f7;
+  height: 100%;
+  padding: 30px 0px;
+}
+
+nav#sidenav div.btns {
+  display: block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+nav#sidenav div.btns a.create-new-article {
+  display: block;
+  width: 200px;
+  text-align: center;
+  background-color: royalblue;
+  padding: .5em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 20px auto;
+  color: #fff;
+  -webkit-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+}
+
+nav#sidenav div.btns a.create-new-article span {
+  margin-right: 10px;
+}
+
+nav#sidenav div.btns div.login-register {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+nav#sidenav div.btns div.login-register a {
+  display: block;
+  width: 50%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0px 10px;
+  background: linear-gradient(45deg, white, rgba(0, 0, 0, 0.2));
+  text-align: center;
+  padding: .5em;
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 0.8);
+  text-decoration: none;
+  -webkit-transition: 500ms ease-in-out;
+  transition: 500ms ease-in-out;
+}
+
+nav#sidenav div.btns div.login-register a span {
+  margin-right: 5px;
+}
+
+nav#sidenav div.btns div.login-register a:hover {
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+  background: linear-gradient(-45deg, white, rgba(0, 0, 0, 0.2));
+  color: rgba(0, 0, 0, 0.7);
+}
+
+nav#sidenav ul {
+  display: block;
+  list-style: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 1em;
+}
+
+nav#sidenav ul li {
+  display: block;
+}
+
+nav#sidenav ul li a {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #333;
+  width: 100%;
+  text-decoration: none;
+  padding: .5em 1em;
+  -webkit-transition: 300ms ease-in-out;
+  transition: 300ms ease-in-out;
+  display: block;
+  border-radius: 20px;
+}
+
+nav#sidenav ul li a:hover {
+  background-color: rgba(255, 0, 0, 0.2);
+}
+
+nav#sidenav.sidenav-toggle {
+  right: 0px;
+}
+
 div.container {
   clear: both;
   width: 100%;
   margin: auto;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-}
-
-div.container ul.mobile-menus {
-  display: none;
 }
 
 div.container div.articles {
@@ -583,7 +807,217 @@ div.container div.full-article div.body div.text-content a.read-more:hover {
   background-color: rgba(65, 105, 225, 0.9);
 }
 
-@media (max-width: 620px) {
+div.container div.login {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 50%;
+  margin: 50px auto;
+  min-height: 75vh;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+div.container div.login div.login-heading {
+  padding: .5em;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.8);
+  font-family: 'Heebo', sans-serif;
+}
+
+div.container div.login form {
+  width: 75%;
+  min-height: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: auto;
+  background-color: #fff;
+  margin-top: 30px;
+  -webkit-box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+div.container div.login form div.form-contents div.email, div.container div.login form div.form-contents div.password {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 300px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 20px 0px;
+}
+
+@-webkit-keyframes placeholder {
+  from {
+    top: 0;
+  }
+  to {
+    top: -20px;
+  }
+}
+
+@keyframes placeholder {
+  from {
+    top: 0;
+  }
+  to {
+    top: -20px;
+  }
+}
+
+div.container div.login form div.form-contents div.email input, div.container div.login form div.form-contents div.password input {
+  display: block;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 20px 0px 0px 10px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+div.container div.login form div.form-contents div.email input::-webkit-input-placeholder, div.container div.login form div.form-contents div.password input::-webkit-input-placeholder {
+  -webkit-transition: 300ms ease-in-out;
+  transition: 300ms ease-in-out;
+}
+
+div.container div.login form div.form-contents div.email input:-ms-input-placeholder, div.container div.login form div.form-contents div.password input:-ms-input-placeholder {
+  -webkit-transition: 300ms ease-in-out;
+  transition: 300ms ease-in-out;
+}
+
+div.container div.login form div.form-contents div.email input::-ms-input-placeholder, div.container div.login form div.form-contents div.password input::-ms-input-placeholder {
+  -webkit-transition: 300ms ease-in-out;
+  transition: 300ms ease-in-out;
+}
+
+div.container div.login form div.form-contents div.email input::placeholder, div.container div.login form div.form-contents div.password input::placeholder {
+  -webkit-transition: 300ms ease-in-out;
+  transition: 300ms ease-in-out;
+}
+
+div.container div.login form div.form-contents div.email input:focus::-webkit-input-placeholder, div.container div.login form div.form-contents div.password input:focus::-webkit-input-placeholder {
+  position: relative;
+  top: -20px;
+  -webkit-animation-name: placeholder;
+          animation-name: placeholder;
+  -webkit-animation-duration: 300ms;
+          animation-duration: 300ms;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+}
+
+div.container div.login form div.form-contents div.email input:focus:-ms-input-placeholder, div.container div.login form div.form-contents div.password input:focus:-ms-input-placeholder {
+  position: relative;
+  top: -20px;
+  animation-name: placeholder;
+  animation-duration: 300ms;
+  animation-timing-function: ease-in-out;
+}
+
+div.container div.login form div.form-contents div.email input:focus::-ms-input-placeholder, div.container div.login form div.form-contents div.password input:focus::-ms-input-placeholder {
+  position: relative;
+  top: -20px;
+  animation-name: placeholder;
+  animation-duration: 300ms;
+  animation-timing-function: ease-in-out;
+}
+
+div.container div.login form div.form-contents div.email input:focus::placeholder, div.container div.login form div.form-contents div.password input:focus::placeholder {
+  position: relative;
+  top: -20px;
+  -webkit-animation-name: placeholder;
+          animation-name: placeholder;
+  -webkit-animation-duration: 300ms;
+          animation-duration: 300ms;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+}
+
+div.container div.login form div.form-contents div.email span.user-icon, div.container div.login form div.form-contents div.email span.password-icon, div.container div.login form div.form-contents div.password span.user-icon, div.container div.login form div.form-contents div.password span.password-icon {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 1em .5em .2em 1em;
+  font-size: 22px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+div.container div.login form div.form-contents div.login-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+div.container div.login form div.form-contents div.login-btn button {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  display: block;
+  padding: .4em 1em;
+  cursor: pointer;
+  border: none;
+  font-family: 'Heebo', sans-serif;
+  font-size: 16px;
+  background-color: royalblue;
+  color: #fff;
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+}
+
+div.container div.login form div.form-contents span.new-to-website {
+  text-align: center;
+  display: block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-top: 20px;
+}
+
+div.container div.login form div.form-contents span.new-to-website a {
+  margin-left: 5px;
+  text-decoration: none;
+}
+
+@media (max-width: 920px) {
+  div.container div.login {
+    width: 95%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  div.container div.login div.login-heading {
+    padding: .5em;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    color: rgba(0, 0, 0, 0.8);
+    font-family: 'Heebo', sans-serif;
+  }
+  div.container div.login form {
+    width: 90%;
+  }
+  div.container div.login form div.form-contents div.email, div.container div.login form div.form-contents div.password {
+    width: 100%;
+  }
+}
+
+@media (max-width: 720px) {
   nav#navbar a.create-new-article {
     display: none;
   }
@@ -606,116 +1040,11 @@ div.container div.full-article div.body div.text-content a.read-more:hover {
             align-items: center;
     margin-right: 10px;
   }
-  @-webkit-keyframes show {
-    0% {
-      height: 0;
-    }
-    100% {
-      height: 233px;
-    }
+  nav#navbar div.login-register {
+    display: none;
   }
-  @keyframes show {
-    0% {
-      height: 0;
-    }
-    100% {
-      height: 233px;
-    }
-  }
-  @-webkit-keyframes hide {
-    0% {
-      height: 233px;
-    }
-    100% {
-      height: 0px;
-      overflow: hidden;
-    }
-  }
-  @keyframes hide {
-    0% {
-      height: 233px;
-    }
-    100% {
-      height: 0px;
-      overflow: hidden;
-    }
-  }
-  div.container ul.mobile-menus {
+  nav#sidenav {
     display: block;
-    padding: 0;
-    margin: 0;
-    text-align: center;
-    background-color: #00acee;
-    height: 0;
-    overflow: hidden;
-    width: 100%;
-    -webkit-animation-name: hide;
-            animation-name: hide;
-    -webkit-animation-duration: 200ms;
-            animation-duration: 200ms;
-    -webkit-animation-timing-function: ease-in-out;
-            animation-timing-function: ease-in-out;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-  }
-  div.container ul.mobile-menus a.create-new-article {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    width: 200px;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    text-decoration: none;
-    background-color: #f7f7f7;
-    height: 20px;
-    line-height: 30px;
-    color: #333;
-    text-align: center;
-    padding: 1em .5em;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
-    -webkit-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
-            box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
-    border-radius: 2px;
-    margin: 30px auto 0px auto;
-    -webkit-transition: 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    transition: 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    border-top: 1px;
-  }
-  div.container ul.mobile-menus a.create-new-article span.article-icon {
-    margin-right: 5px;
-  }
-  div.container ul.mobile-menus li {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  div.container ul.mobile-menus li a {
-    display: block;
-    padding: 1em;
-    overflow: hidden;
-    text-decoration: none;
-    color: rgba(255, 255, 255, 0.8);
-    -webkit-transition: 200ms ease-in-out;
-    transition: 200ms ease-in-out;
-    font-size: 16px;
-  }
-  div.container ul.mobile-menus li a:hover {
-    background-color: rgba(0, 0, 0, 0.02);
-  }
-  div.container ul.mobile-menus.toggle-ul {
-    height: auto;
-    -webkit-animation-name: show;
-            animation-name: show;
-    -webkit-animation-duration: 200ms;
-            animation-duration: 200ms;
-    -webkit-animation-timing-function: ease-in-out;
-            animation-timing-function: ease-in-out;
   }
   div.container div.articles {
     margin: 0px 0px;
@@ -733,10 +1062,25 @@ div.container div.full-article div.body div.text-content a.read-more:hover {
     padding: .5em;
     box-sizing: border-box;
   }
-  div.container div.articles div.article div.title h2 {
+  div.container div.articles div.articles {
+    margin: 20px 0px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    margin-left: 100px;
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 1em;
+  }
+  div.container div.articles div.articles div.article div.title h2 {
     font-size: 1.5rem;
   }
-  div.container div.articles div.article div.body a.read-more {
+  div.container div.articles div.articles div.article div.body a.read-more {
     margin: 20px auto 5px auto;
   }
   div.container div.create-article-section {
