@@ -624,14 +624,13 @@ div.container{
         width:50%;
         margin: 50px auto;
         min-height: 75vh;
-        border: 1px solid rgba(0,0,0,.1);
-        background-color: rgba(51, 255, 0, 0.1);
+        border: 1px solid rgba(0,0,0,.1);        
         div.login-heading{
             padding:.5em;
             width: 100%;
-            background-color: rgba(51, 255, 0, 0.1);
+            background-color: #00acee;
             box-sizing: border-box;
-            color:rgba(0,0,0,.8);
+            color:rgba(255,255,255,1);
             font-family: 'Heebo', sans-serif;
             border-bottom: 1px solid rgba(0,0,0,.1);
         }
@@ -728,13 +727,13 @@ div.container{
         min-height: 75vh;
         border: 1px solid rgba(0,0,0,.1);
         padding-bottom: 40px;
-        background-color: rgba(51, 255, 0, 0.1);
+        box-sizing: border-box;
         div.register-heading{
             padding:.5em;
             width: 100%;
-            background-color: rgba(51, 255, 0, 0.1);
+            background-color: #00acee;
             box-sizing: border-box;
-            color:rgba(0,0,0,.8);
+            color:rgba(255,255,255,1);
             font-family: 'Heebo', sans-serif;
             border-bottom: 1px solid rgba(0,0,0,.1);
         }
