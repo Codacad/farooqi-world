@@ -899,22 +899,22 @@ div.container div.login form div.form-contents div.email input::placeholder, div
 
 div.container div.login form div.form-contents div.email input:focus::-webkit-input-placeholder, div.container div.login form div.form-contents div.password input:focus::-webkit-input-placeholder {
   top: -20px;
-  color: rgba(6, 110, 6, 0.5);
+  font-size: 12px;
 }
 
 div.container div.login form div.form-contents div.email input:focus:-ms-input-placeholder, div.container div.login form div.form-contents div.password input:focus:-ms-input-placeholder {
   top: -20px;
-  color: rgba(6, 110, 6, 0.5);
+  font-size: 12px;
 }
 
 div.container div.login form div.form-contents div.email input:focus::-ms-input-placeholder, div.container div.login form div.form-contents div.password input:focus::-ms-input-placeholder {
   top: -20px;
-  color: rgba(6, 110, 6, 0.5);
+  font-size: 12px;
 }
 
 div.container div.login form div.form-contents div.email input:focus::placeholder, div.container div.login form div.form-contents div.password input:focus::placeholder {
   top: -20px;
-  color: rgba(6, 110, 6, 0.5);
+  font-size: 12px;
 }
 
 div.container div.login form div.form-contents div.email span.user-icon, div.container div.login form div.form-contents div.email span.password-icon, div.container div.login form div.form-contents div.password span.user-icon, div.container div.login form div.form-contents div.password span.password-icon {
@@ -1065,22 +1065,22 @@ div.container div.register form div.form-contents div.username input::placeholde
 
 div.container div.register form div.form-contents div.username input:focus::-webkit-input-placeholder, div.container div.register form div.form-contents div.email input:focus::-webkit-input-placeholder, div.container div.register form div.form-contents div.password input:focus::-webkit-input-placeholder {
   top: -20px;
-  color: rgba(6, 110, 6, 0.5);
+  font-size: 12px;
 }
 
 div.container div.register form div.form-contents div.username input:focus:-ms-input-placeholder, div.container div.register form div.form-contents div.email input:focus:-ms-input-placeholder, div.container div.register form div.form-contents div.password input:focus:-ms-input-placeholder {
   top: -20px;
-  color: rgba(6, 110, 6, 0.5);
+  font-size: 12px;
 }
 
 div.container div.register form div.form-contents div.username input:focus::-ms-input-placeholder, div.container div.register form div.form-contents div.email input:focus::-ms-input-placeholder, div.container div.register form div.form-contents div.password input:focus::-ms-input-placeholder {
   top: -20px;
-  color: rgba(6, 110, 6, 0.5);
+  font-size: 12px;
 }
 
 div.container div.register form div.form-contents div.username input:focus::placeholder, div.container div.register form div.form-contents div.email input:focus::placeholder, div.container div.register form div.form-contents div.password input:focus::placeholder {
   top: -20px;
-  color: rgba(6, 110, 6, 0.5);
+  font-size: 12px;
 }
 
 div.container div.register form div.form-contents div.username span.username-icon, div.container div.register form div.form-contents div.username span.user-icon, div.container div.register form div.form-contents div.username span.password-icon, div.container div.register form div.form-contents div.email span.username-icon, div.container div.register form div.form-contents div.email span.user-icon, div.container div.register form div.form-contents div.email span.password-icon, div.container div.register form div.form-contents div.password span.username-icon, div.container div.register form div.form-contents div.password span.user-icon, div.container div.register form div.form-contents div.password span.password-icon {

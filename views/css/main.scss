@@ -671,7 +671,7 @@ div.container{
                     }
                     input:focus::placeholder{
                         top: -20px;   
-                        color: rgba(6, 110, 6, 0.5);                            
+                        font-size:12px;                          
                     }
                     span.user-icon, span.password-icon{
                         box-sizing: border-box;
@@ -767,7 +767,7 @@ div.container{
                     }
                     input:focus::placeholder{                        
                         top: -20px;      
-                        color: rgba(6, 110, 6, 0.5);                            
+                        font-size:12px;                        
                     }
                     span.username-icon, span.user-icon, span.password-icon{
                         box-sizing: border-box;
