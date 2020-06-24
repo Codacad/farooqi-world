@@ -829,11 +829,7 @@ div.container{
             box-sizing: border-box;
             div.login-heading{
                 padding:.5em;
-                width: 100%;
-                background-color: rgba(0,0,0,.1);
-                box-sizing: border-box;
-                color:rgba(0,0,0,.8);
-                font-family: 'Heebo', sans-serif;
+                width: 100%;                                
             }
             form{
                 width: 90%;               
@@ -847,13 +843,8 @@ div.container{
         div.register{           
             width:95%;              
             box-sizing: border-box;
-            div.register-heading{
-                padding:.5em;
-                width: 100%;
-                background-color: rgba(0,0,0,.1);
-                box-sizing: border-box;
-                color:rgba(0,0,0,.8);
-                font-family: 'Heebo', sans-serif;
+            div.register-heading{                
+                width: 100%;               
             }
             form{
                 width: 90%;               
