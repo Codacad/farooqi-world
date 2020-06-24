@@ -36,10 +36,10 @@ nav#navbar{
         float: right;
         margin-right: 20px;
         text-decoration: none;        
-        background-color:royalblue;
+        background-color:#fff;
         height: 40px;
         line-height: 30px;
-        color: #fff;
+        color: rgba(0,0,0,.8);
         text-align: center;
         padding:1em;
         position: relative;
@@ -70,31 +70,28 @@ nav#navbar{
             height:100%;            
             line-height: 40px;
             box-sizing: border-box;
-            margin:0px 10px;
-            background:linear-gradient(45deg, rgba(255,255,255,1), rgba(255,255,255,.2));
+            margin:0px 10px;        
             text-align: center;
             padding: .5em;
             border-radius: 3px;
-            box-shadow: 0px 0px 3px rgba(0,0,0,.5);                            
-            color: rgba(0,0,0,.8);
+            box-shadow: 0px 0px 3px rgba(0,0,0,.5);                                        
             text-decoration: none;
-            transition: all 500ms ease-in-out;                
+            transition: all 500ms ease-in-out;   
+            background-color: #333;             
+            color: #fff;
             span{
                 margin-right: 5px;
             }
         }
         a:hover{
             transition: 200ms ease-in-out;  
-            background:linear-gradient(-45deg, rgba(255,255,255,1), rgba(255,255,255,.2));                               
-            color: rgba(0,0,0,.7);
+            // background:linear-gradient(-45deg, rgba(255,255,255,1), rgba(255,255,255,.2));                               
+            // color: rgba(0,0,0,.7);
         }                 
     }
     a#hide-btn{
         display: none;
-    }
-    a.create-new-article:hover{
-      background-color:rgba(65, 105, 225, 0.877);
-    }
+    }   
     a.brand-logo{
         font-family: 'Sriracha', cursive;
         font-size: 34px;
@@ -644,7 +641,7 @@ div.container{
             justify-content: center;
             align-items: center;           
             margin: auto;        
-            background-color: #fff;
+            background-color:#fff;
             margin-top: 30px;
             box-shadow: 0px 10px 10px rgba(0,0,0,.1);
             border-radius: 5px;
@@ -722,6 +719,107 @@ div.container{
                 }
             }    
         }
+    }   
+    div.register{
+        box-sizing: border-box;
+        width:50%;
+        margin: 50px auto;
+        min-height: 75vh;
+        border: 1px solid rgba(0,0,0,.1);
+        padding-bottom: 40px;
+        div.register-heading{
+            padding:.5em;
+            width: 100%;
+            background-color: rgba(0,0,0,.1);
+            box-sizing: border-box;
+            color:rgba(0,0,0,.8);
+            font-family: 'Heebo', sans-serif;
+        }
+        form{
+            width: 75%;
+            min-height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;           
+            margin: auto;        
+            background-color:#fff;
+            margin-top: 30px;
+            box-shadow: 0px 10px 10px rgba(0,0,0,.1);
+            border-radius: 5px;
+            div.form-contents{
+               div.username, div.email, div.password{
+                    position: relative;
+                    display: flex;                                  
+                    width: 300px;      
+                    border-bottom: 1px solid rgba(0,0,0,.5);                    
+                    box-sizing: border-box;
+                    margin: 20px 0px; 
+                    @keyframes placeholder{
+                        from{
+                            top:0;
+                        }
+                        to{
+                            top:-20px;
+                        }
+                    }                    
+                    input{
+                        display: block;
+                        width: 100%;
+                        box-sizing: border-box;
+                        padding: 20px 0px 0px 10px;
+                        border: none;
+                        outline: none;
+                        font-size: 16px;
+                        font-weight: 500;
+                    }
+                    input::placeholder{
+                        transition: 300ms ease-in-out;
+                    }
+                    input:focus::placeholder{
+                        position: relative;
+                        top: -20px;        
+                        animation-name: placeholder;                
+                        animation-duration: 300ms;
+                        animation-timing-function: ease-in-out;
+                    }
+                    span.username-icon, span.user-icon, span.password-icon{
+                        box-sizing: border-box;
+                        display: flex;
+                        box-sizing: border-box;
+                        padding: 1em .5em .2em 1em;
+                        font-size: 22px;
+                        color: rgba(0,0,0,.6);
+                    }
+                }
+                div.register-btn{
+                    display: flex;
+                    button{
+                        box-sizing: border-box;
+                        width: 100%;
+                        display: block;
+                        padding: .4em 1em;
+                        cursor: pointer;
+                        border: none;
+                        font-family: 'Heebo', sans-serif;
+                        font-size: 16px;                        
+                        background-color: royalblue;
+                        color: #fff;
+                        border-radius: 3px;
+                        box-shadow: 0px 0px 2px rgba(0,0,0,.5);
+                    }
+                }
+                span.already-registered{
+                    text-align: center;
+                    display: block;
+                    box-sizing: border-box;
+                    margin-top: 20px;
+                    a{
+                        margin-left: 5px;
+                        text-decoration: none;
+                    }
+                }
+            }    
+        }
     }
     @media (max-width:920px){
         div.login{           
@@ -739,6 +837,26 @@ div.container{
                 width: 90%;               
                 div.form-contents{
                     div.email, div.password{                                
+                        width:100%;      
+                    }                                       
+                }    
+            }
+        }
+        div.register{           
+            width:95%;              
+            box-sizing: border-box;
+            div.register-heading{
+                padding:.5em;
+                width: 100%;
+                background-color: rgba(0,0,0,.1);
+                box-sizing: border-box;
+                color:rgba(0,0,0,.8);
+                font-family: 'Heebo', sans-serif;
+            }
+            form{
+                width: 90%;               
+                div.form-contents{
+                   div.username, div.email, div.password{                                
                         width:100%;      
                     }                                       
                 }    

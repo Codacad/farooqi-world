@@ -44,10 +44,10 @@ nav#navbar a.create-new-article {
   float: right;
   margin-right: 20px;
   text-decoration: none;
-  background-color: royalblue;
+  background-color: #fff;
   height: 40px;
   line-height: 30px;
-  color: #fff;
+  color: rgba(0, 0, 0, 0.8);
   text-align: center;
   padding: 1em;
   position: relative;
@@ -97,16 +97,16 @@ nav#navbar div.login-register a {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin: 0px 10px;
-  background: linear-gradient(45deg, white, rgba(255, 255, 255, 0.2));
   text-align: center;
   padding: .5em;
   border-radius: 3px;
   -webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
           box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
-  color: rgba(0, 0, 0, 0.8);
   text-decoration: none;
   -webkit-transition: all 500ms ease-in-out;
   transition: all 500ms ease-in-out;
+  background-color: #333;
+  color: #fff;
 }
 
 nav#navbar div.login-register a span {
@@ -116,16 +116,10 @@ nav#navbar div.login-register a span {
 nav#navbar div.login-register a:hover {
   -webkit-transition: 200ms ease-in-out;
   transition: 200ms ease-in-out;
-  background: linear-gradient(-45deg, white, rgba(255, 255, 255, 0.2));
-  color: rgba(0, 0, 0, 0.7);
 }
 
 nav#navbar a#hide-btn {
   display: none;
-}
-
-nav#navbar a.create-new-article:hover {
-  background-color: rgba(65, 105, 225, 0.877);
 }
 
 nav#navbar a.brand-logo {
@@ -994,6 +988,185 @@ div.container div.login form div.form-contents span.new-to-website a {
   text-decoration: none;
 }
 
+div.container div.register {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 50%;
+  margin: 50px auto;
+  min-height: 75vh;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 40px;
+}
+
+div.container div.register div.register-heading {
+  padding: .5em;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.8);
+  font-family: 'Heebo', sans-serif;
+}
+
+div.container div.register form {
+  width: 75%;
+  min-height: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: auto;
+  background-color: #fff;
+  margin-top: 30px;
+  -webkit-box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+div.container div.register form div.form-contents div.username, div.container div.register form div.form-contents div.email, div.container div.register form div.form-contents div.password {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 300px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 20px 0px;
+}
+
+@keyframes placeholder {
+  from {
+    top: 0;
+  }
+  to {
+    top: -20px;
+  }
+}
+
+div.container div.register form div.form-contents div.username input, div.container div.register form div.form-contents div.email input, div.container div.register form div.form-contents div.password input {
+  display: block;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 20px 0px 0px 10px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+div.container div.register form div.form-contents div.username input::-webkit-input-placeholder, div.container div.register form div.form-contents div.email input::-webkit-input-placeholder, div.container div.register form div.form-contents div.password input::-webkit-input-placeholder {
+  -webkit-transition: 300ms ease-in-out;
+  transition: 300ms ease-in-out;
+}
+
+div.container div.register form div.form-contents div.username input:-ms-input-placeholder, div.container div.register form div.form-contents div.email input:-ms-input-placeholder, div.container div.register form div.form-contents div.password input:-ms-input-placeholder {
+  -webkit-transition: 300ms ease-in-out;
+  transition: 300ms ease-in-out;
+}
+
+div.container div.register form div.form-contents div.username input::-ms-input-placeholder, div.container div.register form div.form-contents div.email input::-ms-input-placeholder, div.container div.register form div.form-contents div.password input::-ms-input-placeholder {
+  -webkit-transition: 300ms ease-in-out;
+  transition: 300ms ease-in-out;
+}
+
+div.container div.register form div.form-contents div.username input::placeholder, div.container div.register form div.form-contents div.email input::placeholder, div.container div.register form div.form-contents div.password input::placeholder {
+  -webkit-transition: 300ms ease-in-out;
+  transition: 300ms ease-in-out;
+}
+
+div.container div.register form div.form-contents div.username input:focus::-webkit-input-placeholder, div.container div.register form div.form-contents div.email input:focus::-webkit-input-placeholder, div.container div.register form div.form-contents div.password input:focus::-webkit-input-placeholder {
+  position: relative;
+  top: -20px;
+  -webkit-animation-name: placeholder;
+          animation-name: placeholder;
+  -webkit-animation-duration: 300ms;
+          animation-duration: 300ms;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+}
+
+div.container div.register form div.form-contents div.username input:focus:-ms-input-placeholder, div.container div.register form div.form-contents div.email input:focus:-ms-input-placeholder, div.container div.register form div.form-contents div.password input:focus:-ms-input-placeholder {
+  position: relative;
+  top: -20px;
+  animation-name: placeholder;
+  animation-duration: 300ms;
+  animation-timing-function: ease-in-out;
+}
+
+div.container div.register form div.form-contents div.username input:focus::-ms-input-placeholder, div.container div.register form div.form-contents div.email input:focus::-ms-input-placeholder, div.container div.register form div.form-contents div.password input:focus::-ms-input-placeholder {
+  position: relative;
+  top: -20px;
+  animation-name: placeholder;
+  animation-duration: 300ms;
+  animation-timing-function: ease-in-out;
+}
+
+div.container div.register form div.form-contents div.username input:focus::placeholder, div.container div.register form div.form-contents div.email input:focus::placeholder, div.container div.register form div.form-contents div.password input:focus::placeholder {
+  position: relative;
+  top: -20px;
+  -webkit-animation-name: placeholder;
+          animation-name: placeholder;
+  -webkit-animation-duration: 300ms;
+          animation-duration: 300ms;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+}
+
+div.container div.register form div.form-contents div.username span.username-icon, div.container div.register form div.form-contents div.username span.user-icon, div.container div.register form div.form-contents div.username span.password-icon, div.container div.register form div.form-contents div.email span.username-icon, div.container div.register form div.form-contents div.email span.user-icon, div.container div.register form div.form-contents div.email span.password-icon, div.container div.register form div.form-contents div.password span.username-icon, div.container div.register form div.form-contents div.password span.user-icon, div.container div.register form div.form-contents div.password span.password-icon {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 1em .5em .2em 1em;
+  font-size: 22px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+div.container div.register form div.form-contents div.register-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+div.container div.register form div.form-contents div.register-btn button {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  display: block;
+  padding: .4em 1em;
+  cursor: pointer;
+  border: none;
+  font-family: 'Heebo', sans-serif;
+  font-size: 16px;
+  background-color: royalblue;
+  color: #fff;
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+}
+
+div.container div.register form div.form-contents span.already-registered {
+  text-align: center;
+  display: block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-top: 20px;
+}
+
+div.container div.register form div.form-contents span.already-registered a {
+  margin-left: 5px;
+  text-decoration: none;
+}
+
 @media (max-width: 920px) {
   div.container div.login {
     width: 95%;
@@ -1013,6 +1186,26 @@ div.container div.login form div.form-contents span.new-to-website a {
     width: 90%;
   }
   div.container div.login form div.form-contents div.email, div.container div.login form div.form-contents div.password {
+    width: 100%;
+  }
+  div.container div.register {
+    width: 95%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  div.container div.register div.register-heading {
+    padding: .5em;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    color: rgba(0, 0, 0, 0.8);
+    font-family: 'Heebo', sans-serif;
+  }
+  div.container div.register form {
+    width: 90%;
+  }
+  div.container div.register form div.form-contents div.username, div.container div.register form div.form-contents div.email, div.container div.register form div.form-contents div.password {
     width: 100%;
   }
 }
