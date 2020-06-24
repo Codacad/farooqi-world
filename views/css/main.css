@@ -948,7 +948,7 @@ div.container div.login form div.form-contents div.email span.user-icon, div.con
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  padding: 1em .5em .2em 1em;
+  padding: 1em .5em .2em 0em;
   font-size: 22px;
   color: rgba(0, 0, 0, 0.6);
 }
@@ -1129,7 +1129,7 @@ div.container div.register form div.form-contents div.username span.username-ico
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  padding: 1em .5em .2em 1em;
+  padding: 1em .5em .2em 0em;
   font-size: 22px;
   color: rgba(0, 0, 0, 0.6);
 }
