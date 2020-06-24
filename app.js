@@ -1,9 +1,12 @@
 const express = require('express');
 const mongoose = require('mongoose')
+const session = require('express-session');
+const connectMongo = require('connect-mongo')(session);
 const expressLayout = require('express-ejs-layouts');
 const cors = require('cors');
 const routes = require('./routes/index');
-const config = require('dotenv').config()
+require('dotenv').config()
+
 const app = express()
 app.use(cors());
 app.use(express.json())
@@ -22,6 +25,20 @@ connection.on('connected', () => {
     console.log(`Connection is established at ${connection.host}:${connection.port}`)
 })
 
+const sessionStore = new connectMongo({
+    mongooseConnection:connection,
+    collection:"sessions"
+})
+
+app.use(session({
+    secret:"nayriz",
+    resave:false,
+    saveUninitialized:true,
+    store:sessionStore,
+    cookie:{
+        maxAge: 1000*60*60*24
+    }
+}))
 
 app.use('/', routes);
 

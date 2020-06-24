@@ -17,5 +17,12 @@
     "express-ejs-layouts": "^2.5.0",
     "mongoose": "^5.9.10",
     "nodemon": "^2.0.3"
+  },
+  "devDependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-mongo": "^3.2.0",
+    "express-session": "^1.17.1",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0"
   }
 }

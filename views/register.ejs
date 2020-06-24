@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+</head>
+<body>
+   <div class="container">   
+    <div class="register">
+        <form action="/register" method="POST">
+            <div class="register-heading">
+                <h1>Resgister here....</h1>
+            </div>
+           <div class="input-body">
+                <div class="name">
+                    <input type="text" name="name" placeholder="Name" id="name"/>
+                </div>
+                <div class="email">
+                    <input type="email" name="email" placeholder="E-Mail" id="email"/>
+                </div>
+                <div class="password">
+                    <input type="password" name="password" placeholder="Password" id="password"/>
+                </div>
+           </div>
+            <div class="register-btn">
+                <button type="submit">Register</button>
+            </div>
+        </form>
+    </div>
+   </div>   
+</body>
+</html>

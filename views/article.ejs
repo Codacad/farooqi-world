@@ -8,13 +8,7 @@
     <title>Article</title>
 </head>
 <body>
-   <div class="container">
-        <ul class="mobile-menus">                  
-            <li><a href="/">Home</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#about">About</a></li>
-            <a href="/create-new-article" class="create-new-article" id=<%=title == "Create Article" ? "hide-btn" : ""%>> <span class="article-icon"><i class="far fa-newspaper"></i></span> <span>Create Article</span></a>  
-        </ul>                    
+   <div class="container">                  
         <div class="full-article">
             <div class="contents">                
             <% if (typeof article != "undefined") { %>                            

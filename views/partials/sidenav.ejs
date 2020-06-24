@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title><%=title%></title>  
+</head>
+<body>
+    <nav id="sidenav" id="sidenav">       
+        <a href="" id="close" class="close">
+            <span>
+                <span></span>            
+                <span></span>            
+            </span>
+        </a> 
+        <div class="sidenav-contents">
+            <div class="btns">
+                <a href="/create-new-article" class="create-new-article" id=<%=title == "Create Article" ? "hide-btn" : ""%>> <span class="article-icon"><i class="far fa-newspaper"></i></span><span>Create Article</span></a>                
+                
+                <div class="login-register">                
+                    <a href="/login" class="login" id=<%=title == "Create Article" ? "hide-btn" : ""%>> <span class="article-icon"><i class="fas fa-sign-in-alt"></i></span> <span>Login</span></a>                
+                    <a href="/register" class="register" id=<%=title == "Create Article" ? "hide-btn" : ""%>> <span class="article-icon"><i class="fas fa-user-plus"></i></span> <span>Register</span></a>                
+                </div>
+            </div>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>        
+        </div>
+    </nav>
+    <script src="../js/main.js"></script>
+</body>
+</html>
