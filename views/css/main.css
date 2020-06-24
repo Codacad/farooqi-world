@@ -853,24 +853,6 @@ div.container div.login form div.form-contents div.email, div.container div.logi
   margin: 20px 0px;
 }
 
-@-webkit-keyframes placeholder {
-  from {
-    top: 0;
-  }
-  to {
-    top: -20px;
-  }
-}
-
-@keyframes placeholder {
-  from {
-    top: 0;
-  }
-  to {
-    top: -20px;
-  }
-}
-
 div.container div.login form div.form-contents div.email input, div.container div.login form div.form-contents div.password input {
   display: block;
   width: 100%;
@@ -886,59 +868,53 @@ div.container div.login form div.form-contents div.email input, div.container di
 div.container div.login form div.form-contents div.email input::-webkit-input-placeholder, div.container div.login form div.form-contents div.password input::-webkit-input-placeholder {
   -webkit-transition: 300ms ease-in-out;
   transition: 300ms ease-in-out;
+  position: relative;
+  top: 0;
+  font-weight: bold;
 }
 
 div.container div.login form div.form-contents div.email input:-ms-input-placeholder, div.container div.login form div.form-contents div.password input:-ms-input-placeholder {
   -webkit-transition: 300ms ease-in-out;
   transition: 300ms ease-in-out;
+  position: relative;
+  top: 0;
+  font-weight: bold;
 }
 
 div.container div.login form div.form-contents div.email input::-ms-input-placeholder, div.container div.login form div.form-contents div.password input::-ms-input-placeholder {
   -webkit-transition: 300ms ease-in-out;
   transition: 300ms ease-in-out;
+  position: relative;
+  top: 0;
+  font-weight: bold;
 }
 
 div.container div.login form div.form-contents div.email input::placeholder, div.container div.login form div.form-contents div.password input::placeholder {
   -webkit-transition: 300ms ease-in-out;
   transition: 300ms ease-in-out;
+  position: relative;
+  top: 0;
+  font-weight: bold;
 }
 
 div.container div.login form div.form-contents div.email input:focus::-webkit-input-placeholder, div.container div.login form div.form-contents div.password input:focus::-webkit-input-placeholder {
-  position: relative;
   top: -20px;
-  -webkit-animation-name: placeholder;
-          animation-name: placeholder;
-  -webkit-animation-duration: 300ms;
-          animation-duration: 300ms;
-  -webkit-animation-timing-function: ease-in-out;
-          animation-timing-function: ease-in-out;
+  color: rgba(6, 110, 6, 0.5);
 }
 
 div.container div.login form div.form-contents div.email input:focus:-ms-input-placeholder, div.container div.login form div.form-contents div.password input:focus:-ms-input-placeholder {
-  position: relative;
   top: -20px;
-  animation-name: placeholder;
-  animation-duration: 300ms;
-  animation-timing-function: ease-in-out;
+  color: rgba(6, 110, 6, 0.5);
 }
 
 div.container div.login form div.form-contents div.email input:focus::-ms-input-placeholder, div.container div.login form div.form-contents div.password input:focus::-ms-input-placeholder {
-  position: relative;
   top: -20px;
-  animation-name: placeholder;
-  animation-duration: 300ms;
-  animation-timing-function: ease-in-out;
+  color: rgba(6, 110, 6, 0.5);
 }
 
 div.container div.login form div.form-contents div.email input:focus::placeholder, div.container div.login form div.form-contents div.password input:focus::placeholder {
-  position: relative;
   top: -20px;
-  -webkit-animation-name: placeholder;
-          animation-name: placeholder;
-  -webkit-animation-duration: 300ms;
-          animation-duration: 300ms;
-  -webkit-animation-timing-function: ease-in-out;
-          animation-timing-function: ease-in-out;
+  color: rgba(6, 110, 6, 0.5);
 }
 
 div.container div.login form div.form-contents div.email span.user-icon, div.container div.login form div.form-contents div.email span.password-icon, div.container div.login form div.form-contents div.password span.user-icon, div.container div.login form div.form-contents div.password span.password-icon {
@@ -1043,15 +1019,6 @@ div.container div.register form div.form-contents div.username, div.container di
   margin: 20px 0px;
 }
 
-@keyframes placeholder {
-  from {
-    top: 0;
-  }
-  to {
-    top: -20px;
-  }
-}
-
 div.container div.register form div.form-contents div.username input, div.container div.register form div.form-contents div.email input, div.container div.register form div.form-contents div.password input {
   display: block;
   width: 100%;
@@ -1067,59 +1034,53 @@ div.container div.register form div.form-contents div.username input, div.contai
 div.container div.register form div.form-contents div.username input::-webkit-input-placeholder, div.container div.register form div.form-contents div.email input::-webkit-input-placeholder, div.container div.register form div.form-contents div.password input::-webkit-input-placeholder {
   -webkit-transition: 300ms ease-in-out;
   transition: 300ms ease-in-out;
+  position: relative;
+  top: 0;
+  font-weight: bold;
 }
 
 div.container div.register form div.form-contents div.username input:-ms-input-placeholder, div.container div.register form div.form-contents div.email input:-ms-input-placeholder, div.container div.register form div.form-contents div.password input:-ms-input-placeholder {
   -webkit-transition: 300ms ease-in-out;
   transition: 300ms ease-in-out;
+  position: relative;
+  top: 0;
+  font-weight: bold;
 }
 
 div.container div.register form div.form-contents div.username input::-ms-input-placeholder, div.container div.register form div.form-contents div.email input::-ms-input-placeholder, div.container div.register form div.form-contents div.password input::-ms-input-placeholder {
   -webkit-transition: 300ms ease-in-out;
   transition: 300ms ease-in-out;
+  position: relative;
+  top: 0;
+  font-weight: bold;
 }
 
 div.container div.register form div.form-contents div.username input::placeholder, div.container div.register form div.form-contents div.email input::placeholder, div.container div.register form div.form-contents div.password input::placeholder {
   -webkit-transition: 300ms ease-in-out;
   transition: 300ms ease-in-out;
+  position: relative;
+  top: 0;
+  font-weight: bold;
 }
 
 div.container div.register form div.form-contents div.username input:focus::-webkit-input-placeholder, div.container div.register form div.form-contents div.email input:focus::-webkit-input-placeholder, div.container div.register form div.form-contents div.password input:focus::-webkit-input-placeholder {
-  position: relative;
   top: -20px;
-  -webkit-animation-name: placeholder;
-          animation-name: placeholder;
-  -webkit-animation-duration: 300ms;
-          animation-duration: 300ms;
-  -webkit-animation-timing-function: ease-in-out;
-          animation-timing-function: ease-in-out;
+  color: rgba(6, 110, 6, 0.5);
 }
 
 div.container div.register form div.form-contents div.username input:focus:-ms-input-placeholder, div.container div.register form div.form-contents div.email input:focus:-ms-input-placeholder, div.container div.register form div.form-contents div.password input:focus:-ms-input-placeholder {
-  position: relative;
   top: -20px;
-  animation-name: placeholder;
-  animation-duration: 300ms;
-  animation-timing-function: ease-in-out;
+  color: rgba(6, 110, 6, 0.5);
 }
 
 div.container div.register form div.form-contents div.username input:focus::-ms-input-placeholder, div.container div.register form div.form-contents div.email input:focus::-ms-input-placeholder, div.container div.register form div.form-contents div.password input:focus::-ms-input-placeholder {
-  position: relative;
   top: -20px;
-  animation-name: placeholder;
-  animation-duration: 300ms;
-  animation-timing-function: ease-in-out;
+  color: rgba(6, 110, 6, 0.5);
 }
 
 div.container div.register form div.form-contents div.username input:focus::placeholder, div.container div.register form div.form-contents div.email input:focus::placeholder, div.container div.register form div.form-contents div.password input:focus::placeholder {
-  position: relative;
   top: -20px;
-  -webkit-animation-name: placeholder;
-          animation-name: placeholder;
-  -webkit-animation-duration: 300ms;
-          animation-duration: 300ms;
-  -webkit-animation-timing-function: ease-in-out;
-          animation-timing-function: ease-in-out;
+  color: rgba(6, 110, 6, 0.5);
 }
 
 div.container div.register form div.form-contents div.username span.username-icon, div.container div.register form div.form-contents div.username span.user-icon, div.container div.register form div.form-contents div.username span.password-icon, div.container div.register form div.form-contents div.email span.username-icon, div.container div.register form div.form-contents div.email span.user-icon, div.container div.register form div.form-contents div.email span.password-icon, div.container div.register form div.form-contents div.password span.username-icon, div.container div.register form div.form-contents div.password span.user-icon, div.container div.register form div.form-contents div.password span.password-icon {

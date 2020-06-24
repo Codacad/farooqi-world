@@ -652,15 +652,7 @@ div.container{
                     width: 300px;      
                     border-bottom: 1px solid rgba(0,0,0,.5);                    
                     box-sizing: border-box;
-                    margin: 20px 0px; 
-                    @keyframes placeholder{
-                        from{
-                            top:0;
-                        }
-                        to{
-                            top:-20px;
-                        }
-                    }                    
+                    margin: 20px 0px;                     
                     input{
                         display: block;
                         width: 100%;
@@ -673,13 +665,13 @@ div.container{
                     }
                     input::placeholder{
                         transition: 300ms ease-in-out;
+                        position: relative;
+                        top: 0;
+                        font-weight: bold; 
                     }
                     input:focus::placeholder{
-                        position: relative;
-                        top: -20px;        
-                        animation-name: placeholder;                
-                        animation-duration: 300ms;
-                        animation-timing-function: ease-in-out;
+                        top: -20px;   
+                        color: rgba(6, 110, 6, 0.5);                            
                     }
                     span.user-icon, span.password-icon{
                         box-sizing: border-box;
@@ -756,14 +748,7 @@ div.container{
                     border-bottom: 1px solid rgba(0,0,0,.5);                    
                     box-sizing: border-box;
                     margin: 20px 0px; 
-                    @keyframes placeholder{
-                        from{
-                            top:0;
-                        }
-                        to{
-                            top:-20px;
-                        }
-                    }                    
+                           
                     input{
                         display: block;
                         width: 100%;
@@ -776,13 +761,13 @@ div.container{
                     }
                     input::placeholder{
                         transition: 300ms ease-in-out;
-                    }
-                    input:focus::placeholder{
                         position: relative;
-                        top: -20px;        
-                        animation-name: placeholder;                
-                        animation-duration: 300ms;
-                        animation-timing-function: ease-in-out;
+                        top: 0;
+                        font-weight: bold;
+                    }
+                    input:focus::placeholder{                        
+                        top: -20px;      
+                        color: rgba(6, 110, 6, 0.5);                            
                     }
                     span.username-icon, span.user-icon, span.password-icon{
                         box-sizing: border-box;
