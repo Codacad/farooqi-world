@@ -971,12 +971,14 @@ div.container div.register {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 50%;
-  margin: 50px auto;
+  margin: 30px auto;
   min-height: 75vh;
   border: 1px solid rgba(0, 0, 0, 0.1);
   padding-bottom: 40px;
   box-sizing: border-box;
   background-color: rgba(250, 9, 9, 0.1);
+  -webkit-box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
 }
 
 div.container div.register div.register-heading {
@@ -1003,11 +1005,16 @@ div.container div.register form {
       -ms-flex-align: center;
           align-items: center;
   margin: auto;
-  background-color: #fff;
-  margin-top: 30px;
-  -webkit-box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
-          box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+  background-color: transparent;
+  margin-top: 10px;
   border-radius: 5px;
+}
+
+div.container div.register form div.form-contents div.success {
+  background-color: rgba(0, 255, 0, 0.2);
+  padding: .5em;
+  text-align: center;
+  margin-top: 20px;
 }
 
 div.container div.register form div.form-contents div.username, div.container div.register form div.form-contents div.email, div.container div.register form div.form-contents div.password {
@@ -1032,6 +1039,32 @@ div.container div.register form div.form-contents div.username input, div.contai
   outline: none;
   font-size: 16px;
   font-weight: 500;
+  background: transparent;
+}
+
+div.container div.register form div.form-contents div.username span.required, div.container div.register form div.form-contents div.email span.required, div.container div.register form div.form-contents div.password span.required {
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+  width: 200px;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  display: block;
+  background-color: transparent;
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 16px;
+  color: rgba(255, 0, 0, 0.5);
+}
+
+div.container div.register form div.form-contents div.username span.required::before, div.container div.register form div.form-contents div.email span.required::before, div.container div.register form div.form-contents div.password span.required::before {
+  position: relative;
+  left: 20px;
+  bottom: -10px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-color: orange;
+  z-index: 100;
 }
 
 div.container div.register form div.form-contents div.username input::-webkit-input-placeholder, div.container div.register form div.form-contents div.email input::-webkit-input-placeholder, div.container div.register form div.form-contents div.password input::-webkit-input-placeholder {
@@ -1102,6 +1135,7 @@ div.container div.register form div.form-contents div.register-btn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-top: 35px;
 }
 
 div.container div.register form div.form-contents div.register-btn button {
@@ -1119,6 +1153,7 @@ div.container div.register form div.form-contents div.register-btn button {
   border-radius: 3px;
   -webkit-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
           box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+  outline: none;
 }
 
 div.container div.register form div.form-contents span.already-registered {

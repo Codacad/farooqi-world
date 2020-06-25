@@ -717,12 +717,13 @@ div.container{
     div.register{
         box-sizing: border-box;
         width:50%;
-        margin: 50px auto;
+        margin: 30px auto;
         min-height: 75vh;
         border: 1px solid rgba(0,0,0,.1);
         padding-bottom: 40px;
         box-sizing: border-box;
         background-color: rgba(250, 9, 9, 0.1);
+        box-shadow: 0px 10px 10px rgba(0,0,0,.1);
         div.register-heading{
             padding:.5em;
             width: 100%;
@@ -739,11 +740,17 @@ div.container{
             justify-content: center;
             align-items: center;           
             margin: auto;        
-            background-color:#fff;
-            margin-top: 30px;
-            box-shadow: 0px 10px 10px rgba(0,0,0,.1);
+            background-color:transparent;
+            margin-top: 10px;
+            // box-shadow: 0px 10px 10px rgba(0,0,0,.1);
             border-radius: 5px;
             div.form-contents{
+                div.success{
+                    background-color: rgba(0,255,0,.2);
+                    padding: .5em;
+                    text-align: center;   
+                    margin-top: 20px;                 
+                }
                div.username, div.email, div.password{
                     position: relative;
                     display: flex;                                  
@@ -761,6 +768,33 @@ div.container{
                         outline: none;
                         font-size: 16px;
                         font-weight: 500;
+                        background: transparent;
+                    }
+                    span.required{
+                        position:absolute;
+                        bottom: -30px;
+                        left: 0;
+                        width: 200px;
+                        // text-align: center;
+                        transition:all 1s ease-in-out;
+                        // transform: translateX(-50%);
+                        display: block;
+                        background-color: transparent;
+                        color: rgba(0,0,0,.8);                        
+                        font-size: 16px;                        
+                        // border-radius: 5px;                         
+                        // border: 1px solid rgba(255, 0, 0,.2);
+                        color: rgba(255, 0, 0,.5);
+                    }
+                    span.required::before{
+                        position: relative;
+                        left: 20px;
+                        bottom: -10px;
+                        display: block;
+                        width: 10px;
+                        height: 10px;
+                        background-color: orange;
+                        z-index: 100;
                     }
                     input::placeholder{
                         transition: 300ms ease-in-out;
@@ -783,6 +817,7 @@ div.container{
                 }
                 div.register-btn{
                     display: flex;
+                    margin-top: 35px;
                     button{
                         box-sizing: border-box;
                         width: 100%;
@@ -796,6 +831,7 @@ div.container{
                         color: #fff;
                         border-radius: 3px;
                         box-shadow: 0px 0px 2px rgba(0,0,0,.5);
+                        outline: none;
                     }
                 }
                 span.already-registered{

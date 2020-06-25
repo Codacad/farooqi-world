@@ -4,6 +4,7 @@ const session = require('express-session');
 const connectMongo = require('connect-mongo')(session);
 const expressLayout = require('express-ejs-layouts');
 const cors = require('cors');
+const passport = require("passport")
 const routes = require('./routes/index');
 require('dotenv').config()
 const app = express()
@@ -38,6 +39,11 @@ app.use(session({
         maxAge: 1000*60*60*24
     }
 }))
+
+require('./config/passport');
+app.use(passport.initialize())
+app.use(passport.session())
+
 
 app.use('/', routes);
 

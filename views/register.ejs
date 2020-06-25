@@ -13,23 +13,48 @@
         </div>
         <form action="/register" method="POST">                
             <div class="form-contents"> 
+                <% if (typeof message != "undefined") { %>
+                    <% if (typeof message.success != "undefined") { %>
+                        <div class="success">
+                            <span><%= message.success %></span>
+                        </div>
+                    <% } %>
+                <% } %>
                 <div class="username">
                     <span class="username-icon">
                         <span><i class="fas fa-envelope"></i></span>
                     </span>
-                    <input type="email" name="username" placeholder="Username" id="username"/>
+                    <input type="text" name="username" placeholder="Username" id="username"/>                    
+                    <% if (typeof message != "undefined") { %>
+                        <% if (typeof message.username !=  'undefined') { %>
+                            <span class="required"><%= message.username %></span>
+                        <% } %>                                               
+                    <% } %>
                 </div>                   
                <div class="email">
                    <span class="user-icon">
                        <span><i class="fas fa-user"></i></span>
                    </span>
                    <input type="email" name="email" placeholder="E-Mail" id="email"/>
+                   <% if (typeof message != "undefined") { %>
+                        <% if (typeof message.email !=  'undefined') { %>
+                            <span class="required"><%= message.email %></span>
+                        <% } %>                       
+                    <% } %>
                </div>
-               <div class="password">
+                <div class="password">
                    <span class="password-icon">
                        <span><i class="fas fa-unlock"></i></span>
                    </span>
                    <input type="password" name="password" placeholder="Password" id="password"/>
+                   <% if (typeof message != "undefined") { %>
+                    <% if (typeof message.password !=  'undefined') { %>
+                        <span class="required"><%= message.password %></span>
+                    <% } %>                    
+                    <% if (typeof message.passwordLength !=  'undefined') { %>
+                        <span class="required"><%= message.passwordLength %></span>
+                    <% } %>
+                <% } %>
                </div>                
                <div class="register-btn">
                    <button type="submit">Register</button>

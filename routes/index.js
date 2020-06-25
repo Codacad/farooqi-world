@@ -1,7 +1,9 @@
 const express = require('express');
 const Router = express.Router();
-const Articles = require('../models/article');
 const Article = require('../models/article');
+const User = require('../models/user');
+const bcrypt = require('bcryptjs');
+const passport = require('passport');
 
 Router.get('/', (req, res) => {
     Article.find({}, (err, article) => {
@@ -10,10 +12,11 @@ Router.get('/', (req, res) => {
         }
         res.render('index', {
             title:"Farooki World",
-            article
+            article,
+            user:req.user
         });
     })
-    
+    console.log(req.user)
 })
 
 Router.get('/article/:id', (req, res) => {
@@ -23,22 +26,32 @@ Router.get('/article/:id', (req, res) => {
         }
         res.render('article', {
             title:"Article",
-            article
+            article,
+            user:req.user
         });
     })
 })
 
 
 Router.get('/contact',(req, res) => {
-    res.render('contact', {title:"Contact"});
+    res.render('contact', {
+        title:"Contact",
+        user:req.user
+    });
 })
 
 Router.get('/about',(req, res) => {
-    res.render('about', {title:"About Us"});
+    res.render('about', {
+        title:"About Us",
+        user:req.user
+    });
 })
 
 Router.get('/create-new-article', (req, res) => {
-    res.render('create-article', {title:"Create Article"})    
+    res.render('create-article', {
+        title:"Create Article",
+        user:req.user
+    })    
 })
 
 // Post Route for creating new article
@@ -52,13 +65,88 @@ Router.post('/create-new-article', (req, res) => {
     })        
 })
 Router.get('/login', (req, res) => {
-    res.render('login', {
-        title:"Login"
-    })
+    if(!req.user){
+        res.render('login', {
+            title:"Login",
+            user:req.user
+        })
+    }else{
+        res.redirect('/')
+    }
 })
+Router.post('/login', passport.authenticate('local', {
+    failureRedirect:"/login",
+    successRedirect:"/"
+}))
+
 Router.get('/register', (req, res) => {
-    res.render('register', {
-        title:"Register"
+    if(!req.user){
+        res.render('register', {
+            title:"Register",
+            user:req.user
+        })    
+    }else{
+        res.redirect('/');
+    }
+})
+Router.post('/register', (req, res) => {
+    const {username, email, password} = req.body;
+    const newUser = new User(req.body);
+    const message = {}
+    if(!username){
+        message.username = "Username Required..."
+    }
+    if(!email){
+        message.email = "Email Required..."
+    }
+    if(!password){
+        message.password = "Password Required..."
+    }else if(password.length < 6){
+        message.passwordLength = "Minimum 6 characters..."
+    }
+    
+     if(Object.keys(message).length === 0){
+         message.success = "Registered Successfully..."
+        const salt = 10;
+        bcrypt.hash(newUser.password, salt, function(err, hash) {    
+            newUser.password = hash;
+            if(err){
+                return err;
+            }else{
+                newUser.save(function(error, user){ 
+                    if(error){
+                        return error
+                    }               
+                    res.render('register', {
+                        title:"Register",
+                        message,
+                        user:req.user
+                    })                  
+                })
+            }
+        });        
+     }else{
+         res.render('register', {
+             title:"Register",
+             message,
+             user:req.user
+         })
+     }         
+     console.log(message)   
+})
+
+Router.get('/logout', (req, res) => {
+    req.logout();
+    res.redirect('/')
+})
+// Users Api
+Router.get('/api/users', (req, res) => {
+    User.find({}, (err, users) => {
+        if(err){
+            return err
+        }
+
+        res.send(users)
     })
 })
 Router.get('/api/article', (req, res) => {
