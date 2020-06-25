@@ -215,8 +215,8 @@ nav#sidenav {
   height: 100%;
   background-color: #00acee;
   z-index: 20;
-  -webkit-transition: 500ms cubic-bezier(0.68, 0, 0.265, 0.1);
-  transition: 500ms cubic-bezier(0.68, 0, 0.265, 0.1);
+  -webkit-transition: 300ms cubic-bezier(0.68, 0, 0.265, 0.1);
+  transition: 300ms cubic-bezier(0.68, 0, 0.265, 0.1);
   -webkit-box-shadow: -5px 75px 10px rgba(0, 0, 0, 0.2);
           box-shadow: -5px 75px 10px rgba(0, 0, 0, 0.2);
   display: none;
@@ -353,6 +353,7 @@ nav#sidenav ul {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 1em;
+  text-align: center;
 }
 
 nav#sidenav ul li {
@@ -808,12 +809,13 @@ div.container div.login {
   margin: 50px auto;
   min-height: 75vh;
   border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: rgba(250, 9, 9, 0.1);
 }
 
 div.container div.login div.login-heading {
   padding: .5em;
   width: 100%;
-  background-color: #00acee;
+  background-color: rgba(250, 9, 9, 0.1);
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   color: white;
@@ -974,12 +976,13 @@ div.container div.register {
   border: 1px solid rgba(0, 0, 0, 0.1);
   padding-bottom: 40px;
   box-sizing: border-box;
+  background-color: rgba(250, 9, 9, 0.1);
 }
 
 div.container div.register div.register-heading {
   padding: .5em;
   width: 100%;
-  background-color: #00acee;
+  background-color: rgba(250, 9, 9, 0.1);
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   color: white;
