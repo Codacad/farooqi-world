@@ -15,11 +15,15 @@
         </a> 
         <div class="sidenav-contents">
             <div class="btns">
-                <a href="/create-new-article" class="create-new-article" id=<%=title == "Create Article" ? "hide-btn" : ""%>> <span class="article-icon"><i class="far fa-newspaper"></i></span><span>Create Article</span></a>                
-                
-                <div class="login-register">                
-                    <a href="/login" class="login" id=<%=title == "Create Article" ? "hide-btn" : ""%>> <span class="article-icon"><i class="fas fa-sign-in-alt"></i></span> <span>Login</span></a>                
-                    <a href="/register" class="register" id=<%=title == "Create Article" ? "hide-btn" : ""%>> <span class="article-icon"><i class="fas fa-user-circle"></i></span> <span>Register</span></a>                
+                <% if (typeof user != 'undefined') { %>                        
+                    <a href="/logout" class="logout" ><span>Logout</span></a>                      
+                <% } %>        
+                <a href="/create-new-article" class="create-new-article" id=<%=title == "Create Article" ? "hide-btn" : ""%>> <span class="article-icon"><i class="far fa-newspaper"></i></span><span>Create Article</span></a>                                
+                <div class="login-register">                                    
+                    <% if (typeof user == 'undefined') { %>
+                        <a href="/login" class="login"> <span class="article-icon"><i class="fas fa-sign-in-alt"></i></span> <span>Login</span></a>                
+                        <a href="/register" class="register" id=<%=title == "Create Article" ? "hide-btn" : ""%>> <span class="article-icon"><i class="fas fa-user-circle"></i></span> <span>Register</span></a>                
+                    <% } %>
                 </div>
             </div>
             <ul>

@@ -9,5 +9,5 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('nav#sidenav a#close').addEventListener('click', (e) => {
         e.preventDefault();
         document.querySelector('nav#sidenav').classList.remove('sidenav-toggle');
-    })
+    }) 
 })

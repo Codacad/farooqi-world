@@ -8,22 +8,24 @@
 <body>
     
     <nav id="navbar">
-        <a href="/" class="brand-logo"><span class="f">F</span>arooqi<span class="w">W</span>orld</a>        
-        <a href="/create-new-article" class="create-new-article" id=<%=title == "Create Article" ? "hide-btn" : ""%>> <span class="article-icon"><i class="far fa-newspaper"></i></span> <span>Create Article</span></a>                
-        <div class="login-register">                
-            <% if (typeof user == "undefined") { %>
-                <a href="/login" class="login" id=<%=title == "Login" ? "hide-login" : ""%>> <span class="article-icon"><i class="fas fa-sign-in-alt"></i></span> <span>Login</span></a>                            
-            <% } %>
-        </div>
+        <a href="/" class="brand-logo"><span class="f">F</span>arooqi<span class="w">W</span>orld</a>                
         <span class="hamburger-icon"><span><i class="fas fa-bars"></i></span></span>
         <ul>
             <li><a href="/">Home</a></li>
             <li><a href="#contact">Contact</a></li>
-            <li><a href="#about">About</a></li>
-            <% if (typeof user != 'undefined') { %>
-                <li><a href="/logout" class="logout" > <span class="article-icon"><i class="fas fa-logout"></i></span> <span>Logout</span></a>                </li>
-            <% } %>
+            <li><a href="#about">About</a></li>            
         </ul>        
+        <div class="nav-left-menus">            
+            <div class="buttons">
+                <a href="/create-new-article" class="create-new-article" id=<%=title == "Create Article" ? "hide-btn" : ""%>> <span class="article-icon"><i class="far fa-newspaper"></i></span> <span>Create Article</span></a>                                                        
+                <% if (typeof user == "undefined") { %>
+                <a href="/login" class="login" id=<%=title == "Login" ? "hide-login" : ""%>> <span class="login-icon"><i class="fas fa-sign-in-alt"></i></span> <span>Login</span></a>                            
+                <% } %>                
+            </div>
+            <% if (typeof user != 'undefined') { %>                        
+                <a href="/logout" class="logout" ><span>Logout</span></a>                      
+            <% } %>        
+        </div>
     </nav>
 </body>
 </html>
