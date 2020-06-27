@@ -1356,6 +1356,9 @@ div.container div.register form div.form-contents span.already-registered a {
 }
 
 @media (max-width: 480px) {
+  body.overflow-hidden {
+    overflow: hidden;
+  }
   nav#sidenav {
     width: 100%;
   }

@@ -17,7 +17,7 @@ html{
     scroll-behavior: smooth;
 }
 body{
-   font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
     background-color: #fff;        
 }
@@ -1026,6 +1026,9 @@ div.container{
 }
 
 @media (max-width:480px){
+    body.overflow-hidden{
+        overflow: hidden;
+    }
     nav#sidenav{      
         width: 100%;      
         a.brand-logo{
