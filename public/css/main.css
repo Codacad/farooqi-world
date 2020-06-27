@@ -105,7 +105,7 @@ nav#navbar ul li a {
 }
 
 nav#navbar ul li a:hover {
-  background-color: rgba(255, 0, 0, 0.2);
+  color: rgba(255, 255, 255, 0.76);
 }
 
 nav#navbar ul::after {
@@ -131,7 +131,8 @@ nav#navbar div.nav-left-menus {
           align-items: center;
   margin-right: 20px;
   height: 40px;
-  position: relative;
+  position: absolute;
+  right: 0;
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
@@ -548,6 +549,8 @@ div.container div.articles div.article div.body div.text-content a.read-more {
 
 div.container div.articles div.article div.body div.text-content a.read-more:hover {
   background-color: #00abeee0;
+  -webkit-box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
 }
 
 div.container div.articles div.article:last-child {
@@ -560,12 +563,14 @@ div.container div.social-profiles {
   padding: 1em;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  background-color: #fff;
+  background-color: rgba(250, 19, 19, 0.1);
   left: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
 }
 
 div.container div.social-profiles span {
@@ -1393,6 +1398,10 @@ div.footer div.footer-contents ul li a {
   font-weight: 500;
   text-decoration: none;
   color: rgba(0, 0, 0, 0.7);
+}
+
+div.footer div.footer-contents ul li a:hover {
+  text-decoration: underline;
 }
 
 div.footer div.footer-contents div.social-profiles {
