@@ -449,7 +449,7 @@ div.container div.articles {
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
   margin-left: 100px;
-  margin-top: 20px;
+  margin-top: 0px;
   background-color: #f7f7f7;
   padding: 1em;
 }
