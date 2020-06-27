@@ -1,3 +1,4 @@
+"use strict"
 const express = require('express');
 const mongoose = require('mongoose')
 const session = require('express-session');
@@ -6,6 +7,7 @@ const expressLayout = require('express-ejs-layouts');
 const cors = require('cors');
 const passport = require("passport")
 const routes = require('./routes/index');
+const path = require('path')
 require('dotenv').config()
 const app = express()
 app.use(cors());
@@ -13,7 +15,7 @@ app.use(express.json())
 app.use(express.urlencoded({extended:false}));
 app.set('view engine', "ejs");
 app.use(expressLayout);
-app.use(express.static('views'));
+app.use(express.static(__dirname + '/public'));
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/farooqi-world', {
     useNewUrlParser:true,
