@@ -19,7 +19,7 @@ html{
 body{
    font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
-    background-color: #fff;
+    background-color: #fff;        
 }
 
 // Navbar
@@ -337,6 +337,7 @@ div.container{
     z-index: 0;
     box-sizing: border-box;       
     padding: 1em 0em;
+    
     div.articles{                   
         box-sizing: border-box;        
         position: relative;
