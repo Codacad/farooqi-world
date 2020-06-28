@@ -42,7 +42,7 @@ nav#navbar{
         float: left;    
         display: flex;
         padding: 0 10px;
-        margin-left: 10px;
+        margin-left: 0px;
         color: #fff;      
         position: relative;  
         z-index: 100;
@@ -54,12 +54,13 @@ nav#navbar{
         }
     }
     span.hamburger-icon{
-        float: right;
+        float: left;
         cursor: pointer;
         display: none;        
         border: 1px solid rgba(255,255,255,.8);
         border-radius: 5px;
-        margin-right: 40px;
+        margin-right: 0px;
+        margin-left: 10px;
         width: 40px;
         height: 40px;
         position: relative;
@@ -174,7 +175,7 @@ nav#navbar::after{
 
 nav#sidenav{
     position: fixed;
-    right: -105%;
+    left: -105%;
     top: 0px;
     width: 300px;
     height:100%;
@@ -202,7 +203,7 @@ nav#sidenav{
         display: flex;
         justify-content: center;
         align-items: center;
-        right: 10px;
+        left: 10px;
         top:5px;      
         border-radius: 50%;  
         transition: 300ms ease-in-out;               
@@ -327,7 +328,7 @@ nav#sidenav{
 }
 
 nav#sidenav.sidenav-toggle{
-    right: 0px;
+    left: 0px;
 }
 // containers
 div.container{
@@ -920,6 +921,9 @@ div.container{
 }
 
 @media (max-width:720px){
+    body.overflow-hidden{
+        overflow: hidden;
+    }
     nav#navbar{
         div.nav-left-menus{
          
@@ -1027,11 +1031,7 @@ div.container{
     }
 }
 
-@media (max-width:480px){
-
-    body.overflow-hidden{
-        overflow: hidden;
-    }
+@media (max-width:480px){    
     nav#navbar{
         width: 100%;
         box-sizing: border-box;
