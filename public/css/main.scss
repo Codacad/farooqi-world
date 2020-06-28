@@ -1028,8 +1028,13 @@ div.container{
 }
 
 @media (max-width:480px){
+
     body.overflow-hidden{
         overflow: hidden;
+    }
+    nav#navbar{
+        width: 100%;
+        box-sizing: border-box;
     }
     nav#sidenav{      
         width: 100%;      

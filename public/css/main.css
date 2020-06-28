@@ -1362,6 +1362,11 @@ div.container div.register form div.form-contents span.already-registered a {
   body.overflow-hidden {
     overflow: hidden;
   }
+  nav#navbar {
+    width: 100%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
   nav#sidenav {
     width: 100%;
   }
