@@ -679,9 +679,8 @@ div.container div.full-article div.title {
 }
 
 div.container div.full-article div.title h2 {
-  color: teal;
+  color: #333;
   font-weight: 700;
-  margin: 10px 0px;
   word-spacing: 2px;
   font-size: 2rem;
 }
@@ -703,30 +702,9 @@ div.container div.full-article div.body div.text-content p {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   line-height: 1.7em;
-  font-size: 120%;
+  font-size: 130%;
   text-align: right;
   font-family: "Urdu Nastaliq Unicode";
-}
-
-div.container div.full-article div.body div.text-content a.read-more {
-  display: block;
-  float: right;
-  width: 100px;
-  text-align: center;
-  color: #fff;
-  padding: .5em 1em;
-  text-decoration: none;
-  margin: 20px auto 5px 0;
-  background-color: royalblue;
-  border-radius: 5px;
-  -webkit-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
-          box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
-  -webkit-transition: 200ms ease-in-out;
-  transition: 200ms ease-in-out;
-}
-
-div.container div.full-article div.body div.text-content a.read-more:hover {
-  background-color: rgba(65, 105, 225, 0.9);
 }
 
 div.container div.login {
@@ -1196,9 +1174,6 @@ div.container div.register form div.form-contents span.already-registered a {
   div.container div.full-article div.title h2 {
     font-size: 1.5rem;
     color: teal;
-  }
-  div.container div.full-article div.body a.read-more {
-    margin: 20px auto 5px auto;
   }
 }
 
