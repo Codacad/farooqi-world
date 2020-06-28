@@ -448,6 +448,8 @@ div.container div.articles {
 
 div.container div.articles div.article {
   padding: 1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
@@ -481,6 +483,7 @@ div.container div.articles div.article div.contents div.body a.read-more {
   font-weight: 600;
   text-align: right;
   word-spacing: 2px;
+  margin-top: 10px;
 }
 
 div.container div.articles div.article div.contents div.body a:hover {
@@ -1203,41 +1206,7 @@ div.container div.register form div.form-contents span.already-registered a {
     overflow: hidden;
   }
   div.container div.articles {
-    margin: 0px 0px;
-    position: relative;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
     width: 100%;
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
-    margin-left: 0px;
-    margin-top: 0px;
-    background-color: rgba(255, 255, 255, 0.5);
-    padding: .5em;
-    box-sizing: border-box;
-  }
-  div.container div.articles div.articles {
-    margin: 20px 0px;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    position: relative;
-    width: 100%;
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
-    margin-left: 100px;
-    margin-top: 20px;
-    background-color: rgba(255, 255, 255, 0.5);
-    padding: 1em;
-  }
-  div.container div.articles div.articles div.article div.title h2 {
-    font-size: 1.5rem;
-  }
-  div.container div.articles div.articles div.article div.body a.read-more {
-    margin: 20px auto 5px auto;
   }
   div.container div.create-article-section {
     width: 100%;
