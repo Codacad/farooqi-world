@@ -16,7 +16,6 @@ Router.get('/', (req, res) => {
             user:req.user
         });
     })
-    console.log(req.user)
 })
 
 Router.get('/article/:id', (req, res) => {
