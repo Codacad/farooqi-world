@@ -447,11 +447,12 @@ div.container div.articles div.article div.contents div.body a.read-more {
   text-align: right;
   word-spacing: 2px;
   margin-top: 10px;
-  width: 150px;
+  outline: none;
 }
 
 div.container div.articles div.article div.contents div.body a:hover {
   text-decoration: underline;
+  background-color: transparent;
 }
 
 div.container div.social-profiles {
