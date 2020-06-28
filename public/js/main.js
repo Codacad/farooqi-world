@@ -12,6 +12,17 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         document.querySelector('nav#sidenav').classList.remove('sidenav-toggle');
         document.querySelector('body').classList.remove("overflow-hidden");
-  
     }) 
+
+    const articleText =  document.querySelectorAll('#article-body-text');
+
+    articleText.forEach(txt => {       
+        if (/^[a-zA-Z]+$/.test(txt.innerHTML)) {                                    
+            console.log("English")
+          } else {
+            // txt.style.fontFamily = "Urdu Nastaliq Unicodef"
+            console.log("urdu")
+          }
+    })
+
 })

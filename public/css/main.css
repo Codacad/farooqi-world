@@ -442,120 +442,49 @@ div.container {
 }
 
 div.container div.articles {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  position: relative;
   width: 60%;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
-  margin-left: 100px;
-  margin-top: 0px;
-  background-color: #f7f7f7;
-  padding: 1em;
+  margin: auto;
 }
 
 div.container div.articles div.article {
-  margin-bottom: 0px;
   padding: 1em;
-  -webkit-transition: 200ms ease-in-out;
-  transition: 200ms ease-in-out;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  border-radius: 5px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  width: 100%;
 }
 
-div.container div.articles div.article div.title {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+div.container div.articles div.article div.contents div.title h2 {
   text-align: right;
+  padding: 0;
 }
 
-div.container div.articles div.article div.title h2 {
-  color: teal;
-  font-weight: 700;
-  margin: 10px 0px;
-  word-spacing: 2px;
-  font-size: 2rem;
-}
-
-div.container div.articles div.article div.body {
+div.container div.articles div.article div.contents div.body div.text-content div#article-body-text {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  font-family: "Urdu Nastaliq Unicode";
-}
-
-div.container div.articles div.article div.body div.text-content {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  display: block;
-  font-size: 1em;
-}
-
-div.container div.articles div.article div.body div.text-content div {
-  height: 350px;
+  height: 195px;
   overflow: hidden;
-}
-
-div.container div.articles div.article div.body div.text-content div p {
-  overflow: hidden;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  line-height: 1.7em;
-  font-size: 120%;
   text-align: right;
+  padding: 10px 0px;
+  font-size: 20px;
+  letter-spacing: 1px;
+  text-overflow: ellipsis;
 }
 
-div.container div.articles div.article div.body div.text-content div p span.quran-ayat {
-  color: orange;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  padding: .2em;
-  font-weight: bold;
+div.container div.articles div.article div.contents div.body div.text-content div#article-body-text p > br {
+  display: none;
 }
 
-div.container div.articles div.article div.body div.text-content div p span.translation {
-  color: rgba(0, 0, 0, 0.6);
-  text-decoration: underline;
-  font-weight: bold;
-}
-
-div.container div.articles div.article div.body div.text-content a.read-more {
+div.container div.articles div.article div.contents div.body a.read-more {
   display: block;
-  float: right;
-  width: 100px;
-  text-align: center;
-  color: #fff;
-  padding: .5em 1em;
   text-decoration: none;
-  margin: 20px auto 5px 0;
-  background-color: #00acee;
-  border-radius: 5px;
-  -webkit-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
-          box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
-  -webkit-transition: 200ms ease-in-out;
-  transition: 200ms ease-in-out;
-  font-weight: bold;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: royalblue;
+  font-weight: 600;
+  text-align: right;
+  word-spacing: 2px;
 }
 
-div.container div.articles div.article div.body div.text-content a.read-more:hover {
-  background-color: #00abeee0;
-  -webkit-box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
-}
-
-div.container div.articles div.article:last-child {
-  border-bottom: none;
+div.container div.articles div.article div.contents div.body a:hover {
+  text-decoration: underline;
 }
 
 div.container div.social-profiles {
@@ -762,19 +691,13 @@ div.container div.create-article-section div.article-form div.form .ck-rounded-c
 
 div.container div.full-article {
   padding: 1em;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: auto;
   -webkit-transition: 200ms ease-in-out;
   transition: 200ms ease-in-out;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border-radius: 5px;
   width: 60%;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
-  margin-left: 100px;
   background-color: #f7f7f7;
 }
 
@@ -799,9 +722,6 @@ div.container div.full-article div.title h2 {
 div.container div.full-article div.body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   font-family: "Urdu Nastaliq Unicode";
 }
 
@@ -818,20 +738,7 @@ div.container div.full-article div.body div.text-content p {
   line-height: 1.7em;
   font-size: 120%;
   text-align: right;
-}
-
-div.container div.full-article div.body div.text-content p span.quran-ayat {
-  color: orange;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  padding: .2em;
-  font-weight: bold;
-}
-
-div.container div.full-article div.body div.text-content p span.translation {
-  color: rgba(0, 0, 0, 0.6);
-  text-decoration: underline;
-  font-weight: bold;
+  font-family: "Urdu Nastaliq Unicode";
 }
 
 div.container div.full-article div.body div.text-content a.read-more {
