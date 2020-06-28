@@ -442,7 +442,7 @@ div.container div.articles div.article div.contents div.body a.read-more {
   text-decoration: none;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  color: royalblue;
+  color: cornflowerblue;
   font-weight: 600;
   text-align: right;
   word-spacing: 2px;
@@ -461,12 +461,12 @@ div.container div.social-profiles {
   padding: 1em;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  background-color: rgba(250, 19, 19, 0.1);
+  background-color: #f7f7f7;
   left: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
 }
@@ -683,6 +683,7 @@ div.container div.full-article div.title h2 {
   font-weight: 700;
   word-spacing: 2px;
   font-size: 2rem;
+  margin-bottom: 10px;
 }
 
 div.container div.full-article div.body {
