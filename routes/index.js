@@ -5,17 +5,19 @@ const User = require('../models/user');
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
 
-Router.get('/', (req, res) => {
+Router.get('/', (req, res) => {             
     Article.find({}, (err, article) => {
+        console.log(article)
         if(err){
-            res.status(404).send({msg:"Some Errors Occured"})
-        }
-        res.render('index', {
-            title:"Farooki World",
-            article,
-            user:req.user
-        });
-    })
+            res.status(404).send(err)
+        }else{
+            res.render('index', {
+                title:"Farooki World",                    
+                article,
+                AuthUser:req.user
+            });  
+        }        
+    })                            
 })
 
 Router.get('/article/:id', (req, res) => {
@@ -26,7 +28,7 @@ Router.get('/article/:id', (req, res) => {
         res.render('article', {
             title:"Article",
             article,
-            user:req.user
+            AuthUser:req.user
         });
     })
 })
@@ -35,39 +37,48 @@ Router.get('/article/:id', (req, res) => {
 Router.get('/contact',(req, res) => {
     res.render('contact', {
         title:"Contact",
-        user:req.user
+        AuthUser:req.user
     });
 })
 
 Router.get('/about',(req, res) => {
     res.render('about', {
         title:"About Us",
-        user:req.user
+        AuthUser:req.user
     });
 })
 
 Router.get('/create-new-article', (req, res) => {
     res.render('create-article', {
         title:"Create Article",
-        user:req.user
+        AuthUser:req.user
     })    
 })
 
 // Post Route for creating new article
 Router.post('/create-new-article', (req, res) => {
-    const newArticle = new Article(req.body);
+    const article =  {            
+        title:req.body.title,
+        category:req.body.category,
+        body:req.body.body,
+        author:req.user
+    }   
+    const newArticle = new Article(article);                                        
     newArticle.save((err, article) => {
         if(err){
-            res.status(404).send('<h1>Some Errors Occured</h1>')
-        }
-        res.redirect('/')
+            res.status(404).send(err)
+        }else{
+            res.redirect('/')
+        }        
     })        
+    
 })
+
 Router.get('/login', (req, res) => {
     if(!req.user){
         res.render('login', {
             title:"Login",
-            user:req.user
+            AuthUser:req.user
         })
     }else{
         res.redirect('/')
@@ -82,7 +93,7 @@ Router.get('/register', (req, res) => {
     if(!req.user){
         res.render('register', {
             title:"Register",
-            user:req.user
+            AuthUser:req.user
         })    
     }else{
         res.redirect('/');
@@ -119,7 +130,7 @@ Router.post('/register', (req, res) => {
                     res.render('register', {
                         title:"Register",
                         message,
-                        user:req.user
+                        AuthUser:req.user
                     })                  
                 })
             }
@@ -128,7 +139,7 @@ Router.post('/register', (req, res) => {
          res.render('register', {
              title:"Register",
              message,
-             user:req.user
+             AuthUser:req.user
          })
      }         
      console.log(message)   
@@ -148,7 +159,7 @@ Router.get('/api/users', (req, res) => {
         res.send(users)
     })
 })
-Router.get('/api/article', (req, res) => {
+Router.get('/api/articles', (req, res) => {
     Article.find({}, (err, article) => {
         if(err){
             res.status(404).send({msg:"Some Errors Occured"})

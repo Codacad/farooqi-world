@@ -17,11 +17,11 @@
         <div class="nav-left-menus">            
             <div class="buttons">
                 <a href="/create-new-article" class="create-new-article" id=<%=title == "Create Article" ? "hide-btn" : ""%>> <span class="article-icon"><i class="far fa-newspaper"></i></span> <span>Create Article</span></a>                                                        
-                <% if (typeof user == "undefined") { %>
+                <% if (typeof AuthUser == "undefined") { %>
                 <a href="/login" class="login" id=<%=title == "Login" ? "hide-login" : ""%>> <span class="login-icon"><i class="fas fa-sign-in-alt"></i></span> <span>Login</span></a>                            
                 <% } %>                
             </div>
-            <% if (typeof user != 'undefined') { %>                        
+            <% if (typeof AuthUser != 'undefined') { %>                        
                 <a href="/logout" class="logout" ><span>Logout</span></a>                      
             <% } %>        
         </div>
