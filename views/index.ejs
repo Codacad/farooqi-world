@@ -1,34 +1,83 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%=title%></title>
-</head>
-<body>
-   <div class="container">    
-        <div class="articles" id="articles">        
-            <% if (typeof article != "undefined") { %>                
-                <% article.forEach(article => { %>                
-                    <div class="article">
-                        <div class="contents">
-                            <div class="title">
-                                <h2><%=article.title%></h2>                        
-                            </div>
-                            <div class="body">                            
-                                <div class="text-content">                                        
-                                    <div id="article-body-text">
-                                        <%-article.body%>                                        
+<title><%=title%></title>
+<div class="articles-section">
+    <div class="contents">
+        <% if (typeof articles != "undefined") { %>
+            <% articles.forEach(article => { %>
+                <div class="article">
+                    <div class="edit-and-delete">
+                        <ul>
+                            <li>
+                                <a href=""><span class="material-icons">edit</span></a>
+                                <ul><li>Edit</li></ul>
+                            </li>
+                            <li>
+                                <a href=""><span class="material-icons">delete</span></a>
+                                <ul><li>Delete</li></ul>
+                            </li>
+                        </ul>                      
+                    </div>
+                    <div class="article-contents">
+                        <div class="article-header">
+                            <div class="header-contents">
+                                <div class="author">
+                                    <div class="profile-pic">
+                                        <img src="./images/profile-pic.png" alt="profile-pic">
                                     </div>
-                                    <a href="/article/<%=article._id%>" class="read-more">یہاں مزید پڑھیں</a>                                    
+                                    <div class="name-and-published">
+                                        <div class="name"><%= article.author.name %> </div>
+                                        <div class="published"><%= article.createdAt.toDateString() %> </div>
+                                    </div>
+                                </div>
+                                <div class="mins-to-read">5 mins</div>                                
+                            </div>
+                        </div>
+                        <div class="article-body">
+                            <div class="body-contents">
+                                <div class="title">
+                                   <h2> <%= article.title %> </h2>
+                                </div>
+                                <div class="body">
+                                    <%- article.body %>                                     
+                                </div>
+                                <div class="read-more">
+                                    <a href="/<%=article._id%>">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="article-footer">
+                            <div class="footer-contents">
+                                <div class="comment-and-like">
+                                    <ul>
+                                        <li>
+                                            <a href=""><span class="material-icons">mode_comment</span></a>
+                                            <ul>
+                                                <li>Comment</li>
+                                            </ul>
+                                        </li>
+                                        <li><a href=""><span class="material-icons">thumb_up_alt</span></a>
+                                            <ul>
+                                                <li>Like</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
                                 </div>                                
+                                <div class="share">
+                                    <ul>
+                                        <li>
+                                            <a href=""><span class="material-icons">share</span></a>
+                                            <ul>
+                                                <li><a href=""><span><i class="fab fa-facebook"></i></span><span>Facebook</span></a></li>
+                                                <li><a href=""><span><i class="fab fa-twitter"></i></span><span>Twitter</span></a></li>
+                                                <li><a href=""><span><i class="fab fa-instagram"></i></span><span>Instagram</span></a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
-                <% }) %>
-            <% } %>
-        </div>        
-       
-   </div> 
-</body>
-</html>
+                </div>
+            <% }) %>
+        <% } %>        
+    </div>
+</div>

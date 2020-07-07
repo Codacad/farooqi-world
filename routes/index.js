@@ -6,14 +6,14 @@ const bcrypt = require('bcryptjs');
 const passport = require('passport');
 
 Router.get('/', (req, res) => {             
-    Article.find({}, (err, article) => {
-        console.log(article)
+    Article.find({}, (err, articles) => {
+        console.log(articles)
         if(err){
             res.status(404).send(err)
         }else{
             res.render('index', {
                 title:"Farooki World",                    
-                article,
+                articles,
                 AuthUser:req.user
             });  
         }        
@@ -100,11 +100,11 @@ Router.get('/register', (req, res) => {
     }
 })
 Router.post('/register', (req, res) => {
-    const {username, email, password} = req.body;
+    const {name, email, password} = req.body;
     const newUser = new User(req.body);
     const message = {}
-    if(!username){
-        message.username = "Username Required..."
+    if(!name){
+        message.name = "Name Required..."
     }
     if(!email){
         message.email = "Email Required..."
@@ -141,8 +141,7 @@ Router.post('/register', (req, res) => {
              message,
              AuthUser:req.user
          })
-     }         
-     console.log(message)   
+     }              
 })
 
 Router.get('/logout', (req, res) => {

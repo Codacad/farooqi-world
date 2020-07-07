@@ -4,14 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="fontawesome-free-5.13.0-web/css/all.css">    
+    <link rel="stylesheet" href="./fontawesome-free-5.13.0-web/css/all.css">    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 </head>
 <body>
-    <%- include('partials/social-profiles') %>
-    <%- include('partials/navbar') %>
-    <%- include('partials/sidenav') %>
-    <%- body %>
-    <%- include('partials/footer')%>    
+    <div id="app-wrapper">        
+        <%- include('partials/navbar') %>
+        <!-- <%- include('partials/sidenav') %> -->
+        <div id="container">
+            <%- body %>
+        </div>          
+    </div>
     <script src="./js/main.js"></script>
 </body>
 </html>

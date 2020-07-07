@@ -33,7 +33,7 @@ const sessionStore = new connectMongo({
 })
 
 app.use(session({
-    secret:process.env.mySecret,
+    secret:process.env.mySecret || "rizwan",
     resave:false,
     saveUninitialized:true,
     store:sessionStore,

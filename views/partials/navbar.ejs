@@ -1,30 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title><%=title%></title>  
-</head>
-<body>
-    
-    <nav id="navbar">        
-        <span class="hamburger-icon"><span><i class="fas fa-bars"></i></span></span>
-        <a href="/" class="brand-logo"><span class="f">F</span>arooqi<span class="w">W</span>orld</a>                        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#about">About</a></li>            
-        </ul>        
-        <div class="nav-left-menus">            
-            <div class="buttons">
-                <a href="/create-new-article" class="create-new-article" id=<%=title == "Create Article" ? "hide-btn" : ""%>> <span class="article-icon"><i class="far fa-newspaper"></i></span> <span>Create Article</span></a>                                                        
-                <% if (typeof AuthUser == "undefined") { %>
-                <a href="/login" class="login" id=<%=title == "Login" ? "hide-login" : ""%>> <span class="login-icon"><i class="fas fa-sign-in-alt"></i></span> <span>Login</span></a>                            
-                <% } %>                
-            </div>
-            <% if (typeof AuthUser != 'undefined') { %>                        
-                <a href="/logout" class="logout" ><span>Logout</span></a>                      
-            <% } %>        
-        </div>
-    </nav>
-</body>
-</html>
+<nav id="navbar">        
+    <div class="nav-left-menus">
+        <a href="" class="hamburger-icon"><span><i class="fas fa-bars"></i></span></a>
+        <a href="/" class="brand-logo"><span class="f">F</span>arooqi<span class="w">W</span>orld</a>                                      
+    </div>
+    <div class="nav-right-menus">            
+        <div class="buttons">            
+            <% if (typeof AuthUser == "undefined") { %>
+            <a href="/login" class="login" id=<%=title == "Login" ? "hide-login" : ""%>> <span class="login-icon"><i class="fas fa-sign-in-alt"></i></span> <span>Login</span></a>                            
+            <% } %>                
+            
+            <% if (typeof AuthUser != 'undefined') { %>                                                        
+            <% } %>                        
+            <ul class="user-menus">
+                <li>
+                    <a href="" class="caret"><i class="fas fa-caret-down"></i></a>
+                    <ul>
+                        <li class="social-proflies">
+                            <span class="facebook">
+                                <a target="_blank" href="https://www.facebook.com/Farooquis-world-100432181470217"><span><i class="fab fa-facebook"></i></span></a>
+                                <!-- <span class="tooltip">Facebook</span> -->
+                            </span>
+                            <span class="twitter">
+                                <a target="_blank" href="https://twitter.com/FarmanFarooqui4"><span><i class="fab fa-twitter"></i></span></a>
+                                <!-- <span class="tooltip">Twitter</span> -->
+                            </span>
+                            <span class="youtube">
+                                <a target="_blank" href="https://www.youtube.com/channel/UCqIrhdoygYnHIIeyYsYBcKA"><span><i class="fab fa-youtube"></i></span></a>
+                                <!-- <span class="tooltip">Youtube</span> -->
+                            </span>
+                            <span class="instagram">
+                                <a target="_blank" href="https://www.instagram.com/farmanfarooqui4/"><span><i class="fab fa-instagram"></i></span></a>
+                                <!-- <span class="tooltip">Instagram</span> -->
+                            </span>
+                        </li>
+                        <li><a href=""> <span class="material-icons">dashboard</span><span>Dashboard</span></a></li>
+                        <li><a href="/create-new-article" class="create-new-article" id=<%=title == "Create Article" ? "hide-btn" : ""%>> <span class="article-icon"><i class="far fa-newspaper"></i></span> <span>Create Article</span></a></li>
+                        <li><a href="/logout" class="logout" ><span>Logout</span></a>                      </li>
+                    </ul>
+                </li>
+            </ul>    
+        </div>            
+    </div>
+</nav>
