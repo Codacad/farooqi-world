@@ -11,6 +11,10 @@ body {
   background-color: #f7f7f7;
 }
 
+body.overflow-hidden {
+  overflow: hidden;
+}
+
 div#app-wrapper nav#navbar {
   position: fixed;
   top: 0;
@@ -89,19 +93,30 @@ div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus {
 
 div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus li {
   position: relative;
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
 div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus li a.caret {
+  display: block;
   color: silver;
   font-size: 22px;
+  margin-left: 20px;
 }
 
 div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus li a.caret:hover {
   color: #cecbcb;
 }
 
-div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus li ul::after {
+div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus li div#dropdown-wrapper {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus li div#dropdown-wrapper ul::after {
   content: "";
   position: absolute;
   width: 10px;
@@ -114,7 +129,7 @@ div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus li ul::
           transform: rotate(45deg);
 }
 
-div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus li ul {
+div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus li div#dropdown-wrapper ul {
   -webkit-transform: translateY(20px);
           transform: translateY(20px);
   -webkit-transition: 200ms cubic-bezier(0.47, 0, 0.745, 0.715);
@@ -123,7 +138,7 @@ div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus li ul {
   list-style: none;
   display: block;
   position: absolute;
-  top: 55px;
+  top: 0px;
   left: -160px;
   width: 200px;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -133,13 +148,59 @@ div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus li ul {
           box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
 }
 
-div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus li ul li {
+div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus li div#dropdown-wrapper ul li.login-register {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus li div#dropdown-wrapper ul li.login-register a.mobile-login-btn {
+  width: 80px;
+  background-color: #3b5998;
+  margin: 5px;
+  padding: .5em;
+  color: #fff;
+  text-align: center;
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5);
+}
+
+div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus li div#dropdown-wrapper ul li.login-register a.mobile-login-btn span {
+  margin-right: 3px;
+}
+
+div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus li div#dropdown-wrapper ul li.login-register a.mobile-login-btn:hover {
+  background-color: #3b5898dc;
+}
+
+div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus li div#dropdown-wrapper ul li.login-register a.mobile-register-btn {
+  width: 100px;
+  background-color: #3b5998;
+  margin: 5px;
+  padding: .5em;
+  color: #fff;
+  text-align: center;
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5);
+}
+
+div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus li div#dropdown-wrapper ul li.login-register a.mobile-register-btn span {
+  margin-right: 3px;
+}
+
+div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus li div#dropdown-wrapper ul li.login-register a.mobile-register-btn:hover {
+  background-color: #3b5898dc;
+}
+
+div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus li div#dropdown-wrapper ul li {
   line-height: 1em;
   margin-left: 0px;
   width: 100%;
 }
 
-div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus li ul li a {
+div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus li div#dropdown-wrapper ul li a {
   padding: .5em 1em;
   text-decoration: none;
   color: rgba(0, 0, 0, 0.6);
@@ -151,21 +212,21 @@ div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus li ul l
           align-items: center;
 }
 
-div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus li ul li a span:first-child {
+div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus li div#dropdown-wrapper ul li a span:first-child {
   margin-right: 10px;
 }
 
-div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus li ul li a.logout {
+div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus li div#dropdown-wrapper ul li a.logout {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   margin-top: 10px;
   background-color: #f7f7f7;
 }
 
-div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus li ul li a:hover {
+div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus li div#dropdown-wrapper ul li a:hover {
   background-color: rgba(0, 0, 0, 0.04);
 }
 
-div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus li ul li.social-proflies {
+div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus li div#dropdown-wrapper ul li.social-proflies {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -179,22 +240,99 @@ div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus li ul l
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus li ul li.social-proflies a {
+div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus li div#dropdown-wrapper ul li.social-proflies a {
   padding: 0;
   margin: 10px;
 }
 
-div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus li ul li.social-proflies a:hover {
+div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus li div#dropdown-wrapper ul li.social-proflies a:hover {
   background-color: transparent;
   color: rgba(0, 0, 0, 0.8);
 }
 
-div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus li:hover ul {
+div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus li div#dropdown-wrapper ul.toggle-user-menus {
   -webkit-transform: translateY(0);
           transform: translateY(0);
   -webkit-transform: scale(1);
           transform: scale(1);
   visibility: visible;
+}
+
+div#app-wrapper div#sidenav-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 110;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+
+div#app-wrapper div#sidenav-wrapper nav.sidenav {
+  position: relative;
+  width: 300px;
+  height: 100%;
+  background-color: #f7f7f7;
+  margin-left: -300px;
+}
+
+div#app-wrapper div#sidenav-wrapper nav.sidenav div.header {
+  width: 100%;
+  padding: 1em;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+div#app-wrapper div#sidenav-wrapper nav.sidenav div.header a.close {
+  width: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 30px;
+  color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+}
+
+div#app-wrapper div#sidenav-wrapper nav.sidenav div.sidenav-contents {
+  padding: 1em;
+}
+
+div#app-wrapper div#sidenav-wrapper nav.sidenav div.sidenav-contents ul {
+  list-style: none;
+  width: 100%;
+}
+
+div#app-wrapper div#sidenav-wrapper nav.sidenav div.sidenav-contents ul li a {
+  display: block;
+  -webkit-transition: 200ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition: 200ms cubic-bezier(0.23, 1, 0.32, 1);
+  padding: .5em;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
+}
+
+div#app-wrapper div#sidenav-wrapper nav.sidenav div.sidenav-contents ul li a:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+div#app-wrapper div#sidenav-wrapper nav.sidenav {
+  margin-left: 0;
+}
+
+div#app-wrapper div#sidenav-wrapper.sidenav-wrapper-toggle {
+  visibility: visible;
+  opacity: 1;
 }
 
 div#app-wrapper div#container {
@@ -502,7 +640,7 @@ div#app-wrapper div#container div.articles-section div.contents div.article div.
 
 div#app-wrapper div#container div.articles-section div.contents div.article div.article-contents div.article-footer div.footer-contents div.share ul li ul {
   position: absolute;
-  top: -7px;
+  top: -4px;
   right: 30px;
   border-radius: 4px;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -528,8 +666,8 @@ div#app-wrapper div#container div.articles-section div.contents div.article div.
   padding: .5em;
   text-align: left;
   text-decoration: none;
-  font-weight: 600;
-  font-size: 18px;
+  font-weight: 500;
+  font-size: 16px;
   color: #fff;
 }
 
@@ -561,8 +699,11 @@ div#app-wrapper div#container div.articles-section div.contents div.article div.
 }
 
 @media (max-width: 520px) {
+  div#app-wrapper nav#navbar div.nav-right-menus div.buttons a.login {
+    display: none;
+  }
   div#app-wrapper div#container {
-    padding: 1em .5em;
+    padding: 0;
   }
   div#app-wrapper div#container div.articles-section {
     width: 100%;

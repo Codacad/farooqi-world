@@ -10,6 +10,9 @@ body{
     font-family: 'Roboto', sans-serif;
     background-color: #f7f7f7; 
 }
+body.overflow-hidden{
+    overflow: hidden;
+}
 
 // App Wrapper 
 div#app-wrapper{
@@ -71,95 +74,201 @@ div#app-wrapper{
                     list-style: none;                    
                     li{
                         position: relative;
-                        margin-left: 20px;
+                        margin-left: 10px;
                         a.caret{
+                            display: block;
                             color: silver;
-                            font-size: 22px;
+                            font-size: 22px;                                
+                            margin-left: 20px;
                         }
                         a.caret:hover{
                             color:rgb(206, 203, 203);
                         }
-                        ul::after{
-                            content: "";
-                            position: absolute;
-                            width: 10px;
-                            height: 10px;
-                            display: block;
-                            top: -5px;
-                            right: 25px;
-                            background-color: #fff;
-                            transform: rotate(45deg);                            
-                        }
-                        ul{
-                            transform: translateY(20px);                        
-                            // transform: scale(.7);
-                            transition: 200ms cubic-bezier(0.47, 0, 0.745, 0.715);
-                            visibility: hidden;                            
-                            list-style: none;
-                            display: block;
-                            position: absolute;                     
-                            top: 55px;       
-                            left: -160px;    
-                            width: 200px;                                   
-                            border: 1px solid rgba(0,0,0,.1);
-                            background-color: #fff;
-                            border-radius: 3px;
-                            box-shadow: 0px 5px 10px rgba(0,0,0,.1);                            
-                            li{
-                                line-height: 1em;
-                                margin-left: 0px;                            
-                                width: 100%;
-                                a{                                    
-                                    padding: .5em 1em;
-                                    text-decoration: none;
-                                    color: rgba(0,0,0,.6);
+                        div#dropdown-wrapper{
+                            position: relative;
+                            top: 0;
+                            left: 0;                            
+                            width: 100%;                            
+                            height: 100%;
+                            background-color: rgba(0,0,0,.5);
+                            ul::after{
+                                content: "";
+                                position: absolute;
+                                width: 10px;
+                                height: 10px;
+                                display: block;
+                                top: -5px;
+                                right: 25px;
+                                background-color: #fff;
+                                transform: rotate(45deg);                            
+                            }
+                            ul{
+                                transform: translateY(20px);                        
+                                // transform: scale(.7);
+                                transition: 200ms cubic-bezier(0.47, 0, 0.745, 0.715);
+                                visibility: hidden;                            
+                                list-style: none;
+                                display: block;
+                                position: absolute;                     
+                                top: 0px;       
+                                left: -160px;    
+                                width: 200px;                                   
+                                border: 1px solid rgba(0,0,0,.1);
+                                background-color: #fff;
+                                border-radius: 3px;
+                                box-shadow: 0px 5px 10px rgba(0,0,0,.1); 
+                                li.login-register{
                                     display: flex;
+                                    a.mobile-login-btn{
+                                        width: 80px;
+                                        background-color: #3b5998;
+                                        margin: 5px;    
+                                        padding: .5em; 
+                                        color: #fff;                               
+                                        text-align: center;
+                                        border-radius: 3px;
+                                        box-shadow: 0px 0px 1px rgba(0,0,0,.5);
+                                        span{
+                                            margin-right: 3px;
+                                        }
+                                    }
+                                    a.mobile-login-btn:hover{
+                                        background-color: #3b5898dc;
+                                    }
+                                    a.mobile-register-btn{
+                                        width: 100px;
+                                        background-color: #3b5998;
+                                        margin: 5px;    
+                                        padding: .5em; 
+                                        color: #fff;                               
+                                        text-align: center;
+                                        border-radius: 3px;
+                                        box-shadow: 0px 0px 1px rgba(0,0,0,.5);
+                                        span{
+                                            margin-right: 3px;
+                                        }
+                                    }
+                                    a.mobile-register-btn:hover{
+                                        background-color: #3b5898dc;
+                                    }
+                                }                           
+                                li{
+                                    line-height: 1em;
+                                    margin-left: 0px;                            
+                                    width: 100%;
+                                    a{                                    
+                                        padding: .5em 1em;
+                                        text-decoration: none;
+                                        color: rgba(0,0,0,.6);
+                                        display: flex;
+                                        align-items: center;
+                                        span:first-child{
+                                            margin-right: 10px;                                        
+                                        }
+                                    }
+                                    a.logout{
+                                        border-top: 1px solid rgba(0,0,0,.1);
+                                        margin-top: 10px;
+                                        background-color: #f7f7f7;
+                                    }
+                                    
+                                    a:hover{
+                                        background-color: rgba(0,0,0,.04);
+                                    }                                
+                                    
+                                }                                           
+                                li.social-proflies{
+                                    display: flex;                                
+                                    justify-content: center;
                                     align-items: center;
-                                    span:first-child{
-                                        margin-right: 10px;                                        
+                                    margin-bottom:10px;
+                                    border-bottom: 1px solid rgba(0,0,0,.1);                                                                                               
+                                    a{
+                                        padding: 0;
+                                        margin: 10px;
+                                    }
+                                    a:hover{
+                                        background-color: transparent;
+                                        color: rgba(0,0,0,.8);
                                     }
                                 }
-                                a.logout{
-                                    border-top: 1px solid rgba(0,0,0,.1);
-                                    margin-top: 10px;
-                                    background-color: #f7f7f7;
-                                }
-                                a:hover{
-                                    background-color: rgba(0,0,0,.04);
-                                }
-                            }               
-                            li.social-proflies{
-                                display: flex;                                
-                                justify-content: center;
-                                align-items: center;
-                                margin-bottom:10px;
-                                border-bottom: 1px solid rgba(0,0,0,.1);                                                                                               
-                                a{
-                                    padding: 0;
-                                    margin: 10px;
-                                }
-                                a:hover{
-                                    background-color: transparent;
-                                    color: rgba(0,0,0,.8);
-                                }
                             }
-                        }
+                            ul.toggle-user-menus{
+                                transform: translateY(0);
+                                transform: scale(1);
+                                visibility: visible;                        
+                            }
+                        }                      
                     }
-                    li:hover ul{
-                        transform: translateY(0);
-                        transform: scale(1);
-                        visibility: visible;                        
-                    }
+                  
                 }
             }
         }
     }
 
-    // Sidenav
-    nav#sidenav{    
+    // Sidenav    
+    div#sidenav-wrapper{    
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,.2);
+        z-index: 110;
+        visibility: hidden;
+        opacity: 0;
+        transition: 300ms;        
+        nav.sidenav{
+            position: relative;
+            width: 300px;
+            height: 100%;
+            background-color: #f7f7f7;    
+            margin-left: -300px;
+            div.header{
+                width: 100%;
+                padding: 1em;
+                border-bottom: 1px solid rgba(0,0,0,.1);
+                a.close{
+                    width: 30px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 30px;
+                    color: rgba(0,0,0,.5);
+                    background-color: rgba(0,0,0,.05);            
+                    border-radius: 50%;
+                }
+            }        
+            div.sidenav-contents{
+                padding: 1em;
+                ul{
+                    list-style: none;
+                    width: 100%;
+                    li{
+                        a{
+                            display: block;
+                            transition: 200ms cubic-bezier(0.23, 1, 0.320, 1);
+                            padding: .5em;
+                            text-decoration: none;
+                            color: rgba(0,0,0,.6);
+                            border-radius: 5px;
+                        }
+                        a:hover{
+                            background-color: rgba(0,0,0,.05);
+                        }
+                    }
+                }
+            }
+        }
+        nav.sidenav{
+            margin-left: 0;
+        }
     }
 
-
+    div#sidenav-wrapper.sidenav-wrapper-toggle{
+        visibility: visible;
+        opacity: 1;
+    }
     // containers 
     div#container{          
         position: relative;
@@ -391,7 +500,7 @@ div#app-wrapper{
                                             }
                                             ul{
                                                 position: absolute;
-                                                top: -7px;
+                                                top:-4px;
                                                 right: 30px;
                                                 border-radius: 4px;
                                                 border: 1px solid rgba(0,0,0,.1);
@@ -408,8 +517,8 @@ div#app-wrapper{
                                                         padding: .5em;
                                                         text-align: left;
                                                         text-decoration: none;
-                                                        font-weight: 600;
-                                                        font-size: 18px;
+                                                        font-weight: 500;
+                                                        font-size: 16px;
                                                         color: #fff;
                                                         span:first-child{
                                                             margin-right: 5px;                                                                                                                                                                                                                                           
@@ -452,8 +561,17 @@ div#app-wrapper{
     }
 
     @media (max-width:520px){ 
+        nav#navbar{
+            div.nav-right-menus{
+                div.buttons{
+                    a.login{
+                        display: none;
+                    }
+                }
+            }
+        }
         div#container{        
-            padding: 1em .5em;                       
+            padding: 0;                       
             div.articles-section{
                 width: 100%;  
                 min-height: 100%;
