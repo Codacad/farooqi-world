@@ -361,7 +361,127 @@ div#app-wrapper{
             margin:auto;                               
             div.contents{
                 display: grid;
-                grid-template-columns: repeat(2, 1fr);                
+                grid-template-columns: repeat(2, 1fr);    
+                div#login-wrapper{
+                    position: fixed;                        
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: #fff;
+                    z-index:110;
+                    visibility: hidden;
+                    opacity: 0;
+                    transform: scale(0);
+                    div.login-close{
+                        position: absolute;
+                        top: 30px;
+                        right: 40px;                        
+                        a span{
+                            font-size: 2rem;
+                        }
+                    }
+                    div.login{
+                        position: absolute;
+                        width: 500px;
+                        height: 80vh;
+                        background-color: #f7f7f7;
+                        top: 50%;
+                        left: 50%;
+                        transform: translateY(-50%) translateX(-50%);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        box-shadow:0px 5px 10px rgba(0,0,0,.1);
+                        border:2px solid cornflowerblue;
+                        border-radius: 5px;
+                        div.login-contents{
+                            div.login-heading{
+                                text-align: center;
+                                padding:1em 0em;
+                                text-transform:uppercase;
+                                color: silver;
+                                margin-bottom:20px;
+                            }
+                            form{
+                                div.form-contents{
+                                    div.email, div.password{
+                                        border: 1px solid rgba(0,0,0,.1);
+                                        margin-bottom: 10px;
+                                        width: 100%;
+                                        height: 40px;
+                                        display: flex;                                    
+                                        justify-content: center;
+                                        background-color: rgba(0,0,0,.06);
+                                        align-items: center;
+                                        border-radius: 5px;
+                                        box-shadow: inset 0px 0px 10px rgba(0,0,0,.1);
+                                        span{
+                                            display: flex;
+                                            justify-content: center;
+                                            align-items: center;
+                                            padding:0 .5em;
+                                            color: rgba(0,0,0,.6);
+                                        }
+                                        input{
+                                            border: none;
+                                            width: 100%;
+                                            height:100%;
+                                            outline: none;
+                                            background-color: transparent;
+                                            padding: 0px .5em;
+                                            font-size: 18px;
+                                            color: rgba(0,0,0,.6);
+                                        }                                        
+                                    }                                    
+                                }
+                                div.login-btn{
+                                    width:100%;
+                                    button{
+                                        display:block;
+                                        width:100%;
+                                        border:none;
+                                        padding:.5em 0em;
+                                        text-align: center;
+                                        outline:none;
+                                        background:#3b5998;
+                                        color:#fff;
+                                        font-size: 18px;                                        
+                                        border-radius: 3px;
+                                        box-shadow: 0px 0px 1px rgba(0,0,0,.6);
+                                        margin: 20px 0px;
+                                        cursor: pointer;
+                                    }
+                                    button:hover{
+                                        box-shadow: 0px 0px 10px rgba(0,0,0,.1);
+                                        background-color: #3b5898dc;
+                                    }
+                                }
+                                span.new-to-website{
+                                    display:flex;
+                                    justify-content: center;    
+                                    align-items: center;                                                                                                    
+                                    a{
+                                        color: rgba(0,0,0,.4);
+                                        text-decoration: none;
+                                        font-weight:600;
+                                        margin-left:5px;
+                                        display: block;                                    
+                                    }
+                                    a:hover{
+                                        text-decoration:underline;
+                                        color: rgba(0,0,0,.6);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }    
+                div#login-wrapper.toggle-login-wrapper{
+                    visibility: visible;
+                    transform: scale(1);
+                    opacity: 1;
+                }              
                 div.article:hover div.edit-and-delete{
                     visibility: visible;
                     opacity: 1;
@@ -638,8 +758,43 @@ div#app-wrapper{
                 width: 100%;                                            
                 div.contents{
                     display: block;
-                    grid-template-columns: repeat(2, 1fr);                                   
-                }
+                    grid-template-columns: repeat(2, 1fr);                                                       
+                    div#login-wrapper{
+                        position: fixed;                        
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-color: #fff;
+                        z-index:110;
+                        visibility: hidden;
+                        opacity: 0;
+                        transform: scale(0);
+                        div.login-close{
+                            position: absolute;
+                            top: 30px;
+                            right: 40px;                        
+                            a span{
+                                font-size: 2rem;
+                            }
+                        }
+                        div.login{
+                            position: absolute;
+                            width: 75%;
+                            height: 80vh;
+                            background-color: #f7f7f7;
+                            top: 50%;
+                            left: 50%;
+                            transform: translateY(-50%) translateX(-50%);
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            box-shadow:0px 5px 10px rgba(0,0,0,.1);
+                            border:2px solid cornflowerblue;
+                            border-radius: 5px;
+                        }
+                    }                    
+                }                          
             }
         }        
     }
@@ -664,8 +819,43 @@ div#app-wrapper{
                 min-height: 100%;
                 margin:auto;                                      
                 div.contents{
+                    position:relative;
                     display: block;
-                    grid-template-columns: repeat(2, 1fr);                                                  
+                    grid-template-columns: repeat(2, 1fr);    
+                    div#login-wrapper{
+                        position: fixed;                        
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-color: #fff;
+                        z-index:110;
+                        visibility: hidden;
+                        opacity: 0;
+                        transform: scale(0);
+                        div.login-close{
+                            position: absolute;
+                            top: 10px;
+                            right: 10px;                        
+                            a span{
+                                font-size: 2rem;
+                            }
+                        }
+                        div.login{
+                            position: absolute;
+                            width: 95%;                            
+                            background-color: #f7f7f7;
+                            top: 50%;
+                            left: 50%;
+                            transform: translateY(-50%) translateX(-50%);
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            box-shadow:0px 5px 10px rgba(0,0,0,.1);
+                            border:2px solid cornflowerblue;
+                            border-radius: 5px;
+                        }
+                    }                                                                                                   
                     div.article{                                              
                         div.mobile-edit-and-delete{
                             display:block;

@@ -80,7 +80,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }            
         })
     })
-
     const articleText =  document.querySelectorAll('#article-body-text');
     articleText.forEach(txt => {       
         if (/^[a-zA-Z]+$/.test(txt.innerHTML)) {                                    
@@ -89,6 +88,18 @@ document.addEventListener('DOMContentLoaded', () => {
             // txt.style.fontFamily = "Urdu Nastaliq Unicodef"
             console.log("urdu")
           }
+    })
+    document.querySelector('nav#navbar a.mobile-login-btn').addEventListener('click', (e) => {
+        e.preventDefault();
+        document.querySelector('div#login-wrapper').classList.add('toggle-login-wrapper');  
+    })
+    document.querySelector('nav#navbar a.mobile-register-btn').addEventListener('click', (e) => {
+        e.preventDefault();
+        document.querySelector('div#login-wrapper').classList.add('toggle-login-wrapper');  
+    })
+    document.querySelector('div.login-close a').addEventListener('click', (e) => {
+        e.preventDefault();
+        document.querySelector('div#login-wrapper').classList.remove('toggle-login-wrapper');
     })
 
 })

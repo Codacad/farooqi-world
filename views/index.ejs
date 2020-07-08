@@ -1,6 +1,41 @@
 <title><%=title%></title>
 <div class="articles-section">
     <div class="contents">
+        <div id="login-wrapper">
+            <div class="login-close">
+                <a href=""><span class="material-icons">close</span></a>
+            </div>
+            <div class="login">
+                <div class="login-contents">
+                    <div class="login-heading">
+                        <h1>Login</h1>
+                    </div>
+                    <form action="/login" method="POST">                
+                            <div class="form-contents">                    
+                            <div class="email">
+                                <span class="user-icon">
+                                    <span><i class="fas fa-user"></i></span>
+                                </span>
+                                <input type="email" name="email" placeholder="E-Mail" id="email"/>
+                            </div>
+                            <div class="password">
+                                <span class="password-icon">
+                                    <span><i class="fas fa-unlock"></i></span>
+                                </span>
+                                <input type="password" name="password" placeholder="Password" id="password"/>
+                            </div>                
+                            <div class="login-btn">
+                                <button type="submit">Login</button>
+                            </div>
+                            <span class="new-to-website">
+                                <span class="text">New to FW</span>
+                                <a href="/register">Create an Account...</a>
+                            </span>
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </div>
         <% if (typeof articles != "undefined") { %>
             <% articles.forEach(article => { %>
                 <div class="article" id="article">
