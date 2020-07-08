@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const hamburgerIcon = document.querySelector('div.nav-left-menus a.hamburger-icon');
+    const registerForm = document.querySelector('div.register');
+    const loginForm = document.querySelector('div.login');
     hamburgerIcon.addEventListener('click', function(e){
         e.preventDefault()
         document.querySelector('div#sidenav-wrapper').classList.add('sidenav-wrapper-toggle')
@@ -91,15 +93,37 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     document.querySelector('nav#navbar a.mobile-login-btn').addEventListener('click', (e) => {
         e.preventDefault();
-        document.querySelector('div#login-wrapper').classList.add('toggle-login-wrapper');  
+        document.querySelector('div#login-register-wrapper').classList.add('toggle-login-register-wrapper');  
+        loginForm.style.zIndex = 1;
+        registerForm.style.zIndex = 0;
     })
     document.querySelector('nav#navbar a.mobile-register-btn').addEventListener('click', (e) => {
         e.preventDefault();
-        document.querySelector('div#login-wrapper').classList.add('toggle-login-wrapper');  
+        document.querySelector('div#login-register-wrapper').classList.add('toggle-login-register-wrapper');  
+        loginForm.style.zIndex = 0;
+        registerForm.style.zIndex = 1;
     })
     document.querySelector('div.login-close a').addEventListener('click', (e) => {
         e.preventDefault();
-        document.querySelector('div#login-wrapper').classList.remove('toggle-login-wrapper');
+        document.querySelector('div#login-register-wrapper').classList.remove('toggle-login-register-wrapper');           
+    })
+  
+    document.querySelector('a.switch-to-login').addEventListener('click', (e) => {
+        e.preventDefault()        
+        loginForm.style.zIndex = 1;
+        registerForm.style.zIndex = 0;
+    })
+    document.querySelector('a.switch-to-register').addEventListener('click', (e) => {
+        e.preventDefault()                
+        loginForm.style.zIndex = 0;
+        registerForm.style.zIndex = 1;
+        registerForm.classList.add('')
+    })
+
+    document.querySelector('div.register-btn button').addEventListener('click', () => {
+        if(!document.querySelector('div#login-register-wrapper').classList.contains('toggle-login-register-wrapper')){
+            document.querySelector('div#login-register-wrapper').classList.add('toggle-login-register-wrapper');  
+        }        
     })
 
 })

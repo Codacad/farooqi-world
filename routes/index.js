@@ -5,7 +5,11 @@ const User = require('../models/user');
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
 
-Router.get('/', (req, res) => {             
+Router.get('/', (req, res) => {   
+    req.flash('allFieldRequired', "You must fill all fields.")          
+    req.flash('passwordLength', "Password must contain at least 6 characters.")          
+    req.flash('password', "Please enter the password.")          
+    console.log(req.flash())    
     Article.find({}, (err, articles) => {    
         if(err){
             res.status(404).send(err)
@@ -84,7 +88,8 @@ Router.get('/login', (req, res) => {
     }
 })
 Router.post('/login', passport.authenticate('local', {
-    failureRedirect:"/login",
+    failureFlash:true,
+    failureRedirect:"/",
     successRedirect:"/"
 }))
 
@@ -98,7 +103,8 @@ Router.get('/register', (req, res) => {
         res.redirect('/');
     }
 })
-Router.post('/register', (req, res) => {
+
+Router.post('/', (req, res) => {
     const {name, email, password} = req.body;
     const newUser = new User(req.body);
     const message = {}
@@ -112,8 +118,7 @@ Router.post('/register', (req, res) => {
         message.password = "Password Required..."
     }else if(password.length < 6){
         message.passwordLength = "Minimum 6 characters..."
-    }
-    
+    }        
      if(Object.keys(message).length === 0){
          message.success = "Registered Successfully..."
         const salt = 10;
@@ -126,20 +131,12 @@ Router.post('/register', (req, res) => {
                     if(error){
                         return error
                     }               
-                    res.render('register', {
-                        title:"Register",
-                        message,
-                        AuthUser:req.user
-                    })                  
+                    res.redirect('/')                                    
                 })
             }
         });        
      }else{
-         res.render('register', {
-             title:"Register",
-             message,
-             AuthUser:req.user
-         })
+         
      }              
 })
 
