@@ -15,6 +15,10 @@ body.overflow-hidden {
   overflow: hidden;
 }
 
+a:active {
+  background-color: transparent;
+}
+
 div#app-wrapper nav#navbar {
   position: fixed;
   top: 0;
@@ -827,10 +831,16 @@ div#app-wrapper div#container div.articles-section div.contents div.article div.
     min-height: 100%;
     margin: auto;
   }
+  div#app-wrapper div#container div.articles-section div.edit-and-delete {
+    display: none;
+  }
   div#app-wrapper div#container div.articles-section div.contents {
     display: block;
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
+  }
+  div#app-wrapper div#container div.articles-section div.article-footer div.footer-contents div.comment-and-like ul li ul {
+    display: none;
   }
 }
 /*# sourceMappingURL=main.css.map */

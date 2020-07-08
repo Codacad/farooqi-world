@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
     const hamburgerIcon = document.querySelector('div.nav-left-menus a.hamburger-icon');
-    
     hamburgerIcon.addEventListener('click', function(e){
         e.preventDefault()
         document.querySelector('div#sidenav-wrapper').classList.add('sidenav-wrapper-toggle')
@@ -44,6 +43,22 @@ document.addEventListener('DOMContentLoaded', () => {
             document.querySelector('div#dropdown-wrapper').classList.remove('toggle-dropdown')
         }
     }
+
+    document.querySelector('a.edit-icon').addEventListener('click', (e) => {
+        e.preventDefault()
+    })
+    document.querySelector('a.delete-icon').addEventListener('click', (e) => {
+        e.preventDefault()
+    })
+    document.querySelector('a.comment-icon').addEventListener('click', (e) => {
+        e.preventDefault()
+    })
+    document.querySelector('a.like-icon').addEventListener('click', (e) => {
+        e.preventDefault()
+    })
+    document.querySelector('a.share-icon').addEventListener('click', (e) => {
+        e.preventDefault()
+    })
 
     const articleText =  document.querySelectorAll('#article-body-text');
     articleText.forEach(txt => {       
