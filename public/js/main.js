@@ -43,21 +43,42 @@ document.addEventListener('DOMContentLoaded', () => {
             document.querySelector('div#dropdown-wrapper').classList.remove('toggle-dropdown')
         }
     }
-
-    document.querySelector('a.edit-icon').addEventListener('click', (e) => {
-        e.preventDefault()
-    })
-    document.querySelector('a.delete-icon').addEventListener('click', (e) => {
-        e.preventDefault()
-    })
-    document.querySelector('a.comment-icon').addEventListener('click', (e) => {
-        e.preventDefault()
-    })
-    document.querySelector('a.like-icon').addEventListener('click', (e) => {
-        e.preventDefault()
-    })
-    document.querySelector('a.share-icon').addEventListener('click', (e) => {
-        e.preventDefault()
+    document.querySelectorAll('a.edit-icon').forEach(editIcon => {
+        editIcon.addEventListener('click', (e) => {
+            e.preventDefault()
+        })
+    })     
+    document.querySelectorAll('a.delete-icon').forEach(deleteIcon => {
+        deleteIcon.addEventListener('click', (e) => {
+            e.preventDefault()
+        })
+    })     
+    document.querySelectorAll('a.comment-icon').forEach(commentIcon => {
+        commentIcon.addEventListener('click', (e) => {
+            e.preventDefault()
+        })
+    })     
+    document.querySelectorAll('a.like-icon').forEach(likeIcon => {
+        likeIcon.addEventListener('click', (e) => {
+            e.preventDefault()
+        })
+    })     
+    document.querySelectorAll('a.share-icon').forEach(shareIcon => {
+        shareIcon.addEventListener('click', (e) => {
+            e.preventDefault()
+        })
+    })     
+    const ellipseIcon = document.querySelectorAll('a.ellipse-icon');
+    ellipseIcon.forEach(ellipse => {
+        ellipse.addEventListener('click', (e) => {
+            e.preventDefault();
+            trueOrFalse = !trueOrFalse;        
+            if(trueOrFalse){
+                ellipse.nextElementSibling.classList.add('edit-and-delete-dropdown-toggle')
+            }else{
+                ellipse.nextElementSibling.classList.remove('edit-and-delete-dropdown-toggle')
+            }            
+        })
     })
 
     const articleText =  document.querySelectorAll('#article-body-text');

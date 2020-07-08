@@ -4,6 +4,21 @@
         <% if (typeof articles != "undefined") { %>
             <% articles.forEach(article => { %>
                 <div class="article" id="article">
+                    <div id="mobileEditAndDeleteWrapper">
+                        <div class="mobile-edit-and-delete">
+                            <ul>
+                                <li>
+                                    <a href="" class="ellipse-icon"><span><i class="fas fa-ellipsis-h"></i></span></a>
+                                   
+                                    <ul class="edit-and-delete-dropdown">
+                                        <li><a href=""><span><span>Edit</span></span></a></li>
+                                        <li><a href=""><span><span>Delete</span></span></a></li>
+                                    </ul>
+                                
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                     <div class="edit-and-delete">
                         <ul>
                             <li>

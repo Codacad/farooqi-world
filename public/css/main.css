@@ -489,6 +489,10 @@ div#app-wrapper div#container div.articles-section div.contents div.article {
   cursor: default;
 }
 
+div#app-wrapper div#container div.articles-section div.contents div.article div.mobile-edit-and-delete {
+  display: none;
+}
+
 div#app-wrapper div#container div.articles-section div.contents div.article div.edit-and-delete {
   -webkit-transition: 200ms ease-in-out;
   transition: 200ms ease-in-out;
@@ -831,13 +835,82 @@ div#app-wrapper div#container div.articles-section div.contents div.article div.
     min-height: 100%;
     margin: auto;
   }
-  div#app-wrapper div#container div.articles-section div.edit-and-delete {
-    display: none;
-  }
   div#app-wrapper div#container div.articles-section div.contents {
     display: block;
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
+  }
+  div#app-wrapper div#container div.articles-section div.contents div.article div.mobile-edit-and-delete {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1em;
+  }
+  div#app-wrapper div#container div.articles-section div.contents div.article div.mobile-edit-and-delete ul li {
+    list-style: none;
+    position: relative;
+  }
+  div#app-wrapper div#container div.articles-section div.contents div.article div.mobile-edit-and-delete ul li a.ellipse-icon {
+    color: rgba(0, 0, 0, 0.6);
+    position: relative;
+    z-index: 1;
+  }
+  div#app-wrapper div#container div.articles-section div.contents div.article div.mobile-edit-and-delete ul li ul.edit-and-delete-dropdown::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    top: -5px;
+    right: 15px;
+    background-color: #f7f7f7;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  div#app-wrapper div#container div.articles-section div.contents div.article div.mobile-edit-and-delete ul li ul.edit-and-delete-dropdown {
+    position: absolute;
+    background-color: #f7f7f7;
+    top: 20px;
+    right: -10px;
+    width: 100px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    -webkit-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    visibility: hidden;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transition: 300ms ease-in-out;
+    transition: 300ms ease-in-out;
+  }
+  div#app-wrapper div#container div.articles-section div.contents div.article div.mobile-edit-and-delete ul li ul.edit-and-delete-dropdown li a {
+    display: block;
+    line-height: 1em;
+    padding: .5em;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.6);
+  }
+  div#app-wrapper div#container div.articles-section div.contents div.article div.mobile-edit-and-delete ul li ul.edit-and-delete-dropdown li a > span {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  div#app-wrapper div#container div.articles-section div.contents div.article div.mobile-edit-and-delete ul li ul.edit-and-delete-dropdown li a:hover {
+    background-color: rgba(0, 0, 0, 0.01);
+  }
+  div#app-wrapper div#container div.articles-section div.contents div.article div.mobile-edit-and-delete ul li ul.edit-and-delete-dropdown.edit-and-delete-dropdown-toggle {
+    visibility: visible;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  div#app-wrapper div#container div.articles-section div.contents div.article div.edit-and-delete {
+    display: none;
   }
   div#app-wrapper div#container div.articles-section div.article-footer div.footer-contents div.comment-and-like ul li ul {
     display: none;
