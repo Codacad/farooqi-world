@@ -45,11 +45,48 @@ div#app-wrapper{
             }                       
         }
         div.nav-right-menus{
-            div.buttons{
+            div.buttons{                
                 display: flex;
                 justify-content: flex-end;
+                align-items: center;
                 padding: 0 1em;
                 margin-right: 20px;
+                div.search{
+                    display: flex;               
+                    justify-content: flex-end;
+                    align-items: center;
+                    background-color: silver;
+                    width: 100%;
+                    height: 40px;     
+                    border-radius: 4px;                                                      
+                    input{
+                        transition: 200ms cubic-bezier(0.95, 0.05, 0.795, 0.035);
+                        border: none;
+                        outline: none;
+                        padding: .5em 1em;
+                        width: 100%;                    
+                        height: 100%;
+                        background-color: silver;
+                        border-radius: 4px;
+                        font-size: 18px;
+                        color:rgba(0,0,0,.6);                      
+                    }          
+                    input.collapse-search{
+                        width: 0;
+                        overflow: hidden;
+                    }      
+                    input:focus{
+                        background-color:rgba(0,0,0,.05);
+                    }    
+                    div.search-icon{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        padding:.5em;
+                        cursor: pointer;
+                       
+                    }   
+                }
                 a.login{
                     text-decoration: none;
                     display: block;
@@ -85,12 +122,12 @@ div#app-wrapper{
                             color:rgb(206, 203, 203);
                         }
                         div#dropdown-wrapper{
-                            position: relative;
-                            top: 0;
+                            position: fixed;
+                            top: 55px;
                             left: 0;                            
                             width: 100%;                            
-                            height: 100%;
-                            background-color: rgba(0,0,0,.5);
+                            height: 100%;                        
+                            visibility: hidden;                        
                             ul::after{
                                 content: "";
                                 position: absolute;
@@ -110,8 +147,8 @@ div#app-wrapper{
                                 list-style: none;
                                 display: block;
                                 position: absolute;                     
-                                top: 0px;       
-                                left: -160px;    
+                                top: 0px;     
+                                right: 10px;                                    
                                 width: 200px;                                   
                                 border: 1px solid rgba(0,0,0,.1);
                                 background-color: #fff;
@@ -198,7 +235,10 @@ div#app-wrapper{
                                 transform: scale(1);
                                 visibility: visible;                        
                             }
-                        }                      
+                        }  
+                        div#dropdown-wrapper.toggle-dropdown{
+                            visibility: visible;
+                        }                    
                     }
                   
                 }
@@ -241,6 +281,43 @@ div#app-wrapper{
             }        
             div.sidenav-contents{
                 padding: 1em;
+                div.search{
+                    display: flex;               
+                    justify-content: flex-end;
+                    align-items: center;
+                    background-color: silver;
+                    width: 100%;
+                    height: 40px;     
+                    border-radius: 4px;  
+                    margin-bottom: 20px;                                                    
+                    input{
+                        border: none;
+                        outline: none;
+                        padding: .5em 1em;
+                        width: 100%;                    
+                        height: 100%;
+                        background-color: silver;
+                        border-radius: 4px;
+                        font-size: 18px;
+                        color:rgba(0,0,0,.6);   
+                        transition: 200ms cubic-bezier(0.95, 0.05, 0.795, 0.035);                   
+                    }          
+                    input.collapse-search{
+                        width: 0;
+                        overflow: hidden;
+                    }    
+                    input:focus{
+                        background-color:rgba(0,0,0,.05);
+                    }   
+                    div.search-icon{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        padding:.5em;
+                        cursor: pointer;
+                       
+                    }   
+                }
                 ul{
                     list-style: none;
                     width: 100%;
@@ -564,6 +641,9 @@ div#app-wrapper{
         nav#navbar{
             div.nav-right-menus{
                 div.buttons{
+                    div.search{
+                        display: none;                                    
+                    }
                     a.login{
                         display: none;
                     }

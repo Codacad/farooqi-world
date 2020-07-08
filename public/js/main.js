@@ -26,17 +26,23 @@ document.addEventListener('DOMContentLoaded', () => {
         
         if(trueOrFalse){
             document.querySelector('ul.user-menus li ul').classList.add('toggle-user-menus')
+            document.querySelector('div#dropdown-wrapper').classList.add('toggle-dropdown')
         }else{
             document.querySelector('ul.user-menus li ul').classList.remove('toggle-user-menus')
+            document.querySelector('div#dropdown-wrapper').classList.remove('toggle-dropdown')
         }
     })
 
     window.onclick = (e) => {
         if(e.target.id == "sidenav-wrapper"){
-            document.querySelector('div#sidenav-wrapper').classList.remove('sidenav-wrapper-toggle')
+            document.querySelector('div#sidenav-wrapper').classList.remove('sidenav-wrapper-toggle');
             document.querySelector('nav.sidenav').classList.remove('sidenav-toggle');
             document.querySelector('body').classList.remove("overflow-hidden");
         }        
+        if(e.target.id == 'dropdown-wrapper'){
+            document.querySelector('ul.user-menus li ul').classList.remove('toggle-user-menus')
+            document.querySelector('div#dropdown-wrapper').classList.remove('toggle-dropdown')
+        }
     }
 
     const articleText =  document.querySelectorAll('#article-body-text');

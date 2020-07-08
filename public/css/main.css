@@ -60,8 +60,64 @@ div#app-wrapper nav#navbar div.nav-right-menus div.buttons {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 0 1em;
   margin-right: 20px;
+}
+
+div#app-wrapper nav#navbar div.nav-right-menus div.buttons div.search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: silver;
+  width: 100%;
+  height: 40px;
+  border-radius: 4px;
+}
+
+div#app-wrapper nav#navbar div.nav-right-menus div.buttons div.search input {
+  -webkit-transition: 200ms cubic-bezier(0.95, 0.05, 0.795, 0.035);
+  transition: 200ms cubic-bezier(0.95, 0.05, 0.795, 0.035);
+  border: none;
+  outline: none;
+  padding: .5em 1em;
+  width: 100%;
+  height: 100%;
+  background-color: silver;
+  border-radius: 4px;
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+div#app-wrapper nav#navbar div.nav-right-menus div.buttons div.search input.collapse-search {
+  width: 0;
+  overflow: hidden;
+}
+
+div#app-wrapper nav#navbar div.nav-right-menus div.buttons div.search input:focus {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+div#app-wrapper nav#navbar div.nav-right-menus div.buttons div.search div.search-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: .5em;
+  cursor: pointer;
 }
 
 div#app-wrapper nav#navbar div.nav-right-menus div.buttons a.login {
@@ -108,12 +164,12 @@ div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus li a.ca
 }
 
 div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus li div#dropdown-wrapper {
-  position: relative;
-  top: 0;
+  position: fixed;
+  top: 55px;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  visibility: hidden;
 }
 
 div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus li div#dropdown-wrapper ul::after {
@@ -139,7 +195,7 @@ div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus li div#
   display: block;
   position: absolute;
   top: 0px;
-  left: -160px;
+  right: 10px;
   width: 200px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: #fff;
@@ -258,6 +314,10 @@ div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus li div#
   visibility: visible;
 }
 
+div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus li div#dropdown-wrapper.toggle-dropdown {
+  visibility: visible;
+}
+
 div#app-wrapper div#sidenav-wrapper {
   position: fixed;
   top: 0;
@@ -305,6 +365,60 @@ div#app-wrapper div#sidenav-wrapper nav.sidenav div.header a.close {
 
 div#app-wrapper div#sidenav-wrapper nav.sidenav div.sidenav-contents {
   padding: 1em;
+}
+
+div#app-wrapper div#sidenav-wrapper nav.sidenav div.sidenav-contents div.search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: silver;
+  width: 100%;
+  height: 40px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+div#app-wrapper div#sidenav-wrapper nav.sidenav div.sidenav-contents div.search input {
+  border: none;
+  outline: none;
+  padding: .5em 1em;
+  width: 100%;
+  height: 100%;
+  background-color: silver;
+  border-radius: 4px;
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.6);
+  -webkit-transition: 200ms cubic-bezier(0.95, 0.05, 0.795, 0.035);
+  transition: 200ms cubic-bezier(0.95, 0.05, 0.795, 0.035);
+}
+
+div#app-wrapper div#sidenav-wrapper nav.sidenav div.sidenav-contents div.search input.collapse-search {
+  width: 0;
+  overflow: hidden;
+}
+
+div#app-wrapper div#sidenav-wrapper nav.sidenav div.sidenav-contents div.search input:focus {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+div#app-wrapper div#sidenav-wrapper nav.sidenav div.sidenav-contents div.search div.search-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: .5em;
+  cursor: pointer;
 }
 
 div#app-wrapper div#sidenav-wrapper nav.sidenav div.sidenav-contents ul {
@@ -699,6 +813,9 @@ div#app-wrapper div#container div.articles-section div.contents div.article div.
 }
 
 @media (max-width: 520px) {
+  div#app-wrapper nav#navbar div.nav-right-menus div.buttons div.search {
+    display: none;
+  }
   div#app-wrapper nav#navbar div.nav-right-menus div.buttons a.login {
     display: none;
   }

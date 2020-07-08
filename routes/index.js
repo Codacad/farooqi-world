@@ -6,8 +6,7 @@ const bcrypt = require('bcryptjs');
 const passport = require('passport');
 
 Router.get('/', (req, res) => {             
-    Article.find({}, (err, articles) => {
-        console.log(articles)
+    Article.find({}, (err, articles) => {    
         if(err){
             res.status(404).send(err)
         }else{

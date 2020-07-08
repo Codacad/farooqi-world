@@ -6,10 +6,14 @@
     <div class="nav-right-menus">            
         <div class="buttons">            
             <% if (typeof AuthUser == "undefined") { %>
-            <a href="/login" class="login" id=<%=title == "Login" ? "hide-login" : ""%>> <span class="login-icon"><i class="fas fa-sign-in-alt"></i></span> <span>Login</span></a>                            
-            <% } %>                
-            
-                                                                             
+            <!-- <a href="/login" class="login" id=<%=title == "Login" ? "hide-login" : ""%>> <span class="login-icon"><i class="fas fa-sign-in-alt"></i></span> <span>Login</span></a>                             -->
+            <% } %>                            
+            <div class="search">
+                <input type="text" placeholder="Search" class="search">
+                <div class="search-icon">
+                    <span class="material-icons">search</span>
+                </div>
+            </div>
             <ul class="user-menus">
                 <li>
                     <a href="" class="caret"><i class="fas fa-caret-down"></i></a>
