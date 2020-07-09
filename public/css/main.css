@@ -867,6 +867,9 @@ div#app-wrapper div#container div#full-article-wrapper {
   margin: 50px auto;
   border: 1px solid rgba(0, 0, 0, 0.05);
   padding: 1em;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.3);
 }
 
 div#app-wrapper div#container div#full-article-wrapper div.article div.artilce-contents div.article-header div.header-contents {
