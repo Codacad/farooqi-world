@@ -58,17 +58,17 @@ div#app-wrapper nav#navbar div.nav-left-menus a.brand-logo {
 }
 
 div#app-wrapper nav#navbar div.nav-right-menus div.buttons {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0 1em;
-  margin-right: 20px;
+  margin-right: 10px;
 }
 
 div#app-wrapper nav#navbar div.nav-right-menus div.buttons div.search {
@@ -85,6 +85,7 @@ div#app-wrapper nav#navbar div.nav-right-menus div.buttons div.search {
   width: 100%;
   height: 40px;
   border-radius: 4px;
+  margin-right: 20px;
 }
 
 div#app-wrapper nav#navbar div.nav-right-menus div.buttons div.search input {
@@ -149,6 +150,50 @@ div#app-wrapper nav#navbar div.nav-right-menus div.buttons a.login:hover {
 
 div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus {
   list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 10px;
+  justify-self: end;
+}
+
+div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus li.user a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 40px;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  color: silver;
+  text-decoration: none;
+  margin-right: 5px;
+  padding: 0em .5em;
+  border-radius: 4px;
+}
+
+div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus li.user a img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  background-color: silver;
+  border-radius: 50%;
+}
+
+div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus li.user a a {
+  text-decoration: none;
+  color: silver;
+}
+
+div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus li.user a:hover {
+  background-color: rgba(247, 247, 247, 0.173);
 }
 
 div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus li {
@@ -160,7 +205,6 @@ div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus li a.ca
   display: block;
   color: silver;
   font-size: 22px;
-  margin-left: 20px;
 }
 
 div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus li a.caret:hover {
@@ -183,7 +227,7 @@ div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus li div#
   height: 10px;
   display: block;
   top: -5px;
-  right: 25px;
+  right: 10px;
   background-color: #fff;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
@@ -206,6 +250,10 @@ div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus li div#
   border-radius: 3px;
   -webkit-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
           box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus li div#dropdown-wrapper ul li.user {
+  display: none;
 }
 
 div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus li div#dropdown-wrapper ul li.login-register {
@@ -1410,7 +1458,36 @@ div#app-wrapper div#container div#register-wrapper div.register div.contents for
   color: rgba(0, 0, 0, 0.6);
 }
 
-@media (max-width: 800px) {
+@media (max-width: 830px) {
+  div#app-wrapper nav#navbar div.nav-right-menus div.buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  div#app-wrapper nav#navbar div.nav-right-menus div.buttons div.search {
+    display: none;
+  }
+  div#app-wrapper nav#navbar div.nav-right-menus div.buttons a.login {
+    display: none;
+  }
+  div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul li.user {
+    display: none;
+  }
+  div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus li div#dropdown-wrapper ul li.user {
+    display: block;
+    position: relative;
+    top: 20px;
+  }
+  div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus li div#dropdown-wrapper ul li.user a {
+    margin: 10px 0px;
+  }
+  div#app-wrapper nav#navbar div.nav-right-menus div.buttons ul.user-menus li div#dropdown-wrapper ul li.user a img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    background-color: silver;
+    border-radius: 50%;
+  }
   div#app-wrapper div#container {
     padding: 1em;
   }
@@ -1470,9 +1547,6 @@ div#app-wrapper div#container div#register-wrapper div.register div.contents for
 }
 
 @media (max-width: 520px) {
-  div#app-wrapper nav#navbar div.nav-right-menus div.buttons div.search {
-    display: none;
-  }
   div#app-wrapper nav#navbar div.nav-right-menus div.buttons a.login {
     display: none;
   }

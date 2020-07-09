@@ -50,11 +50,11 @@ div#app-wrapper{
         }
         div.nav-right-menus{
             div.buttons{                
-                display: flex;
+                display: grid;                
+                grid-template-columns: 1fr 1fr;
                 justify-content: flex-end;
-                align-items: center;
-                padding: 0 1em;
-                margin-right: 20px;
+                align-items: center;            
+                margin-right: 10px;
                 div.search{
                     display: flex;               
                     justify-content: flex-end;
@@ -62,7 +62,8 @@ div#app-wrapper{
                     background-color: silver;
                     width: 100%;
                     height: 40px;     
-                    border-radius: 4px;                                                      
+                    border-radius: 4px;  
+                    margin-right: 20px;                                                    
                     input{
                         transition: 200ms cubic-bezier(0.95, 0.05, 0.795, 0.035);
                         border: none;
@@ -112,7 +113,40 @@ div#app-wrapper{
                     background-color:rgb(206, 203, 203);                    
                 }
                 ul.user-menus{
-                    list-style: none;                    
+                    list-style: none;  
+                    display: flex;                  
+                    margin-right: 10px;
+                    justify-self: end;
+                    li.user{                        
+                        a{
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            height: 40px;
+                            position: relative;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            color: silver;
+                            text-decoration: none;
+                            margin-right: 5px;
+                            padding: 0em .5em;
+                            border-radius: 4px;
+                            img{
+                                width: 30px;
+                                height: 30px;
+                                margin-right: 10px;
+                                background-color: silver;
+                                border-radius: 50%;
+                            }
+                            a{
+                                text-decoration: none;
+                                color: silver;
+                            }
+                        }
+                        a:hover{
+                            background-color:rgba(247, 247, 247, 0.173);
+                        }
+                    }                    
                     li{
                         position: relative;
                         margin-left: 10px;
@@ -120,7 +154,6 @@ div#app-wrapper{
                             display: block;
                             color: silver;
                             font-size: 22px;                                
-                            margin-left: 20px;
                         }
                         a.caret:hover{
                             color:rgb(206, 203, 203);
@@ -139,7 +172,7 @@ div#app-wrapper{
                                 height: 10px;
                                 display: block;
                                 top: -5px;
-                                right: 25px;
+                                right: 10px;
                                 background-color: #fff;
                                 transform: rotate(45deg);                            
                             }
@@ -158,6 +191,9 @@ div#app-wrapper{
                                 background-color: #fff;
                                 border-radius: 3px;
                                 box-shadow: 0px 5px 10px rgba(0,0,0,.1); 
+                                li.user{
+                                    display: none;
+                                }
                                 li.login-register{
                                     display: flex;
                                     a.mobile-login-btn{
@@ -1082,7 +1118,41 @@ div#app-wrapper{
 
 
     // Media Queries
-    @media (max-width:800px){
+    @media (max-width:830px){
+        nav#navbar{
+            div.nav-right-menus{
+                div.buttons{
+                    display: flex;
+                    div.search{
+                        display: none;                                    
+                    }
+                    a.login{
+                        display: none;
+                    }
+                    ul{
+                        li.user{
+                            display: none;
+                        }
+                    }
+                    ul.user-menus li div#dropdown-wrapper ul li.user{                                                
+                        display: block;
+                        // border-bottom: 1px solid rgba(0,0,0,.1);
+                        position: relative;                        
+                        top: 20px;
+                        a{   
+                            margin: 10px 0px;                                                 
+                            img{
+                                width: 30px;
+                                height: 30px;
+                                margin-right: 10px;
+                                background-color: silver;
+                                border-radius: 50%;                                
+                            }                            
+                        }
+                    }
+                }
+            }
+        }
         div#container{        
             padding: 1em;                       
             div.articles-section{
@@ -1134,10 +1204,7 @@ div#app-wrapper{
     @media (max-width:520px){ 
         nav#navbar{
             div.nav-right-menus{
-                div.buttons{
-                    div.search{
-                        display: none;                                    
-                    }
+                div.buttons{                   
                     a.login{
                         display: none;
                     }
@@ -1271,7 +1338,6 @@ div#app-wrapper{
                         }         
                     }
                 }
-                
                 div.article-footer{
                    div.footer-contents{
                     div.comment-and-like{
