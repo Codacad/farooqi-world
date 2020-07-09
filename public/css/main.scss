@@ -396,241 +396,14 @@ div#app-wrapper{
         top:55px;                
         background-color: #f7f7f7; 
         div.articles-section{
-            width: 80%;  
-            min-height: 100vh;
+            width: 80%;              
             margin:auto;                               
             div.contents{
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);   
-                    //  Login and Register
                 div#login-register-wrapper{
-                    position: fixed;                        
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    background-color: #fff;
-                    z-index:110;
-                    visibility: hidden;
-                    opacity: 0;
-                    transform: scale(0);
                     display: none;
-                    div.login-close{
-                        position: absolute;
-                        top: 30px;
-                        right: 40px;                        
-                        a span{
-                            font-size: 2rem;
-                        }
-                    }
-                    div.register.switch-register{                        
-                        visibility: visible;
-                        opacity: 1;
-                        transform: scale(1);
-                    }
-                    div.login.switch-login{              
-                        visibility: visible;
-                        opacity: 1;
-                        transform: scale(1);
-                    }
-                    div.register{
-                        position: absolute;
-                        width: 500px;
-                        height: 80vh;
-                        background-color: #f7f7f7;
-                        top: 50%;
-                        left: 50%;
-                        transform: translateY(-50%) translateX(-50%);                    
-                        box-shadow:0px 5px 10px rgba(0,0,0,.1);
-                        border:2px solid cornflowerblue;
-                        border-radius: 5px;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;                        
-                        div.contents{
-                            display: block;
-                            div.register-header{
-                                text-align: center;
-                                padding:1em 0em;
-                                text-transform:uppercase;
-                                color: silver;
-                                margin-bottom:20px;
-                            }
-                            form{
-                                div.form-contents{
-                                   div.name, div.email, div.password{
-                                        border: 1px solid rgba(0,0,0,.1);
-                                        margin-bottom: 10px;
-                                        width: 100%;
-                                        height: 40px;
-                                        display: flex;                                    
-                                        justify-content: center;
-                                        background-color: rgba(0,0,0,.06);
-                                        align-items: center;
-                                        border-radius: 5px;
-                                        box-shadow: inset 0px 0px 10px rgba(0,0,0,.1);
-                                        span{
-                                            display: flex;
-                                            justify-content: center;
-                                            align-items: center;
-                                            padding:0 .5em;
-                                            color: rgba(0,0,0,.6);
-                                        }
-                                        input{
-                                            border: none;
-                                            width: 100%;
-                                            height:100%;
-                                            outline: none;
-                                            background-color: transparent;
-                                            padding: 0px .5em;
-                                            font-size: 18px;
-                                            color: rgba(0,0,0,.6);
-                                        }                                        
-                                    }                                    
-                                }
-                                div.register-btn{
-                                    width:100%;
-                                    button{
-                                        display:block;
-                                        width:100%;
-                                        border:none;
-                                        padding:.5em 0em;
-                                        text-align: center;
-                                        outline:none;
-                                        background:#3b5998;
-                                        color:#fff;
-                                        font-size: 18px;                                        
-                                        border-radius: 3px;
-                                        box-shadow: 0px 0px 1px rgba(0,0,0,.6);
-                                        margin: 20px 0px;
-                                        cursor: pointer;
-                                    }
-                                    button:hover{
-                                        box-shadow: 0px 0px 10px rgba(0,0,0,.1);
-                                        background-color: #3b5898dc;
-                                    }
-                                }
-                                span.already-registered{
-                                    display:flex;
-                                    justify-content: center;    
-                                    align-items: center;                                                                                                    
-                                    a{
-                                        color: rgba(0,0,0,.4);
-                                        text-decoration: none;
-                                        font-weight:600;
-                                        margin-left:5px;
-                                        display: block;                                    
-                                    }
-                                    a:hover{
-                                        text-decoration:underline;
-                                        color: rgba(0,0,0,.6);
-                                    }
-                                }
-                            }
-                        }
-                    }    
-                    div.login{
-                        position: absolute;
-                        width: 500px;
-                        height: 80vh;
-                        background-color: #f7f7f7;
-                        top: 50%;
-                        left: 50%;
-                        transform: translateY(-50%) translateX(-50%);
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        box-shadow:0px 5px 10px rgba(0,0,0,.1);
-                        border:2px solid cornflowerblue;
-                        border-radius: 5px;
-                        z-index:0;
-                        div.login-contents{
-                            div.login-heading{
-                                text-align: center;
-                                padding:1em 0em;
-                                text-transform:uppercase;
-                                color: silver;
-                                margin-bottom:20px;
-                            }
-                            form{
-                                div.form-contents{
-                                    div.email, div.password{
-                                        border: 1px solid rgba(0,0,0,.1);
-                                        margin-bottom: 10px;
-                                        width: 100%;
-                                        height: 40px;
-                                        display: flex;                                    
-                                        justify-content: center;
-                                        background-color: rgba(0,0,0,.06);
-                                        align-items: center;
-                                        border-radius: 5px;
-                                        box-shadow: inset 0px 0px 10px rgba(0,0,0,.1);
-                                        span{
-                                            display: flex;
-                                            justify-content: center;
-                                            align-items: center;
-                                            padding:0 .5em;
-                                            color: rgba(0,0,0,.6);
-                                        }
-                                        input{
-                                            border: none;
-                                            width: 100%;
-                                            height:100%;
-                                            outline: none;
-                                            background-color: transparent;
-                                            padding: 0px .5em;
-                                            font-size: 18px;
-                                            color: rgba(0,0,0,.6);
-                                        }                                        
-                                    }                                    
-                                }
-                                div.login-btn{
-                                    width:100%;
-                                    button{
-                                        display:block;
-                                        width:100%;
-                                        border:none;
-                                        padding:.5em 0em;
-                                        text-align: center;
-                                        outline:none;
-                                        background:#3b5998;
-                                        color:#fff;
-                                        font-size: 18px;                                        
-                                        border-radius: 3px;
-                                        box-shadow: 0px 0px 1px rgba(0,0,0,.6);
-                                        margin: 20px 0px;
-                                        cursor: pointer;
-                                    }
-                                    button:hover{
-                                        box-shadow: 0px 0px 10px rgba(0,0,0,.1);
-                                        background-color: #3b5898dc;
-                                    }
-                                }
-                                span.new-to-website{
-                                    display:flex;
-                                    justify-content: center;    
-                                    align-items: center;                                                                                                    
-                                    a{
-                                        color: rgba(0,0,0,.4);
-                                        text-decoration: none;
-                                        font-weight:600;
-                                        margin-left:5px;
-                                        display: block;                                    
-                                    }
-                                    a:hover{
-                                        text-decoration:underline;
-                                        color: rgba(0,0,0,.6);
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }                                    
-                div#login-register-wrapper.toggle-login-register-wrapper{
-                    visibility: visible;
-                    transform: scale(1);
-                    opacity: 1;
-                }              
+                }                
                 div.article:hover div.edit-and-delete{
                     visibility: visible;
                     opacity: 1;
@@ -788,7 +561,7 @@ div#app-wrapper{
                                         display: flex;
                                         list-style: none;
                                         li{
-                                            position: relative;
+                                            position: relative;                                                                                       
                                             a{                                       
                                                 display: block;                                       
                                                 padding:.5em 1em;
@@ -798,10 +571,10 @@ div#app-wrapper{
                                                 content: "";
                                                 display: block;
                                                 position: absolute;                                                
-                                                width: 10px;
-                                                height: 10px;
+                                                width: 7px;
+                                                height: 7px;
                                                 background-color: #333;                                                
-                                                top: -5px;
+                                                top: -3.5px;
                                                 left: 50%;
                                                 transform: translateX(-50%) rotate(45deg);                                                
                                             }                                             
@@ -811,16 +584,16 @@ div#app-wrapper{
                                                 transition: 200ms ease-in-out;
                                                 opacity: 0;
                                                 top: 40px;
-                                                right: -20px;                                                                                                
+                                                right: 0px;                                                                                                
                                                 box-shadow: 0px 5px 10px rgba(0,0,0,.1);
                                                 li{
-                                                    border-radius: 5px;
-                                                    width: 100px;
+                                                    border-radius: 5px;                                                    // width: 100px;
                                                     color: #f7f7f7;
                                                     text-align: center;
                                                     display: block;
                                                     background-color: #333;
-                                                    padding: .5em;                                                
+                                                    padding: .2em .5em;                                                
+                                                    font-size: 14px;
                                                 }
                                             }
                                         }
@@ -853,7 +626,7 @@ div#app-wrapper{
                                             }
                                             ul{
                                                 position: absolute;
-                                                top:-4px;
+                                                top:0px;
                                                 right: 30px;
                                                 border-radius: 4px;
                                                 border: 1px solid rgba(0,0,0,.1);
@@ -867,7 +640,7 @@ div#app-wrapper{
                                                     a{                                                        
                                                         display: flex;                                                        
                                                         align-items: center;                                                            
-                                                        padding: .5em;
+                                                        padding: .2em .5em;
                                                         text-align: left;
                                                         text-decoration: none;
                                                         font-weight: 500;
@@ -894,6 +667,76 @@ div#app-wrapper{
                     }
                 }
             }
+        }
+
+        // Create Article
+        div#create-article-wrapper{
+            width: 60%;
+            margin: 100px auto 20px auto;
+            padding: 1em;
+            border: 1px solid rgba(0,0,0,.06);
+            border-radius: 5px;      
+            div.create-article{
+                h2{
+                    font-size: 150%;
+                    color: rgba(0,0,0,.6);
+                    margin-bottom: 20px;
+                    text-align: center;
+                }
+                div.article-form{
+                    form{
+                        div.category-title{
+                            input{                                
+                                outline: none;
+                                padding: .5em;
+                                background-color: rgba(0,0,0,.02);
+                                color: rgba(0,0,0,.6);
+                                height: 40px;
+                                font-size: 18px;
+                                margin-bottom: 10px;
+                                border-radius: 5px;
+                                width: 100%;
+                                border: 1px solid rgba(0,0,0,.1);
+                            }
+                            input:focus{
+                                background-color: rgba(0,0,0,.03);
+                            }                            
+                        }
+                    }
+                    div.text-area{
+                        border-radius: 10px;
+                    }
+                    .ck-rounded-corners .ck.ck-editor__main>.ck-editor__editable, .ck.ck-editor__main>.ck-editor__editable.ck-rounded-corners{
+                        height: 250px;
+                        background-color: rgba(0,0,0,.02);
+                        color: rgba(0,0,0,.6);
+                    }
+                    .ck-rounded-corners .ck.ck-editor__main>.ck-editor__editable, .ck.ck-editor__main>.ck-editor__editable.ck-rounded-corners:focus{                        
+                        background-color: rgba(0,0,0,.03);                        
+                    }
+                    div.btn{
+                        display: flex;
+                        justify-content: flex-end;
+                        margin-top: 20px;
+                        button{
+                            display: block;
+                            width: 100px;
+                            border: none;
+                            padding: .8em;                            
+                            cursor: pointer;
+                            font-weight: 600;
+                            text-transform: uppercase;
+                            background-color: #3b5998;
+                            color: silver;
+                            border-radius: 3px;
+                            box-shadow: 0px 0px 1px rgba(0,0,0,.6);
+                        }
+                        button:hover{
+                            background-color: #3b5898c7;
+                        }
+                    }
+                }
+            }      
         }
         // Login
         div#login-wrapper{
@@ -1199,7 +1042,7 @@ div#app-wrapper{
                     }                    
                 }                          
             }            
-        }        
+        }              
     }
 
     @media (max-width:520px){ 
@@ -1213,7 +1056,14 @@ div#app-wrapper{
             }
         }
         div#container{        
-            padding: 0;                       
+            padding: 0;   
+            div#create-article-wrapper{
+                width: 90%;
+                margin: 20px auto 20px auto;
+                padding: 1em;
+                border: 1px solid rgba(0,0,0,.06);
+                border-radius: 5px;  
+              }                       
             div#login-wrapper{
                 div.login{
                     width: 95%;                    

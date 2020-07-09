@@ -514,7 +514,6 @@ div#app-wrapper div#container {
 
 div#app-wrapper div#container div.articles-section {
   width: 80%;
-  min-height: 100vh;
   margin: auto;
 }
 
@@ -526,312 +525,7 @@ div#app-wrapper div#container div.articles-section div.contents {
 }
 
 div#app-wrapper div#container div.articles-section div.contents div#login-register-wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #fff;
-  z-index: 110;
-  visibility: hidden;
-  opacity: 0;
-  -webkit-transform: scale(0);
-          transform: scale(0);
   display: none;
-}
-
-div#app-wrapper div#container div.articles-section div.contents div#login-register-wrapper div.login-close {
-  position: absolute;
-  top: 30px;
-  right: 40px;
-}
-
-div#app-wrapper div#container div.articles-section div.contents div#login-register-wrapper div.login-close a span {
-  font-size: 2rem;
-}
-
-div#app-wrapper div#container div.articles-section div.contents div#login-register-wrapper div.register.switch-register {
-  visibility: visible;
-  opacity: 1;
-  -webkit-transform: scale(1);
-          transform: scale(1);
-}
-
-div#app-wrapper div#container div.articles-section div.contents div#login-register-wrapper div.login.switch-login {
-  visibility: visible;
-  opacity: 1;
-  -webkit-transform: scale(1);
-          transform: scale(1);
-}
-
-div#app-wrapper div#container div.articles-section div.contents div#login-register-wrapper div.register {
-  position: absolute;
-  width: 500px;
-  height: 80vh;
-  background-color: #f7f7f7;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translateY(-50%) translateX(-50%);
-          transform: translateY(-50%) translateX(-50%);
-  -webkit-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
-          box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
-  border: 2px solid cornflowerblue;
-  border-radius: 5px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-div#app-wrapper div#container div.articles-section div.contents div#login-register-wrapper div.register div.contents {
-  display: block;
-}
-
-div#app-wrapper div#container div.articles-section div.contents div#login-register-wrapper div.register div.contents div.register-header {
-  text-align: center;
-  padding: 1em 0em;
-  text-transform: uppercase;
-  color: silver;
-  margin-bottom: 20px;
-}
-
-div#app-wrapper div#container div.articles-section div.contents div#login-register-wrapper div.register div.contents form div.form-contents div.name, div#app-wrapper div#container div.articles-section div.contents div#login-register-wrapper div.register div.contents form div.form-contents div.email, div#app-wrapper div#container div.articles-section div.contents div#login-register-wrapper div.register div.contents form div.form-contents div.password {
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  margin-bottom: 10px;
-  width: 100%;
-  height: 40px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  background-color: rgba(0, 0, 0, 0.06);
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border-radius: 5px;
-  -webkit-box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.1);
-          box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.1);
-}
-
-div#app-wrapper div#container div.articles-section div.contents div#login-register-wrapper div.register div.contents form div.form-contents div.name span, div#app-wrapper div#container div.articles-section div.contents div#login-register-wrapper div.register div.contents form div.form-contents div.email span, div#app-wrapper div#container div.articles-section div.contents div#login-register-wrapper div.register div.contents form div.form-contents div.password span {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 0 .5em;
-  color: rgba(0, 0, 0, 0.6);
-}
-
-div#app-wrapper div#container div.articles-section div.contents div#login-register-wrapper div.register div.contents form div.form-contents div.name input, div#app-wrapper div#container div.articles-section div.contents div#login-register-wrapper div.register div.contents form div.form-contents div.email input, div#app-wrapper div#container div.articles-section div.contents div#login-register-wrapper div.register div.contents form div.form-contents div.password input {
-  border: none;
-  width: 100%;
-  height: 100%;
-  outline: none;
-  background-color: transparent;
-  padding: 0px .5em;
-  font-size: 18px;
-  color: rgba(0, 0, 0, 0.6);
-}
-
-div#app-wrapper div#container div.articles-section div.contents div#login-register-wrapper div.register div.contents form div.register-btn {
-  width: 100%;
-}
-
-div#app-wrapper div#container div.articles-section div.contents div#login-register-wrapper div.register div.contents form div.register-btn button {
-  display: block;
-  width: 100%;
-  border: none;
-  padding: .5em 0em;
-  text-align: center;
-  outline: none;
-  background: #3b5998;
-  color: #fff;
-  font-size: 18px;
-  border-radius: 3px;
-  -webkit-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);
-          box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);
-  margin: 20px 0px;
-  cursor: pointer;
-}
-
-div#app-wrapper div#container div.articles-section div.contents div#login-register-wrapper div.register div.contents form div.register-btn button:hover {
-  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  background-color: #3b5898dc;
-}
-
-div#app-wrapper div#container div.articles-section div.contents div#login-register-wrapper div.register div.contents form span.already-registered {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-div#app-wrapper div#container div.articles-section div.contents div#login-register-wrapper div.register div.contents form span.already-registered a {
-  color: rgba(0, 0, 0, 0.4);
-  text-decoration: none;
-  font-weight: 600;
-  margin-left: 5px;
-  display: block;
-}
-
-div#app-wrapper div#container div.articles-section div.contents div#login-register-wrapper div.register div.contents form span.already-registered a:hover {
-  text-decoration: underline;
-  color: rgba(0, 0, 0, 0.6);
-}
-
-div#app-wrapper div#container div.articles-section div.contents div#login-register-wrapper div.login {
-  position: absolute;
-  width: 500px;
-  height: 80vh;
-  background-color: #f7f7f7;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translateY(-50%) translateX(-50%);
-          transform: translateY(-50%) translateX(-50%);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
-          box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
-  border: 2px solid cornflowerblue;
-  border-radius: 5px;
-  z-index: 0;
-}
-
-div#app-wrapper div#container div.articles-section div.contents div#login-register-wrapper div.login div.login-contents div.login-heading {
-  text-align: center;
-  padding: 1em 0em;
-  text-transform: uppercase;
-  color: silver;
-  margin-bottom: 20px;
-}
-
-div#app-wrapper div#container div.articles-section div.contents div#login-register-wrapper div.login div.login-contents form div.form-contents div.email, div#app-wrapper div#container div.articles-section div.contents div#login-register-wrapper div.login div.login-contents form div.form-contents div.password {
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  margin-bottom: 10px;
-  width: 100%;
-  height: 40px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  background-color: rgba(0, 0, 0, 0.06);
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border-radius: 5px;
-  -webkit-box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.1);
-          box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.1);
-}
-
-div#app-wrapper div#container div.articles-section div.contents div#login-register-wrapper div.login div.login-contents form div.form-contents div.email span, div#app-wrapper div#container div.articles-section div.contents div#login-register-wrapper div.login div.login-contents form div.form-contents div.password span {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 0 .5em;
-  color: rgba(0, 0, 0, 0.6);
-}
-
-div#app-wrapper div#container div.articles-section div.contents div#login-register-wrapper div.login div.login-contents form div.form-contents div.email input, div#app-wrapper div#container div.articles-section div.contents div#login-register-wrapper div.login div.login-contents form div.form-contents div.password input {
-  border: none;
-  width: 100%;
-  height: 100%;
-  outline: none;
-  background-color: transparent;
-  padding: 0px .5em;
-  font-size: 18px;
-  color: rgba(0, 0, 0, 0.6);
-}
-
-div#app-wrapper div#container div.articles-section div.contents div#login-register-wrapper div.login div.login-contents form div.login-btn {
-  width: 100%;
-}
-
-div#app-wrapper div#container div.articles-section div.contents div#login-register-wrapper div.login div.login-contents form div.login-btn button {
-  display: block;
-  width: 100%;
-  border: none;
-  padding: .5em 0em;
-  text-align: center;
-  outline: none;
-  background: #3b5998;
-  color: #fff;
-  font-size: 18px;
-  border-radius: 3px;
-  -webkit-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);
-          box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);
-  margin: 20px 0px;
-  cursor: pointer;
-}
-
-div#app-wrapper div#container div.articles-section div.contents div#login-register-wrapper div.login div.login-contents form div.login-btn button:hover {
-  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  background-color: #3b5898dc;
-}
-
-div#app-wrapper div#container div.articles-section div.contents div#login-register-wrapper div.login div.login-contents form span.new-to-website {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-div#app-wrapper div#container div.articles-section div.contents div#login-register-wrapper div.login div.login-contents form span.new-to-website a {
-  color: rgba(0, 0, 0, 0.4);
-  text-decoration: none;
-  font-weight: 600;
-  margin-left: 5px;
-  display: block;
-}
-
-div#app-wrapper div#container div.articles-section div.contents div#login-register-wrapper div.login div.login-contents form span.new-to-website a:hover {
-  text-decoration: underline;
-  color: rgba(0, 0, 0, 0.6);
-}
-
-div#app-wrapper div#container div.articles-section div.contents div#login-register-wrapper.toggle-login-register-wrapper {
-  visibility: visible;
-  -webkit-transform: scale(1);
-          transform: scale(1);
-  opacity: 1;
 }
 
 div#app-wrapper div#container div.articles-section div.contents div.article:hover div.edit-and-delete {
@@ -1056,10 +750,10 @@ div#app-wrapper div#container div.articles-section div.contents div.article div.
   content: "";
   display: block;
   position: absolute;
-  width: 10px;
-  height: 10px;
+  width: 7px;
+  height: 7px;
   background-color: #333;
-  top: -5px;
+  top: -3.5px;
   left: 50%;
   -webkit-transform: translateX(-50%) rotate(45deg);
           transform: translateX(-50%) rotate(45deg);
@@ -1072,19 +766,19 @@ div#app-wrapper div#container div.articles-section div.contents div.article div.
   transition: 200ms ease-in-out;
   opacity: 0;
   top: 40px;
-  right: -20px;
+  right: 0px;
   -webkit-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
           box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 div#app-wrapper div#container div.articles-section div.contents div.article div.article-contents div.article-footer div.footer-contents div.comment-and-like ul li ul li {
   border-radius: 5px;
-  width: 100px;
   color: #f7f7f7;
   text-align: center;
   display: block;
   background-color: #333;
-  padding: .5em;
+  padding: .2em .5em;
+  font-size: 14px;
 }
 
 div#app-wrapper div#container div.articles-section div.contents div.article div.article-contents div.article-footer div.footer-contents div.comment-and-like ul li:hover ul {
@@ -1124,7 +818,7 @@ div#app-wrapper div#container div.articles-section div.contents div.article div.
 
 div#app-wrapper div#container div.articles-section div.contents div.article div.article-contents div.article-footer div.footer-contents div.share ul li ul {
   position: absolute;
-  top: -4px;
+  top: 0px;
   right: 30px;
   border-radius: 4px;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -1147,7 +841,7 @@ div#app-wrapper div#container div.articles-section div.contents div.article div.
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: .5em;
+  padding: .2em .5em;
   text-align: left;
   text-decoration: none;
   font-weight: 500;
@@ -1166,6 +860,81 @@ div#app-wrapper div#container div.articles-section div.contents div.article div.
 div#app-wrapper div#container div.articles-section div.contents div.article div.article-contents div.article-footer div.footer-contents div.share ul li:hover ul {
   visibility: visible;
   opacity: 1;
+}
+
+div#app-wrapper div#container div#create-article-wrapper {
+  width: 60%;
+  margin: 100px auto 20px auto;
+  padding: 1em;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 5px;
+}
+
+div#app-wrapper div#container div#create-article-wrapper div.create-article h2 {
+  font-size: 150%;
+  color: rgba(0, 0, 0, 0.6);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+div#app-wrapper div#container div#create-article-wrapper div.create-article div.article-form form div.category-title input {
+  outline: none;
+  padding: .5em;
+  background-color: rgba(0, 0, 0, 0.02);
+  color: rgba(0, 0, 0, 0.6);
+  height: 40px;
+  font-size: 18px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+div#app-wrapper div#container div#create-article-wrapper div.create-article div.article-form form div.category-title input:focus {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+div#app-wrapper div#container div#create-article-wrapper div.create-article div.article-form div.text-area {
+  border-radius: 10px;
+}
+
+div#app-wrapper div#container div#create-article-wrapper div.create-article div.article-form .ck-rounded-corners .ck.ck-editor__main > .ck-editor__editable, div#app-wrapper div#container div#create-article-wrapper div.create-article div.article-form .ck.ck-editor__main > .ck-editor__editable.ck-rounded-corners {
+  height: 250px;
+  background-color: rgba(0, 0, 0, 0.02);
+  color: rgba(0, 0, 0, 0.6);
+}
+
+div#app-wrapper div#container div#create-article-wrapper div.create-article div.article-form .ck-rounded-corners .ck.ck-editor__main > .ck-editor__editable, div#app-wrapper div#container div#create-article-wrapper div.create-article div.article-form .ck.ck-editor__main > .ck-editor__editable.ck-rounded-corners:focus {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+div#app-wrapper div#container div#create-article-wrapper div.create-article div.article-form div.btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-top: 20px;
+}
+
+div#app-wrapper div#container div#create-article-wrapper div.create-article div.article-form div.btn button {
+  display: block;
+  width: 100px;
+  border: none;
+  padding: .8em;
+  cursor: pointer;
+  font-weight: 600;
+  text-transform: uppercase;
+  background-color: #3b5998;
+  color: silver;
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);
+          box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);
+}
+
+div#app-wrapper div#container div#create-article-wrapper div.create-article div.article-form div.btn button:hover {
+  background-color: #3b5898c7;
 }
 
 div#app-wrapper div#container div#login-wrapper {
@@ -1553,6 +1322,13 @@ div#app-wrapper div#container div#register-wrapper div.register div.contents for
   }
   div#app-wrapper div#container {
     padding: 0;
+  }
+  div#app-wrapper div#container div#create-article-wrapper {
+    width: 90%;
+    margin: 20px auto 20px auto;
+    padding: 1em;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 5px;
   }
   div#app-wrapper div#container div#login-wrapper div.login {
     width: 95%;
