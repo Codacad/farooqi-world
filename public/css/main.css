@@ -15,7 +15,7 @@ body.overflow-hidden {
   overflow: hidden;
 }
 
-a:active {
+a:visited {
   background-color: transparent;
 }
 
