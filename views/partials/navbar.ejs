@@ -40,10 +40,10 @@
                             <% if (typeof AuthUser != 'undefined') { %>   
                                 <li><a href=""> <span class="material-icons">dashboard</span><span>Dashboard</span></a></li>
                             <% } %>                        
-                            <li><a href="/create-new-article" class="create-new-article" id=<%=title == "Create Article" ? "hide-btn" : ""%>> <span class="article-icon"><i class="far fa-newspaper"></i></span> <span>Create Article</span></a></li>                        
-                            <li class="login-register">
-                                <a href="" class="mobile-login-btn" id=<%=title == "Login" ? "hide-login" : ""%>> <span class="login-icon"><i class="fas fa-sign-in-alt"></i></span> <span>Login</span></a>
-                                <a href="" class="mobile-register-btn" id=<%=title == "Register" ? "hide-register" : ""%>> <span class="material-icons">account_circle</span></span> <span>Register</span></a>
+                            <li><a href="/create-new-article" class="create-new-article" id=<%=title == "Create Article" ? "hide-btn" : ""%>> <span class="article-icon"><i class="far fa-newspaper"></i></span> <span>Create Article</span></a></li>                                                    
+                            <li class="login-register" id="<%= AuthUser ? "loggedIn" : ""%>">
+                                <a href="/login" class="mobile-login-btn" id=<%=title == "Login" ? "hide-login" : ""%>> <span class="login-icon"><i class="fas fa-sign-in-alt"></i></span> <span>Login</span></a>
+                                <a href="/register" class="mobile-register-btn" id=<%=title == "Register" ? "hide-register" : ""%>> <span class="material-icons">account_circle</span></span> <span>Register</span></a>
                             </li>
                             
                             <% if (typeof AuthUser != 'undefined') { %>   

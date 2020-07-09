@@ -5,11 +5,8 @@ const User = require('../models/user');
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
 
-Router.get('/', (req, res) => {   
-    req.flash('allFieldRequired', "You must fill all fields.")          
-    req.flash('passwordLength', "Password must contain at least 6 characters.")          
-    req.flash('password', "Please enter the password.")          
-    console.log(req.flash())    
+Router.get('/', (req, res) => {      
+    console.log(req.user)             
     Article.find({}, (err, articles) => {    
         if(err){
             res.status(404).send(err)
@@ -23,7 +20,7 @@ Router.get('/', (req, res) => {
     })                            
 })
 
-Router.get('/article/:id', (req, res) => {
+Router.get('/:id', (req, res) => {
     Article.findById(req.params.id, (err, article) => {
         if(err){
             res.status(404).send({msg:"Some Errors Occured"})
@@ -88,8 +85,7 @@ Router.get('/login', (req, res) => {
     }
 })
 Router.post('/login', passport.authenticate('local', {
-    failureFlash:true,
-    failureRedirect:"/",
+    failureRedirect:"/login",
     successRedirect:"/"
 }))
 
@@ -104,10 +100,10 @@ Router.get('/register', (req, res) => {
     }
 })
 
-Router.post('/', (req, res) => {
+Router.post('/register', (req, res) => {
     const {name, email, password} = req.body;
-    const newUser = new User(req.body);
-    const message = {}
+    const newUser = new User(req.body);    
+    const message = {}    
     if(!name){
         message.name = "Name Required..."
     }
@@ -118,7 +114,7 @@ Router.post('/', (req, res) => {
         message.password = "Password Required..."
     }else if(password.length < 6){
         message.passwordLength = "Minimum 6 characters..."
-    }        
+    }            
      if(Object.keys(message).length === 0){
          message.success = "Registered Successfully..."
         const salt = 10;
@@ -131,26 +127,30 @@ Router.post('/', (req, res) => {
                     if(error){
                         return error
                     }               
-                    res.redirect('/')                                    
+                    res.redirect('/')                                                                           
                 })
             }
         });        
      }else{
-         
+         res.render('register', {
+             message,
+             title:"Register",
+             AuthUser:req.user             
+         });                  
      }              
 })
 
 Router.get('/logout', (req, res) => {
     req.logout();
-    res.redirect('/')
+    res.redirect('/');
 })
+
 // Users Api
 Router.get('/api/users', (req, res) => {
     User.find({}, (err, users) => {
         if(err){
             return err
         }
-
         res.send(users)
     })
 })

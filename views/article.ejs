@@ -1,0 +1,36 @@
+<title><%= title %></title>
+<div id="full-article-wrapper">
+    <% if (typeof article != 'undefined') { %>
+        <div class="article">
+            <div class="artilce-contents">
+                <div class="article-header">
+                    <div class="header-contents">
+                        <div class="author">
+                            <div class="profile-pic">
+                                <img src="./images/profile-pic.png" alt="profile-pic">
+                            </div>
+                            <div class="name-and-published">
+                                <div class="name"><%= article.author.name %> </div>
+                                <div class="published"><%= article.createdAt.toDateString() %> </div>
+                            </div>
+                        </div>
+                        <div class="mins-to-read">5 mins</div>                                
+                    </div>
+                </div>
+                <div class="article-body">
+                    <div class="body-contents">
+                        <div class="title">
+                           <h2> <%= article.title %> </h2>
+                        </div>
+                        <div class="body">
+                            <%- article.body %>                                     
+                        </div>
+                        <div class="read-more">
+                            <a href="/<%=article._id%>">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>     
+    <% } %>
+</div>

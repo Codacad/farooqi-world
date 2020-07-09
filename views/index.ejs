@@ -1,6 +1,9 @@
 <title><%=title%></title>
-<div class="articles-section">
-    <div class="contents">
+<div class="articles-section">    
+    <% if (typeof success != "undefined") { %>
+        <% console.log(success) %> 
+    <% } %>
+    <div class="contents">                
         <div id="login-register-wrapper">
             <div class="login-close">
                 <a href=""><span class="material-icons">close</span></a>

@@ -1,60 +1,70 @@
 <title><%= title %></title>
-<div class="register">
-    <div class="register-heading">
-        <h1>Resgister here....</h1>
-    </div>
-    <form action="/register" method="POST">                
-        <div class="form-contents"> 
-            <% if (typeof message != "undefined") { %>
-                <% if (typeof message.success != "undefined") { %>
-                    <div class="success">
-                        <span><%= message.success %></span>
+<div id="register-wrapper">
+    <div class="register">
+        <div class="contents">
+            <div class="register-header">
+                <h1>Resgister here....</h1>
+            </div>
+            <form action="/register" method="POST">                
+                <div class="form-contents"> 
+                    <% if (typeof message != "undefined") { %>
+                        <% if (typeof message.success != "undefined") { %>
+                            <div class="success">
+                                <span><%= message.success %></span>
+                            </div>
+                        <% } %>
+                    <% } %>
+                    <div class="name">
+                        <div class="form-group">
+                            <span class="name-icon">
+                                <span><i class="fas fa-envelope"></i></span>
+                            </span>
+                            <input type="text" name="name" placeholder="Name" id="name"/>                    
+                        </div>
+                        <% if (typeof message != "undefined") { %>
+                            <% if (typeof message.name !=  'undefined') { %>
+                                <span class="required"><%= message.name %></span>
+                            <% } %>                                               
+                        <% } %>
+                    </div>                   
+                    <div class="email">
+                        <div class="form-group">
+                            <span class="email-icon">
+                                <span><i class="fas fa-user"></i></span>
+                            </span>
+                            <input type="email" name="email" placeholder="E-Mail" id="email"/>
+                        </div>
+                        <% if (typeof message != "undefined") { %>
+                            <% if (typeof message.email !=  'undefined') { %>
+                                <span class="required"><%= message.email %></span>
+                            <% } %>                       
+                        <% } %>
                     </div>
-                <% } %>
-            <% } %>
-            <div class="name">
-                <span class="name-icon">
-                    <span><i class="fas fa-envelope"></i></span>
-                </span>
-                <input type="text" name="name" placeholder="Name" id="name"/>                    
-                <% if (typeof message != "undefined") { %>
-                    <% if (typeof message.name !=  'undefined') { %>
-                        <span class="required"><%= message.name %></span>
-                    <% } %>                                               
-                <% } %>
-            </div>                   
-            <div class="email">
-                <span class="user-icon">
-                    <span><i class="fas fa-user"></i></span>
-                </span>
-                <input type="email" name="email" placeholder="E-Mail" id="email"/>
-                <% if (typeof message != "undefined") { %>
-                    <% if (typeof message.email !=  'undefined') { %>
-                        <span class="required"><%= message.email %></span>
-                    <% } %>                       
-                <% } %>
-            </div>
-            <div class="password">
-                <span class="password-icon">
-                    <span><i class="fas fa-unlock"></i></span>
-                </span>
-                <input type="password" name="password" placeholder="Password" id="password"/>
-                <% if (typeof message != "undefined") { %>
-                <% if (typeof message.password !=  'undefined') { %>
-                    <span class="required"><%= message.password %></span>
-                <% } %>                    
-                <% if (typeof message.passwordLength !=  'undefined') { %>
-                    <span class="required"><%= message.passwordLength %></span>
-                <% } %>
-            <% } %>
-            </div>                
-            <div class="register-btn">
-                <button type="submit">Register</button>
-            </div>
-            <span class="already-registered">
-                <span class="text">Already registerd?</span>
-                <a href="/login">Login...</a>
-            </span>
+                    <div class="password">
+                        <div class="form-group">
+                            <span class="password-icon">
+                                <span><i class="fas fa-unlock"></i></span>
+                            </span>
+                            <input type="password" name="password" placeholder="Password" id="password"/>
+                        </div>
+                        <% if (typeof message != "undefined") { %>
+                        <% if (typeof message.password !=  'undefined') { %>
+                            <span class="required"><%= message.password %></span>
+                        <% } %>                    
+                        <% if (typeof message.passwordLength !=  'undefined') { %>
+                            <span class="required"><%= message.passwordLength %></span>
+                        <% } %>
+                    <% } %>
+                    </div>                
+                    <div class="register-btn">
+                        <button type="submit">Register</button>
+                    </div>
+                    <span class="already-registered">
+                        <span class="text">Already registerd?</span>
+                        <a href="/login">Login...</a>
+                    </span>
+                </div>
+            </form>
         </div>
-    </form>
+    </div>
 </div>

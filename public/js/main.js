@@ -91,39 +91,39 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log("urdu")
           }
     })
-    document.querySelector('nav#navbar a.mobile-login-btn').addEventListener('click', (e) => {
-        e.preventDefault();
-        document.querySelector('div#login-register-wrapper').classList.add('toggle-login-register-wrapper');  
-        loginForm.style.zIndex = 1;
-        registerForm.style.zIndex = 0;
-    })
-    document.querySelector('nav#navbar a.mobile-register-btn').addEventListener('click', (e) => {
-        e.preventDefault();
-        document.querySelector('div#login-register-wrapper').classList.add('toggle-login-register-wrapper');  
-        loginForm.style.zIndex = 0;
-        registerForm.style.zIndex = 1;
-    })
-    document.querySelector('div.login-close a').addEventListener('click', (e) => {
-        e.preventDefault();
-        document.querySelector('div#login-register-wrapper').classList.remove('toggle-login-register-wrapper');           
-    })
+    // document.querySelector('nav#navbar a.mobile-login-btn').addEventListener('click', (e) => {
+    //     e.preventDefault();
+    //     document.querySelector('div#login-register-wrapper').classList.add('toggle-login-register-wrapper');  
+    //     loginForm.style.zIndex = 1;
+    //     registerForm.style.zIndex = 0;
+    // })
+    // document.querySelector('nav#navbar a.mobile-register-btn').addEventListener('click', (e) => {
+    //     e.preventDefault();
+    //     document.querySelector('div#login-register-wrapper').classList.add('toggle-login-register-wrapper');  
+    //     loginForm.style.zIndex = 0;
+    //     registerForm.style.zIndex = 1;
+    // })
+    // document.querySelector('div.login-close a').addEventListener('click', (e) => {
+    //     e.preventDefault();
+    //     document.querySelector('div#login-register-wrapper').classList.remove('toggle-login-register-wrapper');           
+    // })
   
-    document.querySelector('a.switch-to-login').addEventListener('click', (e) => {
-        e.preventDefault()        
-        loginForm.style.zIndex = 1;
-        registerForm.style.zIndex = 0;
-    })
-    document.querySelector('a.switch-to-register').addEventListener('click', (e) => {
-        e.preventDefault()                
-        loginForm.style.zIndex = 0;
-        registerForm.style.zIndex = 1;
-        registerForm.classList.add('')
-    })
+    // document.querySelector('a.switch-to-login').addEventListener('click', (e) => {
+    //     e.preventDefault()        
+    //     loginForm.style.zIndex = 1;
+    //     registerForm.style.zIndex = 0;
+    // })
+    // document.querySelector('a.switch-to-register').addEventListener('click', (e) => {
+    //     e.preventDefault()                
+    //     loginForm.style.zIndex = 0;
+    //     registerForm.style.zIndex = 1;
+    //     registerForm.classList.add('')
+    // })
 
-    document.querySelector('div.register-btn button').addEventListener('click', () => {
-        if(!document.querySelector('div#login-register-wrapper').classList.contains('toggle-login-register-wrapper')){
-            document.querySelector('div#login-register-wrapper').classList.add('toggle-login-register-wrapper');  
-        }        
-    })
+    // document.querySelector('div.register-btn button').addEventListener('click', () => {
+    //     if(!document.querySelector('div#login-register-wrapper').classList.contains('toggle-login-register-wrapper')){
+    //         document.querySelector('div#login-register-wrapper').classList.add('toggle-login-register-wrapper');  
+    //     }        
+    // })
 
 })

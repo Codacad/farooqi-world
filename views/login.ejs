@@ -1,29 +1,33 @@
 <title><%= title %></title>
-<div class="login">
-    <div class="login-heading">
-        <h1>Login</h1>
+<div id="login-wrapper">
+    <div class="login">
+        <div class="login-contents">
+            <div class="login-heading">
+                <h1>Login</h1>
+            </div>
+            <form action="/login" method="POST">                
+                    <div class="form-contents">                    
+                    <div class="email">
+                        <span class="user-icon">
+                            <span><i class="fas fa-user"></i></span>
+                        </span>
+                        <input type="email" name="email" placeholder="E-Mail" id="email"/>
+                    </div>
+                    <div class="password">
+                        <span class="password-icon">
+                            <span><i class="fas fa-unlock"></i></span>
+                        </span>
+                        <input type="password" name="password" placeholder="Password" id="password"/>
+                    </div>                
+                    <div class="login-btn">
+                        <button type="submit">Login</button>
+                    </div>
+                    <span class="new-to-website">
+                        <span class="text">New to FW</span>
+                        <a href="/register" class="switch-to-register">Create an Account...</a>
+                    </span>
+                    </div>
+            </form>
+        </div>
     </div>
-    <form action="/login" method="POST">                
-            <div class="form-contents">                    
-            <div class="email">
-                <span class="user-icon">
-                    <span><i class="fas fa-user"></i></span>
-                </span>
-                <input type="email" name="email" placeholder="E-Mail" id="email"/>
-            </div>
-            <div class="password">
-                <span class="password-icon">
-                    <span><i class="fas fa-unlock"></i></span>
-                </span>
-                <input type="password" name="password" placeholder="Password" id="password"/>
-            </div>                
-            <div class="login-btn">
-                <button type="submit">Login</button>
-            </div>
-            <span class="new-to-website">
-                <span class="text">New to FW</span>
-                <a href="/register">Create an Account...</a>
-            </span>
-            </div>
-    </form>
 </div>
