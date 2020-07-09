@@ -895,7 +895,7 @@ div#app-wrapper div#container div#create-article-wrapper div.create-article div.
 }
 
 div#app-wrapper div#container div#create-article-wrapper div.create-article div.article-form div.text-area {
-  border-radius: 10px;
+  border-radius: 3px;
   overflow: hidden;
 }
 
