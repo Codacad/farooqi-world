@@ -16,7 +16,6 @@ app.use(express.urlencoded({extended:false}));
 app.set('view engine', "ejs");
 app.use(expressLayout);
 app.use(express.static(__dirname + '/public'));
-const flash = require('connect-flash');
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/farooqi-world', {
     useNewUrlParser:true,
@@ -32,7 +31,7 @@ const sessionStore = new connectMongo({
     mongooseConnection:connection,
     collection:"sessions"
 })
-app.use(flash())
+
 app.use(session({
     secret:process.env.mySecret || "rizwan",
     resave:false,

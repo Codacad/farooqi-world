@@ -15,6 +15,14 @@
                 </div>
             </div>
             <ul class="user-menus">
+                <% if (typeof AuthUser != "undefined") { %>
+                    <li class="user">
+                        <div>
+                            <img src="./images/profile-pic.png" alt="profile Pic">
+                            <a href=""><%= AuthUser.name %> </a>
+                        </div>
+                    </li>
+                <% } %>
                 <li>
                     <a href="" class="caret"><i class="fas fa-caret-down"></i></a>
                     <div id="dropdown-wrapper">

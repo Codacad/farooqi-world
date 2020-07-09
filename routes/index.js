@@ -20,7 +20,7 @@ Router.get('/', (req, res) => {
     })                            
 })
 
-Router.get('/:id', (req, res) => {
+Router.get('/article/:id', (req, res) => {
     Article.findById(req.params.id, (err, article) => {
         if(err){
             res.status(404).send({msg:"Some Errors Occured"})
@@ -34,19 +34,19 @@ Router.get('/:id', (req, res) => {
 })
 
 
-Router.get('/contact',(req, res) => {
-    res.render('contact', {
-        title:"Contact",
-        AuthUser:req.user
-    });
-})
+// Router.get('/contact',(req, res) => {
+//     res.render('contact', {
+//         title:"Contact",
+//         AuthUser:req.user
+//     });
+// })
 
-Router.get('/about',(req, res) => {
-    res.render('about', {
-        title:"About Us",
-        AuthUser:req.user
-    });
-})
+// Router.get('/about',(req, res) => {
+//     res.render('about', {
+//         title:"About Us",
+//         AuthUser:req.user
+//     });
+// })
 
 Router.get('/create-new-article', (req, res) => {
     res.render('create-article', {
@@ -75,14 +75,14 @@ Router.post('/create-new-article', (req, res) => {
 })
 
 Router.get('/login', (req, res) => {
-    if(!req.user){
+    if(req.user){
+        res.redirect('/')
+    }else{
         res.render('login', {
             title:"Login",
             AuthUser:req.user
-        })
-    }else{
-        res.redirect('/')
-    }
+        })    
+    }    
 })
 Router.post('/login', passport.authenticate('local', {
     failureRedirect:"/login",
@@ -91,7 +91,7 @@ Router.post('/login', passport.authenticate('local', {
 
 Router.get('/register', (req, res) => {
     if(!req.user){
-        res.render('register', {
+         res.render('register', {
             title:"Register",
             AuthUser:req.user
         })    
