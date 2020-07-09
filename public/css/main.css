@@ -15,8 +15,9 @@ body.overflow-hidden {
   overflow: hidden;
 }
 
-a:visited {
+a:focus {
   background-color: transparent;
+  outline: none;
 }
 
 div#app-wrapper nav#navbar {

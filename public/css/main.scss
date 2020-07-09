@@ -14,8 +14,9 @@ body.overflow-hidden{
     overflow: hidden;
 }
 
-a:visited{
+a:focus{
     background-color: transparent;
+    outline: none;
 }
 
 // App Wrapper 
@@ -38,7 +39,7 @@ div#app-wrapper{
             a.hamburger-icon{
                 display: block;
                 margin: 0px 20px;
-                color: silver;
+                color: silver;                               
             }
             a.brand-logo{
                 display: block;
