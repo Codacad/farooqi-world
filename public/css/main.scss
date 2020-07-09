@@ -1155,6 +1155,7 @@ div#app-wrapper{
                                 div.profile-pic{
                                     width: 30px;
                                     height: 30px;
+                                    background-color: transparent;
                                     img{
                                         width:100%;
                                         height: 100%;                                        
@@ -1172,7 +1173,8 @@ div#app-wrapper{
                                     }
                                 }
                                 div.reading-time{
-                                    margin-left: 20px;                                                                                                            
+                                    margin-left: 20px;  
+                                    margin-top: -10px;                                                                                                          
                                     div.mins-to-read{                                        
                                         font-size:12px;
                                         font-weight: 300;
@@ -1193,7 +1195,10 @@ div#app-wrapper{
 
                             div.body{                                
                                 font-size: 20px;                            
-                                color: rgba(0,0,0,.7);                                
+                                color: rgba(0,0,0,.7); 
+                                p:first-child{
+                                    display: none;
+                                }                               
                             }
                         }
                     }
