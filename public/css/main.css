@@ -896,6 +896,7 @@ div#app-wrapper div#container div#create-article-wrapper div.create-article div.
 
 div#app-wrapper div#container div#create-article-wrapper div.create-article div.article-form div.text-area {
   border-radius: 10px;
+  overflow: hidden;
 }
 
 div#app-wrapper div#container div#create-article-wrapper div.create-article div.article-form .ck-rounded-corners .ck.ck-editor__main > .ck-editor__editable, div#app-wrapper div#container div#create-article-wrapper div.create-article div.article-form .ck.ck-editor__main > .ck-editor__editable.ck-rounded-corners {

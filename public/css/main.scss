@@ -705,6 +705,7 @@ div#app-wrapper{
                     }
                     div.text-area{
                         border-radius: 10px;
+                        overflow: hidden;
                     }
                     .ck-rounded-corners .ck.ck-editor__main>.ck-editor__editable, .ck.ck-editor__main>.ck-editor__editable.ck-rounded-corners{
                         height: 250px;
