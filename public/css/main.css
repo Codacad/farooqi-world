@@ -1464,7 +1464,7 @@ div#app-wrapper div#container div#register-wrapper div.register div.contents for
   }
   div#app-wrapper div#container div#full-article-wrapper div.article div.artilce-contents div.article-header div.header-contents div.author div.reading-time {
     margin-left: 20px;
-    margin-top: -10px;
+    margin-top: -15px;
   }
   div#app-wrapper div#container div#full-article-wrapper div.article div.artilce-contents div.article-header div.header-contents div.author div.reading-time div.mins-to-read {
     font-size: 12px;
