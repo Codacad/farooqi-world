@@ -669,6 +669,83 @@ div#app-wrapper{
             }
         }
 
+        // Full Article
+        div#full-article-wrapper{
+            width: 75%;
+            margin: 50px auto;
+            border: 1px solid rgba(0,0,0,.05);
+            padding: 1em;
+            div.article{
+                div.artilce-contents{
+                    div.article-header{
+                        div.header-contents{
+                            display: flex;
+                            div.author{
+                                display: flex;                                
+                                align-items: center;
+                                div.profile-pic{
+                                    width: 50px;
+                                    height: 50px;
+                                    border-radius: 50%;
+                                    background-color: #333;                                    
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    img{
+                                        width: 30px;
+                                        height: 30px;
+                                        display: block;
+                                    }
+                                }
+                                div.name-and-published{
+                                    margin-left: 10px;                                   
+                                    div.name{
+                                        font-size: 20px;
+                                        font-weight: 500;                                                                                
+                                    }
+                                    div.published{
+                                        color: rgba(0,0,0,.4);
+                                        font-size: 15px;
+                                    }
+                                }
+                                div.reading-time{
+                                    margin-left: 50px;
+                                    display: flex;
+                                    margin-top: -20px;                                    
+                                    div.mins-to-read{
+                                        align-self: flex-start;
+                                        font-size:14px;
+                                        font-weight: 300;
+                                        color: rgba(0,0,0,.6);
+                                    }
+                                }
+                            }                         
+                        }
+                    }
+                    div.article-body{
+                        margin: 20px 0px;
+                        div.body-contents{
+                            div.title{
+                                text-align: right;
+                                font-size: 160%;
+                                font-weight: bold;
+                                color: teal;
+                            }
+
+                            div.body{
+                                text-align: right;
+                                font-size: 20px;                            
+                                color: rgba(0,0,0,.7);
+                                p{
+                                    word-spacing: 2px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         // Create Article
         div#create-article-wrapper{
             width: 60%;
@@ -999,7 +1076,13 @@ div#app-wrapper{
             }
         }
         div#container{        
-            padding: 1em;                       
+            padding: 1em;     
+            div#full-article-wrapper{
+                width: 95%;
+                margin: 20px auto;
+                border: 1px solid rgba(0,0,0,.05);
+                padding: 1em;
+            }                  
             div.articles-section{
                 width: 100%;                                            
                 div.contents{

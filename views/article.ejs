@@ -16,8 +16,10 @@
                                 <div class="name"><%= article.author.name %> </div>
                                 <div class="published"><%= article.createdAt.toDateString() %> </div>
                             </div>
-                        </div>
-                        <div class="mins-to-read">5 mins</div>                                
+                            <div class="reading-time">
+                                <div class="mins-to-read">5 mins read</div>
+                            </div>
+                        </div>                                                       
                     </div>
                 </div>
                 <div class="article-body">
@@ -27,10 +29,7 @@
                         </div>
                         <div class="body">
                             <%- article.body %>                                     
-                        </div>
-                        <div class="read-more">
-                            <a href="/<%=article._id%>">Read More</a>
-                        </div>
+                        </div>                       
                     </div>
                 </div>
             </div>
