@@ -2,11 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const hamburgerIcon = document.querySelector('div.nav-left-menus a.hamburger-icon');
     const registerForm = document.querySelector('div.register');
     const loginForm = document.querySelector('div.login');
-    document.querySelectorAll('a').forEach(a => {
-        a.onclick = (e) => {
-            e.preventDefault();
-        }
-    })
+  
     hamburgerIcon.addEventListener('click', function(e){
         e.preventDefault()
         document.querySelector('div#sidenav-wrapper').classList.add('sidenav-wrapper-toggle')
