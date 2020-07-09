@@ -1555,11 +1555,11 @@ div#app-wrapper div#container div#register-wrapper div.register div.contents for
   }
   div#app-wrapper div#container div#login-wrapper div.login {
     width: 95%;
-    min-height: 300px;
+    height: 300px;
   }
   div#app-wrapper div#container div#register-wrapper div.register {
     width: 95%;
-    min-height: 400px;
+    height: 400px;
   }
   div#app-wrapper div#container div.articles-section {
     width: 100%;
