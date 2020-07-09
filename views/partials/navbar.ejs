@@ -27,12 +27,14 @@
                     <a href="" class="caret"><i class="fas fa-caret-down"></i></a>
                     <div id="dropdown-wrapper">
                         <ul>
-                            <li class="user">                                
-                                <a href="">
-                                    <img src="./images/profile-pic.png" alt="profile Pic">
-                                    <span><%= AuthUser.name %> </span>
-                                </a>                                                                    
-                            </li>
+                            <% if (typeof AuthUser != "undefined") { %>
+                                <li class="user">
+                                    <a href="">
+                                        <img src="./images/profile-pic.png" alt="profile Pic">
+                                        <span><%= AuthUser.name %> </span>
+                                    </a>
+                                </li>
+                            <% } %>                           
                             <li class="social-proflies">
                                 <span class="facebook">
                                     <a target="_blank" href="https://www.facebook.com/Farooquis-world-100432181470217"><span><i class="fab fa-facebook"></i></span></a>
