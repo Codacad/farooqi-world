@@ -456,6 +456,7 @@ div#app-wrapper div#sidenav-wrapper nav.sidenav div.header span.close {
   color: rgba(0, 0, 0, 0.5);
   background-color: rgba(0, 0, 0, 0.05);
   border-radius: 50%;
+  cursor: pointer;
 }
 
 div#app-wrapper div#sidenav-wrapper nav.sidenav div.sidenav-contents {
