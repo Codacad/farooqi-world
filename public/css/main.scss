@@ -58,17 +58,17 @@ div#app-wrapper{
         }
         div.nav-right-menus{
             display: flex;
-            justify-content: center;
+            justify-content: flex-end;
             align-items: center;
             div.buttons{                
                 display: grid;                
                 grid-template-columns: 1fr 1fr;
                 justify-content: flex-end;
                 align-items: center;            
-                margin-right: 10px;                
+                margin-right: 10px;   
+                width: 100%;             
                 div.search{
-                    display: flex;               
-                    justify-content: flex-end;
+                    display: flex;                               
                     align-items: center;
                     background-color: silver;
                     width: 100%;

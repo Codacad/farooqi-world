@@ -75,9 +75,9 @@ div#app-wrapper nav#navbar div.nav-right-menus {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -95,15 +95,13 @@ div#app-wrapper nav#navbar div.nav-right-menus div.buttons {
       -ms-flex-align: center;
           align-items: center;
   margin-right: 10px;
+  width: 100%;
 }
 
 div#app-wrapper nav#navbar div.nav-right-menus div.buttons div.search {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
