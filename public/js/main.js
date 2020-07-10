@@ -1,8 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const hamburgerIcon = document.querySelector('div.nav-left-menus a.hamburger-icon');
+    const hamburgerIcon = document.querySelector('div.nav-left-menus span.hamburger-icon');
     const registerForm = document.querySelector('div.register');
     const loginForm = document.querySelector('div.login');
-  
+    document.querySelectorAll('#article').forEach(article => {
+        article.addEventListener('click', (e) => {
+            console.log(e.target.id)
+        })
+    })
+
     hamburgerIcon.addEventListener('click', function(e){
         e.preventDefault()
         document.querySelector('div#sidenav-wrapper').classList.add('sidenav-wrapper-toggle')
@@ -12,14 +17,14 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(e.target)
     })
     
-    document.querySelector('nav.sidenav div.header a.close').addEventListener('click', (e) => {
+    document.querySelector('nav.sidenav div.header span.close').addEventListener('click', (e) => {
         e.preventDefault();
         document.querySelector('div#sidenav-wrapper').classList.remove('sidenav-wrapper-toggle')
         document.querySelector('nav.sidenav').classList.remove('sidenav-toggle');
         document.querySelector('body').classList.remove("overflow-hidden");
     }) 
 
-    const caret = document.querySelector('ul.user-menus li a.caret')
+    const caret = document.querySelector('ul.user-menus li span.caret')
     let trueOrFalse = false;
     caret.addEventListener('click', (e) => {        
         e.preventDefault();       
@@ -71,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault()
         })
     })     
-    const ellipseIcon = document.querySelectorAll('a.ellipse-icon');
+    const ellipseIcon = document.querySelectorAll('span.ellipse-icon');
     ellipseIcon.forEach(ellipse => {
         ellipse.addEventListener('click', (e) => {
             e.preventDefault();
