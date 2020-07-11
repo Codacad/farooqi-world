@@ -1775,7 +1775,7 @@ div#app-wrapper div#user-wrapper div.user-contents div.user {
   padding: 1em;
   background-color: rgba(0, 0, 0, 0.05);
   border: 1px solid rgba(0, 0, 0, 0.06);
-  background-image: url("https://images.pexels.com/photos/3771639/pexels-photo-3771639.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  background-image: url("https://source.unsplash.com/random");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
