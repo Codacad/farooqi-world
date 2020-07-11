@@ -19,33 +19,40 @@
                 <div class="timeline">
                     <div id="tabs">
                         <div class="buttons">
-                            <a href="#" data-articles="articles">Articles</a>
-                            <a href="#" data-about="about">About</a>
+                            <a href="#articles-wrapper" class="tab article-tab tab-active" data-tab="articles-wrapper">Articles</a>
+                            <a href="#about" class="tab about-tab" data-tab="about">About</a>
                         </div>
                     </div>
-                    <% userArticles.forEach((userArticle) => { %>
-                        <div class="articles" id="articles">
-                            <div class="header">
-                                <h2>Articles</h2>
-                            </div>
-                            <div class="article">
-                                <div class="article-header">
-            
+                    <div id="articles-wrapper" class="tab-menu">
+                        <% userArticles.forEach((userArticle) => { %>
+                            <div class="articles">
+                                <div class="header">
+                                    <h2>Articles</h2>
                                 </div>
-                                <div class="article-body">
-                                    <div class="body-contents">
-                                        <h2><%=userArticle.title%></h2>
-                                        <div class="body">
-                                            <%-userArticle.body%>
+                                <div class="article">
+                                    <div class="article-header">            
+                                    </div>
+                                    <div class="article-body">
+                                        <div class="body-contents">
+                                            <h2><%=userArticle.title%></h2>
+                                            <div class="body">
+                                                <%-userArticle.body%>
+                                            </div>
                                         </div>
                                     </div>
+                                    <div class="article-footer">
+                
+                                    </div>
                                 </div>
-                                <div class="article-footer">
-            
-                                </div>
-                            </div>
+                            </div>                        
+                        <% }) %>
+                    </div>
+                    <div id="about" class="tab-menu"> 
+                        <div class="about-contents">
+                            <h3>About  Us</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam nemo eligendi cum enim unde explicabo reiciendis eveniet beatae, mollitia aperiam, consequuntur, adipisci sed illo corporis? Quo, nobis! Eligendi, esse minus. Officia, harum? Magni, repellat quam. Aliquid sequi repudiandae dolore corporis cum at sapiente tenetur, quidem reprehenderit eius architecto iste ipsam unde nostrum. Eveniet possimus fugit dolorem sed soluta aliquam atque enim culpa quisquam vitae voluptatem voluptate nemo voluptatum fugiat ipsa, alias illo aut cupiditate, harum est porro, illum ducimus officia rerum. Est, maxime dolorum unde id reiciendis et. Sint labore fuga fugiat ex quae, consequatur in dignissimos eos quisquam illo.</p>
                         </div>
-                    <% }) %>
+                    </div>
                 </div>
             </div>
     </div>

@@ -1,7 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
     const hamburgerIcon = document.querySelector('div.nav-left-menus span.hamburger-icon');
-    const registerForm = document.querySelector('div.register');
-    const loginForm = document.querySelector('div.login');
     document.querySelectorAll('#article').forEach(article => {
         article.addEventListener('click', (e) => {
             console.log(e.target.id)
@@ -97,39 +95,29 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log("urdu")
           }
     })
-    // document.querySelector('nav#navbar a.mobile-login-btn').addEventListener('click', (e) => {
-    //     e.preventDefault();
-    //     document.querySelector('div#login-register-wrapper').classList.add('toggle-login-register-wrapper');  
-    //     loginForm.style.zIndex = 1;
-    //     registerForm.style.zIndex = 0;
-    // })
-    // document.querySelector('nav#navbar a.mobile-register-btn').addEventListener('click', (e) => {
-    //     e.preventDefault();
-    //     document.querySelector('div#login-register-wrapper').classList.add('toggle-login-register-wrapper');  
-    //     loginForm.style.zIndex = 0;
-    //     registerForm.style.zIndex = 1;
-    // })
-    // document.querySelector('div.login-close a').addEventListener('click', (e) => {
-    //     e.preventDefault();
-    //     document.querySelector('div#login-register-wrapper').classList.remove('toggle-login-register-wrapper');           
-    // })
-  
-    // document.querySelector('a.switch-to-login').addEventListener('click', (e) => {
-    //     e.preventDefault()        
-    //     loginForm.style.zIndex = 1;
-    //     registerForm.style.zIndex = 0;
-    // })
-    // document.querySelector('a.switch-to-register').addEventListener('click', (e) => {
-    //     e.preventDefault()                
-    //     loginForm.style.zIndex = 0;
-    //     registerForm.style.zIndex = 1;
-    //     registerForm.classList.add('')
-    // })
+    
 
-    // document.querySelector('div.register-btn button').addEventListener('click', () => {
-    //     if(!document.querySelector('div#login-register-wrapper').classList.contains('toggle-login-register-wrapper')){
-    //         document.querySelector('div#login-register-wrapper').classList.add('toggle-login-register-wrapper');  
-    //     }        
-    // })
+    document.querySelectorAll('.tab-menu').forEach(function(tabMenu) {
+        tabMenu.style.display = "none";
+    })
 
+    document.querySelector('#articles-wrapper').style.display = "block";
+
+    function showTabMenus(id){
+        document.querySelectorAll('.tab-menu').forEach(menu => {
+            menu.style.display = "none";        
+        })
+
+        document.querySelector(`#${id}`).style.display = "block";
+    }
+
+    document.querySelectorAll('div#tabs div.buttons a.tab').forEach(function(tab){
+        tab.onclick = function(e){            
+            document.querySelectorAll('div#tabs div.buttons a.tab').forEach(btn =>  btn.classList.remove("tab-active"))
+            this.classList.add('tab-active')
+            e.preventDefault();
+            showTabMenus(this.dataset.tab)
+            console.log(this.dataset.tab)
+        }
+    })
 })

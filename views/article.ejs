@@ -13,7 +13,7 @@
                                 <img src="../images/profile-pic.png" alt="profile-pic">
                             </div>
                             <div class="name-and-published">
-                                <div class="name"><%= article.author.name %> </div>
+                                <div class="name"><a href="/user/<%=article.author._id%>"><%= article.author.name %> </a></div>
                                 <div class="published"><%= article.createdAt.toDateString() %> </div>
                             </div>
                             <div class="reading-time">
