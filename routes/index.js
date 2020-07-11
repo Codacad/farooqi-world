@@ -4,6 +4,7 @@ const Article = require('../models/article');
 const User = require('../models/user');
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
+const e = require('express');
 
 Router.get('/', (req, res) => {      
     console.log(req.user)             
@@ -18,6 +19,40 @@ Router.get('/', (req, res) => {
             });  
         }        
     })                            
+})
+
+Router.get("/user/:id"||"/user/:name", (req, res) => {
+    User.findOne({_id:req.params.id}, (err, user) => {        
+        Article.find({}, (err, articles) => {            
+            if(!user){           
+                const nonUserArticles = articles.filter(anonymousArticles => {
+                    if(anonymousArticles.author.name == "Anonymous"){
+                        return anonymousArticles;
+                    }
+                })
+                if(err){
+                    return res.status(400).send(err)
+                }else{
+                    return res.render("user", {
+                        title:"Anonymous",
+                        nonUserArticles,
+                        AuthUser:req.user
+                    });
+                }                            
+            }else{
+                const userArticles = articles.filter(userArticle => {
+                    if(req.params.id == userArticle.author._id){
+                        return userArticle;
+                    }                
+                })            
+                res.render("user", {
+                    title:"User",
+                    AuthUser:req.user,
+                    userArticles
+                })
+            }            
+        })
+    })
 })
 
 Router.get('/article/:id', (req, res) => {
@@ -56,7 +91,7 @@ Router.get('/create-new-article', (req, res) => {
 })
 
 // Post Route for creating new article
-Router.post('/create-new-article', (req, res) => {
+Router.post('/', (req, res) => {
     const article =  {            
         title:req.body.title,
         category:req.body.category,

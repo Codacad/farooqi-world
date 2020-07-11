@@ -1,0 +1,53 @@
+<link rel="stylesheet" href="../css/main.css">
+<link rel="stylesheet" href="../fontawesome-free-5.13.0-web/css/all.css">    
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<title><%=title%></title>
+<div id="user-wrapper">
+    <% if (typeof userArticles !=  'undefined') { %>
+        <div class="user-contents">
+            <div class="user">            
+                <div class="user-profile">
+                    <div class="profile-pic">
+                        <img src="../images/profile-pic.png" alt="Profile Picture">
+                    </div>
+                    <div class="profile-name">
+                        <h3><span><%=userArticles[0].author.name%></span></h3>
+                    </div>
+                </div>
+            </div>        
+            <div id="timeline-wrapper">                
+                <div class="timeline">
+                    <div id="tabs">
+                        <div class="buttons">
+                            <a href="#" data-articles="articles">Articles</a>
+                            <a href="#" data-about="about">About</a>
+                        </div>
+                    </div>
+                    <% userArticles.forEach((userArticle) => { %>
+                        <div class="articles" id="articles">
+                            <div class="header">
+                                <h2>Articles</h2>
+                            </div>
+                            <div class="article">
+                                <div class="article-header">
+            
+                                </div>
+                                <div class="article-body">
+                                    <div class="body-contents">
+                                        <h2><%=userArticle.title%></h2>
+                                        <div class="body">
+                                            <%-userArticle.body%>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="article-footer">
+            
+                                </div>
+                            </div>
+                        </div>
+                    <% }) %>
+                </div>
+            </div>
+    </div>
+    <% } %>
+</div>
