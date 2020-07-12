@@ -42,7 +42,7 @@ div#app-wrapper{
             span.hamburger-icon{
                 display: block;
                 margin: 0px 20px;
-                color: rgba(0,0,0,.6);   
+                color: rgba(255,255,255,.9);   
                 cursor: pointer;                            
                 width: 30px;
                 height: 30px;                
@@ -53,7 +53,7 @@ div#app-wrapper{
             }            
             a.brand-logo{
                 display: block;
-                color: rgba(0,0,0,.6);
+                color: rgba(255,255,255,1);
                 font-weight: 600;
                 font-size: 32px;
                 text-decoration: none;
@@ -141,7 +141,7 @@ div#app-wrapper{
                             position: relative;
                             top: 50%;
                             transform: translateY(-50%);
-                            color: rgba(0,0,0,.6);
+                            color: rgba(255,255,255,1);
                             text-decoration: none;                            
                             padding: 0em .5em;
                             border-radius: 4px;
@@ -154,7 +154,7 @@ div#app-wrapper{
                             }
                             a{
                                 text-decoration: none;
-                                color: silver;
+                                color: #fff;
                             }
                         }
                         a:hover{
@@ -166,7 +166,7 @@ div#app-wrapper{
                         margin-left: 10px;
                         span.caret{
                             display: flex;
-                            color: rgba(0,0,0,.6);
+                            color: rgba(255,255,255,1);
                             font-size: 22px;    
                             cursor: pointer;                            
                             width:30px;
@@ -178,10 +178,10 @@ div#app-wrapper{
                             right: 5px;
                             transform: translateY(-50%);                                                       
                             border-radius: 50%;
+                            background-color:rgba(247, 247, 247, 0.473);
                         }                        
-                        span.caret:hover{
-                            color:rgba(0,0,0,.7);
-                            background-color:rgba(247, 247, 247, 0.173);
+                        span.caret:hover{                            
+                            background-color:rgba(247, 247, 247, 0.573);
                         }
                         div#dropdown-wrapper{
                             position: fixed;
@@ -1552,5 +1552,121 @@ div#app-wrapper{
             }
         }
     }
-
+    div#anonymous-user-wrapper{
+        width: 100%;        
+        div.anonymous-user-contents{
+            width: 80%;            
+            margin: 10px auto 20px auto;
+            div.user{
+                padding: 1em;
+                background-color: rgba(0,0,0,.05);
+                border: 1px solid rgba(0,0,0,.06);
+                background-image:url("https://source.unsplash.com/random");                  
+                background-repeat: no-repeat;
+                background-size:cover;
+                background-position: center;                    
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+                height: 400px;
+                display: flex;                                        
+                justify-content: flex-start;
+                align-items: flex-end;
+                div.user-profile{  
+                    margin-bottom: 20px;
+                    display: flex;          
+                    div.profile-pic{
+                        position: relative;
+                        background-color: #fff;
+                        width: 200px;
+                        height: 200px;
+                        border-radius: 50%;
+                        box-shadow: 0px 10px 20px rgba(0,0,0,.1);                        
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border: 5px solid orange;
+                        img{                            
+                            width: 100px;
+                            height: 100px;
+                            display: block;
+                        }                       
+                    }
+                    div.profile-name{
+                        display: flex;
+                        align-items: flex-end;
+                        h3{ 
+                            font-size: 200%;
+                            text-transform: capitalize;
+                            color: rgba(0,0,0,.6);
+                            margin-bottom: 10px;
+                        }
+                    }
+                }
+            }
+            div#timeline-wrapper{            
+                div.timeline{
+                    border: 1px solid rgba(0,0,0,.1);
+                    div#tabs{
+                        width: 100%;
+                        height: 40px;
+                        background-color: #f7f7f7;
+                        line-height: 40px;
+                        border-bottom: 1px solid rgba(0,0,0,.1);
+                        box-shadow: 0px 2px 4px rgba(0,0,0,.1);
+                        div.buttons{
+                            display: flex;
+                            margin-left: 20px;
+                            position: relative;
+                            a{
+                                width: 100px;
+                                height: 100%;
+                                display: block;                                
+                                text-align: center;
+                                text-decoration: none;                                
+                                color: rgba(0,0,0,.6);
+                                position: relative;
+                                transition: 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                            }         
+                            a:hover{
+                                background-color: rgba(0,0,0,.03);
+                            }                              
+                            a:hover::after{
+                                content:"";
+                                position: absolute;
+                                bottom:  0;
+                                left: 0;
+                                width: 100%;
+                                height: 3px;
+                                background-color: #FACB0F;
+                                display: block;
+                            }
+                            a.tab-active::after{
+                                content:"";
+                                position: absolute;
+                                bottom:  0;
+                                left: 0;
+                                width: 100%;
+                                height: 3px;
+                                background-color: #FACB0F;
+                                display: block;
+                            }               
+                        }
+                    }
+                   div#articles-wrapper{
+                       transition: 300ms ease-in-out;
+                        div.articles{
+                            position: relative;
+                            padding: 1em;
+                            background-color: #fff;
+                        }
+                   }
+                   div#about{
+                        padding:1em;
+                        background-color: #fff;
+                        transition: 300ms ease-in-out;
+                   }
+                }
+            }
+        }
+    }
 }
