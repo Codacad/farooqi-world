@@ -1,105 +1,7 @@
+<script async charset="utf-8" src="//cdn.embedly.com/widgets/platform.js"></script>
 <title><%=title%></title>
-<div class="articles-section">    
-    <% if (typeof success != "undefined") { %>
-        <% console.log(success) %> 
-    <% } %>
-    <div class="contents">                
-        <div id="login-register-wrapper">
-            <div class="login-close">
-                <a href=""><span class="material-icons">close</span></a>
-            </div>
-            <div class="register">
-                <div class="contents">
-                    <div class="register-header">
-                        <h1>Resgister here....</h1>
-                    </div>
-                    <form action="/" method="POST">                
-                        <div class="form-contents"> 
-                            <% if (typeof message != "undefined") { %>
-                                <% if (typeof message.success != "undefined") { %>
-                                    <div class="success">
-                                        <span><%= message.success %></span>
-                                    </div>
-                                <% } %>
-                            <% } %>
-                            <div class="name">
-                                <span class="name-icon">                                    
-                                    <span><i class="fas fa-user"></i></span>
-                                </span>
-                                <input type="text" name="name" placeholder="Name" id="name"/>                    
-                                <% if (typeof message != "undefined") { %>
-                                    <% if (typeof message.name !=  'undefined') { %>
-                                        <span class="required"><%= message.name %></span>
-                                    <% } %>                                               
-                                <% } %>
-                            </div>                   
-                            <div class="email">
-                                <span class="user-icon">
-                                    <span><i class="fas fa-envelope"></i></span>
-                                </span>
-                                <input type="email" name="email" placeholder="E-Mail" id="email"/>
-                                <% if (typeof message != "undefined") { %>
-                                    <% if (typeof message.email !=  'undefined') { %>
-                                        <span class="required"><%= message.email %></span>
-                                    <% } %>                       
-                                <% } %>
-                            </div>
-                            <div class="password">
-                                <span class="password-icon">
-                                    <span><i class="fas fa-unlock"></i></span>
-                                </span>
-                                <input type="password" name="password" placeholder="Password" id="password"/>
-                                <% if (typeof message != "undefined") { %>
-                                <% if (typeof message.password !=  'undefined') { %>
-                                    <span class="required"><%= message.password %></span>
-                                <% } %>                    
-                                <% if (typeof message.passwordLength !=  'undefined') { %>
-                                    <span class="required"><%= message.passwordLength %></span>
-                                <% } %>
-                            <% } %>
-                            </div>                
-                            <div class="register-btn">
-                                <button type="submit">Register</button>
-                            </div>
-                            <span class="already-registered">
-                                <span class="text">Already registerd?</span>
-                                <a href="" class="switch-to-login">Login...</a>
-                            </span>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <div class="login">
-                <div class="login-contents">
-                    <div class="login-heading">
-                        <h1>Login</h1>
-                    </div>
-                    <form action="/login" method="POST">                
-                            <div class="form-contents">                    
-                            <div class="email">
-                                <span class="user-icon">
-                                    <span><i class="fas fa-user"></i></span>
-                                </span>
-                                <input type="email" name="email" placeholder="E-Mail" id="login-email"/>
-                            </div>
-                            <div class="password">
-                                <span class="password-icon">
-                                    <span><i class="fas fa-unlock"></i></span>
-                                </span>
-                                <input type="password" name="password" placeholder="Password" id="login-password"/>
-                            </div>                
-                            <div class="login-btn">
-                                <button type="submit">Login</button>
-                            </div>
-                            <span class="new-to-website">
-                                <span class="text">New to FW</span>
-                                <a href="" class="switch-to-register">Create an Account...</a>
-                            </span>
-                            </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+<div class="articles-section">        
+    <div class="contents">                        
         <% if (typeof articles != "undefined") { %>
             <% articles.forEach(article => { %>
                 <div class="article" id="article">
@@ -117,18 +19,22 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="edit-and-delete">
-                        <ul>
-                            <li>
-                                <a href="" class="edit-icon"><span class="material-icons">edit</span></a>
-                                <ul><li>Edit</li></ul>
-                            </li>
-                            <li>
-                                <a href="" class="delete-icon"><span class="material-icons">delete</span></a>
-                                <ul><li>Delete</li></ul>
-                            </li>
-                        </ul>                      
-                    </div>
+                    <% if (typeof AuthUser != "undefined") { %>                        
+                        <% if (AuthUser._id == article.author._id) { %>                            
+                            <div class="edit-and-delete">
+                                <ul>
+                                    <li>
+                                        <a href="" class="edit-icon"><span class="material-icons">edit</span></a>
+                                        <ul><li>Edit</li></ul>
+                                    </li>
+                                    <li>
+                                        <a href="" class="delete-icon"><span class="material-icons">delete</span></a>
+                                        <ul><li>Delete</li></ul>
+                                    </li>
+                                </ul>                      
+                            </div>
+                        <% } %>
+                    <% } %>                    
                     <div class="article-contents">
                         <div class="article-header">
                             <div class="header-contents">
@@ -194,17 +100,57 @@
         <% } %>        
     </div>
 </div>
-<div id="create-article-wrapper">
+<div id="create-article">   
     <div class="create-article">            
-        <h2>Create an Article</h2>
+        <h2>Create an Article</h2>       
+            <% if (typeof success != "undefined") { %>
+                <div class="failure-messages">
+                    <div class="messages">
+                    <div><%=success[0]%></div>
+                    </div>
+                </div>
+            <% } %>
         <div class="article-form">
             <form action="/" method="POST">
                 <div class="form-group category-title">                                                
-                    <div><input type="text" name="title" id="title" class="form-control" placeholder="Title"></div>
-                    <div><input type="text" name="category" id="category" class="form-control" placeholder="Category"></div>
+                    <div class="input">
+                        <input type="text" name="title" id="title" class="form-control" placeholder="Title">
+                        <% if (typeof fail != "undefined") { %>                        
+                            <div class="failure-messages">
+                                <% fail.forEach(failMsg => { %>                                
+                                <div class="title-required">
+                                    <div>
+                                        <%= failMsg.titleRequired %>                                        
+                                    </div>
+                                </div>                                                               
+                                <% }) %>
+                            </div>
+                        <% } %>
+                    </div>
+                    <div class="input"><input type="text" name="category" id="category" class="form-control" placeholder="Category"></div>
                 </div>                   
                 <div class="form-group text-area">                        
                     <textarea id="editor" style="height:400px;" name="body" placeholder="Start writing here..." class="form-control"></textarea>
+                    <% if (typeof fail != "undefined") { %>                        
+                        <div class="failure-messages">
+                            <% fail.forEach(failMsg => { %>                            
+                                <% if (failMsg.bodyRequired) { %>
+                                    <div class="body-required">
+                                        <div>
+                                            <%= failMsg.bodyRequired %>                                           
+                                        </div>
+                                    </div>  
+                                <% } %>                                                            
+                                <% if (failMsg.bodyLength) { %>
+                                    <div class="body-required">
+                                        <div>
+                                            <%= failMsg.bodyLength %>                                            
+                                        </div>
+                                    </div>  
+                                <% } %>                                                            
+                            <% }) %>
+                        </div>
+                    <% } %>
                 </div>
                 <div class="btn">
                     <button type="submit" class="submit-article">Post</button>

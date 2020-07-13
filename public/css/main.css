@@ -35,8 +35,6 @@ div#app-wrapper nav#navbar {
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
   background-color: #FACB0F;
-  -webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-          box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
   line-height: 55px;
   z-index: 100;
 }
@@ -722,26 +720,72 @@ div#app-wrapper div#container div.articles-section div.contents div.article div.
 }
 
 div#app-wrapper div#container div.articles-section div.contents div.article div.article-contents div.article-body {
-  clear: both;
-  text-align: right;
-  padding: 1em;
+  padding: 0em 1em 1em 1em;
 }
 
-div#app-wrapper div#container div.articles-section div.contents div.article div.article-contents div.article-body div.body-contents div.title {
-  font-size: 150%;
+div#app-wrapper div#container div.articles-section div.contents div.article div.article-contents div.article-body div.body-contents.urdu {
+  clear: both;
+  text-align: right;
+}
+
+div#app-wrapper div#container div.articles-section div.contents div.article div.article-contents div.article-body div.body-contents.urdu div.title {
+  font-size: 100%;
   color: rgba(0, 0, 0, 0.8);
 }
 
-div#app-wrapper div#container div.articles-section div.contents div.article div.article-contents div.article-body div.body-contents div.body {
-  max-height: 145px;
+div#app-wrapper div#container div.articles-section div.contents div.article div.article-contents div.article-body div.body-contents.urdu div.body {
+  max-height: 100px;
   overflow: hidden;
   color: rgba(0, 0, 0, 0.8);
   word-spacing: 2px;
   font-size: 20px;
 }
 
-div#app-wrapper div#container div.articles-section div.contents div.article div.article-contents div.article-body div.body-contents div.read-more {
+div#app-wrapper div#container div.articles-section div.contents div.article div.article-contents div.article-body div.body-contents.urdu div.read-more {
   font-size: 18px;
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+div#app-wrapper div#container div.articles-section div.contents div.article div.article-contents div.article-body div.body-contents.urdu div.read-more a {
+  width: 100px;
+  display: block;
+  text-decoration: none;
+  color: #FACB0F;
+  text-align: right;
+}
+
+div#app-wrapper div#container div.articles-section div.contents div.article div.article-contents div.article-body div.body-contents.urdu div.read-more a:hover {
+  color: #FACB0F;
+}
+
+div#app-wrapper div#container div.articles-section div.contents div.article div.article-contents div.article-body {
+  clear: both;
+  text-align: left;
+  padding: 0em 1em 1em 1em;
+}
+
+div#app-wrapper div#container div.articles-section div.contents div.article div.article-contents div.article-body div.body-contents.english div.title {
+  font-size: 100%;
+  color: rgba(0, 0, 0, 0.8);
+  padding-bottom: 1em;
+}
+
+div#app-wrapper div#container div.articles-section div.contents div.article div.article-contents div.article-body div.body-contents.english div.body {
+  max-height: 95px;
+  overflow: hidden;
+  color: rgba(0, 0, 0, 0.8);
+  word-spacing: 2px;
+  font-size: 16px;
+}
+
+div#app-wrapper div#container div.articles-section div.contents div.article div.article-contents div.article-body div.body-contents.english div.read-more {
+  font-size: 16px;
   margin-top: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -751,16 +795,16 @@ div#app-wrapper div#container div.articles-section div.contents div.article div.
           justify-content: flex-start;
 }
 
-div#app-wrapper div#container div.articles-section div.contents div.article div.article-contents div.article-body div.body-contents div.read-more a {
+div#app-wrapper div#container div.articles-section div.contents div.article div.article-contents div.article-body div.body-contents.english div.read-more a {
   width: 100px;
   display: block;
   text-decoration: none;
-  color: #0E6DFB;
-  text-align: center;
+  color: #FACB0F;
+  text-align: left;
 }
 
-div#app-wrapper div#container div.articles-section div.contents div.article div.article-contents div.article-body div.body-contents div.read-more a:hover {
-  color: #0e6dfbd7;
+div#app-wrapper div#container div.articles-section div.contents div.article div.article-contents div.article-body div.body-contents.english div.read-more a:hover {
+  color: #FACB0F;
 }
 
 div#app-wrapper div#container div.articles-section div.contents div.article div.article-contents div.article-footer {
@@ -921,6 +965,87 @@ div#app-wrapper div#container div#full-article-wrapper {
   background-color: #fff;
   -webkit-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.3);
           box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+div#app-wrapper div#container div#full-article-wrapper div.edit-and-delete {
+  position: absolute;
+  top: 0;
+  padding-top: 1em;
+  right: 0;
+}
+
+div#app-wrapper div#container div#full-article-wrapper div.edit-and-delete ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+div#app-wrapper div#container div#full-article-wrapper div.edit-and-delete ul li {
+  position: relative;
+}
+
+div#app-wrapper div#container div#full-article-wrapper div.edit-and-delete ul li a {
+  font-size: 10px;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+div#app-wrapper div#container div#full-article-wrapper div.edit-and-delete ul li a:first-child {
+  margin-right: 10px;
+}
+
+div#app-wrapper div#container div#full-article-wrapper div.edit-and-delete ul li ul {
+  display: block;
+  position: absolute;
+  top: 30px;
+  right: -10px;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: 200ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  transition: 200ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  background-color: #f7f7f7;
+  padding: .2em;
+  width: 60px;
+  border-radius: 2px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+div#app-wrapper div#container div#full-article-wrapper div.edit-and-delete ul li ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+div#app-wrapper div#container div#full-article-wrapper div.edit-and-delete ul li ul li a {
+  font-size: 12px;
+  display: block;
+  text-align: center;
+}
+
+div#app-wrapper div#container div#full-article-wrapper div.edit-and-delete ul li ul::after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  left: 50%;
+  top: -4px;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: #f7f7f7;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+div#app-wrapper div#container div#full-article-wrapper div.edit-and-delete ul li:hover ul {
+  visibility: visible;
+  opacity: 1;
 }
 
 div#app-wrapper div#container div#full-article-wrapper div.article div.artilce-contents div.article-header div.header-contents {
@@ -1016,7 +1141,7 @@ div#app-wrapper div#container div#full-article-wrapper div.article div.artilce-c
   word-spacing: 2px;
 }
 
-div#app-wrapper div#container div#create-article-wrapper {
+div#app-wrapper div#container div#create-article {
   width: 60%;
   margin: 100px auto 20px auto;
   padding: 1em;
@@ -1027,46 +1152,88 @@ div#app-wrapper div#container div#create-article-wrapper {
           box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
 }
 
-div#app-wrapper div#container div#create-article-wrapper div.create-article h2 {
+div#app-wrapper div#container div#create-article div.create-article h2 {
   font-size: 150%;
   color: rgba(0, 0, 0, 0.6);
   margin-bottom: 20px;
   text-align: center;
 }
 
-div#app-wrapper div#container div#create-article-wrapper div.create-article div.article-form form div.category-title input {
+div#app-wrapper div#container div#create-article div.create-article div.article-form form div.category-title div.input {
+  margin-bottom: 10px;
+}
+
+div#app-wrapper div#container div#create-article div.create-article div.article-form form div.category-title div.input input {
   outline: none;
   padding: .5em;
   background-color: rgba(0, 0, 0, 0.02);
   color: rgba(0, 0, 0, 0.6);
   height: 40px;
   font-size: 18px;
-  margin-bottom: 10px;
   border-radius: 5px;
   width: 100%;
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-div#app-wrapper div#container div#create-article-wrapper div.create-article div.article-form form div.category-title input:focus {
+div#app-wrapper div#container div#create-article div.create-article div.article-form form div.category-title div.input input:focus {
   background-color: rgba(0, 0, 0, 0.03);
 }
 
-div#app-wrapper div#container div#create-article-wrapper div.create-article div.article-form div.text-area {
+div#app-wrapper div#container div#create-article div.create-article div.article-form form div.category-title div.input div.failure-messages {
+  border-radius: 5px;
+}
+
+div#app-wrapper div#container div#create-article div.create-article div.article-form form div.category-title div.input div.failure-messages div.title-required {
+  font-size: 12px;
+  padding: .5em;
+  background-color: #fff;
+  color: rgba(255, 0, 0, 0.6);
+  position: relative;
+  font-weight: 600;
+}
+
+div#app-wrapper div#container div#create-article div.create-article div.article-form form div.category-title div.input div.failure-messages div.title-required.hide-popup {
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: 200ms cubic-bezier(0.47, 0, 0.745, 0.715);
+  transition: 200ms cubic-bezier(0.47, 0, 0.745, 0.715);
+  height: 0px;
+  overflow: hidden;
+}
+
+div#app-wrapper div#container div#create-article div.create-article div.article-form div.text-area {
   border-radius: 3px;
   overflow: hidden;
 }
 
-div#app-wrapper div#container div#create-article-wrapper div.create-article div.article-form .ck-rounded-corners .ck.ck-editor__main > .ck-editor__editable, div#app-wrapper div#container div#create-article-wrapper div.create-article div.article-form .ck.ck-editor__main > .ck-editor__editable.ck-rounded-corners {
+div#app-wrapper div#container div#create-article div.create-article div.article-form div.failure-messages {
+  border-radius: 5px;
+}
+
+div#app-wrapper div#container div#create-article div.create-article div.article-form div.failure-messages div.body-required, div#app-wrapper div#container div#create-article div.create-article div.article-form div.failure-messages div.body-length {
+  font-size: 12px;
+  padding: .5em;
+  background-color: #fff;
+  color: rgba(255, 0, 0, 0.829);
+  position: relative;
+  font-weight: 600;
+}
+
+div#app-wrapper div#container div#create-article div.create-article div.article-form .ck.ck-reset.ck-editor.ck-rounded-corners.required {
+  border: 1px solid rgba(255, 0, 0, 0.548);
+}
+
+div#app-wrapper div#container div#create-article div.create-article div.article-form .ck-rounded-corners .ck.ck-editor__main > .ck-editor__editable, div#app-wrapper div#container div#create-article div.create-article div.article-form .ck.ck-editor__main > .ck-editor__editable.ck-rounded-corners {
   height: 250px;
   background-color: rgba(0, 0, 0, 0.02);
   color: rgba(0, 0, 0, 0.6);
 }
 
-div#app-wrapper div#container div#create-article-wrapper div.create-article div.article-form .ck-rounded-corners .ck.ck-editor__main > .ck-editor__editable, div#app-wrapper div#container div#create-article-wrapper div.create-article div.article-form .ck.ck-editor__main > .ck-editor__editable.ck-rounded-corners:focus {
+div#app-wrapper div#container div#create-article div.create-article div.article-form .ck-rounded-corners .ck.ck-editor__main > .ck-editor__editable, div#app-wrapper div#container div#create-article div.create-article div.article-form .ck.ck-editor__main > .ck-editor__editable.ck-rounded-corners:focus {
   background-color: rgba(0, 0, 0, 0.03);
 }
 
-div#app-wrapper div#container div#create-article-wrapper div.create-article div.article-form div.btn {
+div#app-wrapper div#container div#create-article div.create-article div.article-form div.btn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1076,7 +1243,7 @@ div#app-wrapper div#container div#create-article-wrapper div.create-article div.
   margin-top: 20px;
 }
 
-div#app-wrapper div#container div#create-article-wrapper div.create-article div.article-form div.btn button {
+div#app-wrapper div#container div#create-article div.create-article div.article-form div.btn button {
   display: block;
   width: 100px;
   border: none;
@@ -1091,7 +1258,7 @@ div#app-wrapper div#container div#create-article-wrapper div.create-article div.
           box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);
 }
 
-div#app-wrapper div#container div#create-article-wrapper div.create-article div.article-form div.btn button:hover {
+div#app-wrapper div#container div#create-article div.create-article div.article-form div.btn button:hover {
   background-color: #FACB0F;
 }
 
@@ -1601,7 +1768,7 @@ div#app-wrapper div#container div#register-wrapper div.register div.contents for
     margin-left: 10px;
     margin-bottom: 5px;
   }
-  div#app-wrapper div#container div#create-article-wrapper {
+  div#app-wrapper div#container div#create-article {
     width: 90%;
     margin: 20px auto 20px auto;
     padding: 1em;

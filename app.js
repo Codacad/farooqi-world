@@ -8,6 +8,7 @@ const cors = require('cors');
 const passport = require("passport")
 const routes = require('./routes/index');
 const path = require('path')
+const flash = require('connect-flash')
 require('dotenv').config()
 const app = express()
 app.use(cors());
@@ -41,7 +42,7 @@ app.use(session({
         maxAge: 1000*60*60*24
     }
 }))
-
+app.use(flash());
 require('./config/passport');
 app.use(passport.initialize())
 app.use(passport.session())

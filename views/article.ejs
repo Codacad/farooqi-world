@@ -3,7 +3,22 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <title><%= title %></title>
 <div id="full-article-wrapper">
-    <% if (typeof article != 'undefined') { %>
+    <% if (typeof article != 'undefined') { %>        
+        <div id="delete-article">
+            
+        </div>
+        <div class="edit-and-delete">
+            <ul>
+                <li>
+                    <a href="" class="edit-icon"><span class="material-icons">edit</span></a>
+                    <ul><li>Edit</li></ul>
+                </li>
+                <li>
+                    <a href="" class="delete-icon"><span class="material-icons">delete</span></a>
+                    <ul><li>Delete</li></ul>
+                </li>
+            </ul>                      
+        </div>
         <div class="article">
             <div class="artilce-contents">
                 <div class="article-header">

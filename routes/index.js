@@ -6,7 +6,12 @@ const bcrypt = require('bcryptjs');
 const passport = require('passport');
 const e = require('express');
 
-Router.get('/', (req, res) => {                
+Router.get('/', (req, res) => {      
+    if(req.user){
+        req.user.admin = true;
+    }          
+
+    console.log(req.user)
     Article.find({}, (err, articles) => {    
         if(err){
             res.status(404).send(err)
@@ -14,7 +19,9 @@ Router.get('/', (req, res) => {
             res.render('index', {
                 title:"Farooki World",                    
                 articles,
-                AuthUser:req.user
+                AuthUser:req.user,
+                fail:req.flash('failed'),
+                success:req.flash('created')
             });  
         }        
     })                            
@@ -97,14 +104,31 @@ Router.post('/', (req, res) => {
         body:req.body.body,
         author:req.user
     }   
-    const newArticle = new Article(article);                                        
-    newArticle.save((err, article) => {
-        if(err){
-            res.status(404).send(err)
-        }else{
-            res.redirect('/')
-        }        
-    })        
+    const words = req.body.body.split(' ');    
+    const errors = {};
+    if(!req.body.title){
+        errors.titleRequired = 'Required'
+    }
+    if(!req.body.body){
+        errors.bodyRequired = 'Required'
+    }else if(words.length < 50){
+        errors.bodyLength = "Please write at least 50 words"
+    }        
+
+    if(Object.keys(errors).length === 0){        
+        const newArticle = new Article(article);                                        
+        newArticle.save((err, article) => {
+            if(err){
+                return res.status(404).send(err)
+            }else{
+                req.flash('created', "Created Successfully...")
+                res.redirect('/')
+            }        
+        })        
+    }else{
+        req.flash('failed', errors);
+        res.redirect('/#create-article');
+    } 
     
 })
 

@@ -1,11 +1,24 @@
+
 document.addEventListener('DOMContentLoaded', () => {
     const hamburgerIcon = document.querySelector('div.nav-left-menus span.hamburger-icon');
     document.querySelectorAll('#article').forEach(article => {
-        article.addEventListener('click', (e) => {
-            console.log(e.target.id)
-        })
-    })
-
+        const articleBodyContents = article.querySelector('div.article-body div.body-contents');
+        const articleTitle =  articleBodyContents.querySelector('div.title h2');
+        const titleText = articleTitle.innerHTML.split(' ').join('');                
+        if (/^[-@.'"\/#&+\w\s]*$/.test(titleText)) {
+            articleBodyContents.classList.add('english')
+        } else {
+        articleBodyContents.classList.add('urdu');
+        }
+        
+        const body = articleBodyContents.querySelector("div.body")
+        body.querySelectorAll('p').forEach(p => {
+            if(p.innerHTML == '&nbsp;'){
+                p.style.display = "none";
+            }
+        })        
+        
+    })    
     hamburgerIcon.addEventListener('click', function(e){
         e.preventDefault()
         document.querySelector('div#sidenav-wrapper').classList.add('sidenav-wrapper-toggle')
@@ -48,17 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
             document.querySelector('ul.user-menus li ul').classList.remove('toggle-user-menus')
             document.querySelector('div#dropdown-wrapper').classList.remove('toggle-dropdown')
         }
-    }
-    document.querySelectorAll('a.edit-icon').forEach(editIcon => {
-        editIcon.addEventListener('click', (e) => {
-            e.preventDefault()
-        })
-    })     
-    document.querySelectorAll('a.delete-icon').forEach(deleteIcon => {
-        deleteIcon.addEventListener('click', (e) => {
-            e.preventDefault()
-        })
-    })     
+    }    
     document.querySelectorAll('a.comment-icon').forEach(commentIcon => {
         commentIcon.addEventListener('click', (e) => {
             e.preventDefault()
@@ -96,6 +99,18 @@ document.addEventListener('DOMContentLoaded', () => {
           }
     })
     
+    document.querySelectorAll('a.edit-icon').forEach(editIcon => {
+        editIcon.addEventListener('click', (e) => {
+            e.preventDefault()
+            alert('I am edit icon')
+        })
+    })     
+    document.querySelectorAll('a.delete-icon').forEach(deleteIcon => {
+        deleteIcon.addEventListener('click', (e) => {
+            e.preventDefault()
+            alert('I am delete icon')
+        })
+    })     
 
     document.querySelectorAll('.tab-menu').forEach(function(tabMenu) {
         tabMenu.style.display = "none";
@@ -118,6 +133,6 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             showTabMenus(this.dataset.tab)
             console.log(this.dataset.tab)
-        }
-    })
+        }        
+    })          
 })
